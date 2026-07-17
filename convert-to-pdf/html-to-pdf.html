@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML to PDF Converter Online Free | KBResize</title>
+<meta name="description" content="Convert an .html file or pasted HTML/webpage code to PDF, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>HTML to PDF</h1>
+      <p>Convert an .html file, or HTML code you paste in, to a PDF — free.</p>
+    </div>
+
+    <div class="spec-box">
+      ⚠️ <b>Best-effort conversion.</b> Basic HTML, text, and inline styles render well. External stylesheets, JavaScript-driven content, and complex CSS layouts may not look identical to the original page.
+    </div>
+
+    <div class="card">
+      <div class="step-label"><span class="step-num">1</span> Choose your input</div>
+      <div class="segmented" id="htmlSourceGroup">
+        <button type="button" class="active" data-value="file">Upload .html file</button>
+        <button type="button" data-value="paste">Paste HTML code</button>
+      </div>
+
+      <div id="h2pFileWrap" style="margin-top:18px;">
+        <div id="dropzoneH2P" class="dropzone">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+          <p>Click or drag & drop your .html file here</p>
+        </div>
+        <input type="file" id="fileInputH2P" accept=".html,.htm" style="display:none">
+      </div>
+
+      <div id="h2pPasteWrap" style="margin-top:18px;display:none;">
+        <div class="field">
+          <label for="htmlPasteInput">HTML code</label>
+          <textarea id="htmlPasteInput" rows="8" placeholder="&lt;h1&gt;Hello world&lt;/h1&gt;&lt;p&gt;Paste your HTML here...&lt;/p&gt;" style="width:100%;padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--card-bg);color:var(--text);font-family:monospace;resize:vertical;"></textarea>
+        </div>
+      </div>
+
+      <div class="step-label"><span class="step-num">2</span> Convert</div>
+      <div class="controls">
+        <button class="btn" id="h2pBtn">Convert to PDF</button>
+      </div>
+
+      <p id="statusMsgH2P" class="status"></p>
+
+      <div id="resultBoxH2P" class="result-box">
+        <a id="downloadLinkH2P" class="btn" download>⬇ Download PDF</a>
+      </div>
+
+      <div id="h2pRenderHost" class="office-render-host"></div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <p>Your HTML is rendered off-screen in your own browser and captured page-by-page into a PDF — nothing is sent to a server.</p>
+      <h3>Can I convert a live website URL?</h3>
+      <p>Not directly — since everything runs in your browser with no server, we can't fetch another website's page for you (that would require a server-side request). Save the page as an .html file first (most browsers: right-click → "Save As" → Webpage, HTML only), then upload it here.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/html-to-pdf.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convert JPG to PDF Online Free | KBResize</title>
+<meta name="description" content="Combine one or more JPG or PNG images into a single PDF, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>JPG to PDF</h1>
+      <p>Combine one or more images into a single PDF — one image per page, in the order you add them.</p>
+    </div>
+
+    <div class="spec-box">
+      This tool stays free by showing a short ad for larger batches: <b>20 images or fewer is free</b>, <b>21-50 = 1 ad</b>, <b>51-100 = 2 ads</b>, <b>100+ = 3 ads</b>.
+    </div>
+
+    <div class="card">
+      <div id="dropzoneJpgToPdf" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+        <p>Click or drag & drop one or more images here</p>
+      </div>
+      <input type="file" id="fileInputJpgToPdf" accept="image/*" multiple style="display:none">
+
+      <div id="fileListJpgToPdf" class="file-list"></div>
+
+      <div class="controls">
+        <div class="field">
+          <label for="j2pPageSize">Page size</label>
+          <select id="j2pPageSize">
+            <option value="auto">Auto (fit each image)</option>
+            <option value="a4">A4</option>
+            <option value="letter">Letter</option>
+            <option value="legal">Legal</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="j2pOrientation">Orientation</label>
+          <select id="j2pOrientation">
+            <option value="auto">Auto (match image)</option>
+            <option value="p">Portrait</option>
+            <option value="l">Landscape</option>
+          </select>
+        </div>
+        <div class="field" style="min-width:160px;">
+          <label for="j2pMargin">Margin: <span id="j2pMarginVal">0</span> pt</label>
+          <input type="range" id="j2pMargin" min="0" max="72" step="4" value="0">
+        </div>
+        <div class="field" style="min-width:160px;">
+          <label for="j2pQuality">Image quality: <span id="j2pQualityVal">92</span>%</label>
+          <input type="range" id="j2pQuality" min="40" max="100" step="1" value="92">
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="btn" id="convertBtnJpgToPdf">Convert to PDF</button>
+      </div>
+      <script>
+        document.getElementById('j2pMargin').addEventListener('input', e => document.getElementById('j2pMarginVal').textContent = e.target.value);
+        document.getElementById('j2pQuality').addEventListener('input', e => document.getElementById('j2pQualityVal').textContent = e.target.value);
+      </script>
+
+      <div id="progressWrapJpgToPdf" class="progress-wrap">
+        <div id="progressBarJpgToPdf" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgJpgToPdf" class="status"></p>
+
+      <div id="resultBoxJpgToPdf" class="result-box">
+        <a id="downloadLinkJpgToPdf" class="btn" download>⬇ Download PDF</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <h3>What order will the images be in?</h3>
+      <p>Images are placed in the order you add them (shown in the list above). Remove and re-add an image to change its position.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — everything happens locally in your browser. Your images never leave your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/jpg-to-pdf.js"></script>
+</body>
+</html>

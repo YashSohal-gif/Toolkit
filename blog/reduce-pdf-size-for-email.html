@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Won't My PDF Fit in an Email? How to Reduce PDF Size | KBResize</title>
+<meta name="description" content="The real reasons a PDF ends up too large to email, and which compression approach keeps it readable — with a free browser-based tool to fix it.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero" style="text-align:left;padding:30px 0 10px;">
+      <h1>Why won't my PDF fit in an email?</h1>
+      <p>Most inboxes cap attachments at 20–25MB. Here's what actually makes a PDF that large, and how to shrink it without turning your document into mush.</p>
+    </div>
+
+    <div class="card faq">
+      <h2>What actually makes a PDF huge</h2>
+      <p>It's almost never the text. A page of pure typed text — even a 200-page contract — is usually a few hundred KB total, because text in a PDF is just a small set of instructions ("draw this word at this position"), not a picture of the word. The size problem is nearly always <b>images</b>: a scanned page, a screenshot pasted in, or a photo dropped into a Word document before it was exported to PDF. A single photo straight off a phone camera can be 3–8MB — multiply that by 10 scanned pages and you have a 50MB "document."</p>
+
+      <h3>Scanned documents are the worst offender</h3>
+      <p>When you scan a paper page, the scanner captures it as a high-resolution photograph of the whole page — usually at 300 DPI or higher, in full color, even if the page is just black text on white. That's enormously wasteful: a black-and-white page doesn't need 16 million colors per pixel, and it rarely needs to be sharp enough to zoom into individual letters. This is exactly why compressors that re-render each page as a smaller, lower-color-depth image can shrink a scanned PDF by 80–95% with no visible loss in an ordinary read.</p>
+
+      <h3>Why "just zip it" doesn't help much</h3>
+      <p>Zipping a PDF barely shrinks it, because the images and fonts inside a PDF are usually already compressed (JPEG images, for instance, are already about as compressed as they'll get). Zip compression works by finding repeated patterns in a file — but a well-compressed image has very little repetition left to squeeze out. The size reduction has to happen <i>inside</i> the PDF, by re-encoding the images at a smaller size or lower quality, not by wrapping the whole file in another compression layer.</p>
+
+      <h3>What actually works: target a size, not a "quality" slider</h3>
+      <p>Most compression tools ask you to pick a vague "quality" level and hope for the best. A better approach is compressing toward an exact target size — e.g. "get this under 20MB for Gmail" or "under 10MB for this college portal" — and letting the tool iteratively reduce quality and resolution only as much as needed to hit that number, so you're never giving up more clarity than necessary.</p>
+
+      <h3>Does compressing a PDF remove selectable text?</h3>
+      <p>It depends on the method. A tool that rasterizes each page into a smaller image (the approach that gets the biggest size reductions on scanned documents) does turn any real text into part of the image, meaning it's no longer selectable or searchable afterward. If your PDF is a genuine digital document — actual selectable text, not a scan — check whether it needs compressing at all, since text-based PDFs are rarely the ones hitting email attachment limits in the first place.</p>
+    </div>
+
+    <div class="card faq">
+      <h2>Try it</h2>
+      <p>The <a href="../pdf-tools/pdf-compressor.html">PDF Compressor</a> tool lets you set an exact target size in KB or MB and compresses toward it entirely in your browser — nothing is uploaded anywhere. If you're not sure whether your PDF is a scan or real text, it shows you what's inside (fonts, embedded or not) before you compress, so you know what you're trading away.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

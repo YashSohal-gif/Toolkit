@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free QR Code Generator — Create & Download QR Codes | KBResize</title>
+<meta name="description" content="Generate a QR code from any text, link, or Wi-Fi info, free. Download as PNG instantly, no sign-up.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>QR Code Generator</h1>
+      <p>Turn any text, link, or Wi-Fi info into a scannable QR code — free, instant, downloadable.</p>
+    </div>
+
+    <div class="card">
+      <div class="controls" style="flex-direction:column;align-items:stretch;">
+        <div class="field">
+          <label for="qrText">Text, URL, or info to encode</label>
+          <textarea id="qrText" rows="3" placeholder="https://example.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--card-bg);color:var(--text);font-family:inherit;resize:vertical;"></textarea>
+        </div>
+        <div class="controls">
+          <div class="field">
+            <label>Size (px)</label>
+            <div class="segmented" id="qrSizeGroup">
+              <button type="button" data-value="200">200</button>
+              <button type="button" class="active" data-value="300">300</button>
+              <button type="button" data-value="500">500</button>
+              <button type="button" data-value="800">800</button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="qrColor">Foreground color</label>
+            <input type="color" id="qrColor" value="#000000" style="height:42px;width:70px;padding:2px;border-radius:8px;border:1px solid var(--border);">
+          </div>
+          <div class="field">
+            <label for="qrBgColor">Background color</label>
+            <input type="color" id="qrBgColor" value="#ffffff" style="height:42px;width:70px;padding:2px;border-radius:8px;border:1px solid var(--border);">
+          </div>
+          <div class="field">
+            <label for="qrEcLevel" title="Higher levels stay scannable even if part of the code is covered or damaged">Error correction</label>
+            <select id="qrEcLevel">
+              <option value="L">L — smallest pattern</option>
+              <option value="M">M — balanced</option>
+              <option value="Q">Q — robust</option>
+              <option value="H" selected>H — max (best for logos/print)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="qrFormat">Download as</label>
+            <select id="qrFormat">
+              <option value="png">PNG</option>
+              <option value="jpg">JPG</option>
+            </select>
+          </div>
+          <button class="btn" id="generateBtn">Generate QR Code</button>
+        </div>
+      </div>
+      <p id="statusMsg" class="status"></p>
+
+      <div id="resultBox" class="result-box">
+        <div id="qrCanvasHost" style="display:flex;justify-content:center;padding:20px;background:#fff;border-radius:10px;margin-bottom:14px;"></div>
+        <a id="downloadLink" class="btn" download="qrcode.png">⬇ Download QR Code (PNG)</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>What can I encode in a QR code?</h2>
+      <h3>Website links</h3>
+      <p>Paste any URL — great for menus, business cards, and posters.</p>
+      <h3>Wi-Fi details</h3>
+      <p>Use the format <code>WIFI:T:WPA;S:NetworkName;P:Password;;</code> so phones can scan and auto-connect.</p>
+      <h3>Plain text</h3>
+      <p>Contact info, a message, or anything else — the QR code just stores whatever text you enter.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/qr-code-generator.js"></script>
+</body>
+</html>

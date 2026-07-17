@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Forms — Fill Out a Fillable PDF Form Free | KBResize</title>
+<meta name="description" content="Fill out a PDF form's text fields, checkboxes, and dropdowns, then save a completed copy, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>PDF Forms</h1>
+      <p>Upload a fillable PDF form and this tool finds every field automatically — fill them in below, then download your completed copy.</p>
+    </div>
+
+    <div class="spec-box">
+      Everything happens in your browser — your PDF is never uploaded anywhere. Larger PDFs show a short ad before downloading, which keeps this tool free.
+    </div>
+
+    <div class="card">
+      <div id="dropzoneForms" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+        <p>Click or drag & drop your PDF form here</p>
+      </div>
+      <input type="file" id="fileInputForms" accept="application/pdf" style="display:none">
+
+      <div id="formFieldsWrap" style="display:none;margin-top:16px;">
+        <div id="formFieldsList"></div>
+      </div>
+
+      <div class="controls" id="formsSaveControls" style="display:none;justify-content:center;">
+        <label class="toggle-row" title="Bakes your entered values permanently into the page — fields become plain text/marks and can no longer be edited by anyone, including you">
+          <span class="toggle-switch"><input type="checkbox" id="formsFlatten"><span class="toggle-track"></span></span>
+          <span>Flatten form (make it permanent, non-editable)</span>
+        </label>
+        <button class="btn" id="formsSaveBtn">Save Filled PDF</button>
+      </div>
+
+      <div id="progressWrapForms" class="progress-wrap">
+        <div id="progressBarForms" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgForms" class="status"></p>
+
+      <div id="resultBoxForms" class="result-box">
+        <a id="downloadLinkForms" class="btn" download>⬇ Download Filled PDF</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>About fillable forms</h2>
+      <h3>What if my PDF has no fields?</h3>
+      <p>Not every PDF is a true fillable form — if none are detected, you'll see a message saying so. In that case, try the <a href="edit-pdf.html">Edit PDF</a> tool to add text boxes manually instead.</p>
+      <h3>What field types are supported?</h3>
+      <p>Text fields, checkboxes, radio button groups, and dropdown/choice fields are all detected and fillable.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — form filling happens entirely in your browser. Your PDF never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/pdf-forms.js"></script>
+</body>
+</html>

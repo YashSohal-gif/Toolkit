@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit PDF — Add Text, Shapes &amp; Highlights Free | KBResize</title>
+<meta name="description" content="Add text boxes, rectangles, and highlights directly onto your PDF pages, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Edit PDF</h1>
+      <p>Click anywhere on a page to drop in a text box, rectangle, or highlight — arrange your edits, then save them permanently into the PDF.</p>
+    </div>
+
+    <div class="spec-box">
+      Everything happens in your browser — your PDF is never uploaded anywhere. Larger PDFs show a short ad before downloading, which keeps this tool free.
+    </div>
+
+    <div class="card">
+      <div class="step-label"><span class="step-num">1</span> Upload your PDF</div>
+      <div id="dropzoneEdit" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+        <p>Click or drag & drop your PDF here</p>
+      </div>
+      <input type="file" id="fileInputEdit" accept="application/pdf" style="display:none">
+
+      <div class="step-label" id="editStepLabel" style="display:none;"><span class="step-num">2</span> Choose a tool and click the page</div>
+      <div class="field" id="editToolField" style="display:none;">
+        <div class="segmented" id="editToolGroup">
+          <button type="button" class="active" data-value="text">Text</button>
+          <button type="button" data-value="rect">Rectangle</button>
+          <button type="button" data-value="highlight">Highlight</button>
+        </div>
+      </div>
+
+      <div class="controls" id="editPageNav" style="display:none;">
+        <button class="btn secondary" id="editPrevPage">← Prev Page</button>
+        <span id="editPageIndicator" class="status" style="margin:0;">Page 1</span>
+        <button class="btn secondary" id="editNextPage">Next Page →</button>
+        <button class="btn secondary" id="editUndoBtn">Undo Last</button>
+      </div>
+
+      <div id="editCanvasWrap" style="display:none;position:relative;margin-top:14px;max-width:100%;overflow:auto;">
+        <canvas id="editCanvas"></canvas>
+        <div id="editOverlay" style="position:absolute;top:0;left:0;"></div>
+      </div>
+
+      <div class="step-label" id="editSaveLabel" style="display:none;"><span class="step-num">3</span> Save your edits</div>
+      <div class="controls" id="editSaveControls" style="display:none;justify-content:center;">
+        <button class="btn" id="editSaveBtn">Save Edited PDF</button>
+      </div>
+
+      <div id="progressWrapEdit" class="progress-wrap">
+        <div id="progressBarEdit" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgEdit" class="status"></p>
+
+      <div id="resultBoxEdit" class="result-box">
+        <a id="downloadLinkEdit" class="btn" download>⬇ Download Edited PDF</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How editing works</h2>
+      <h3>What can I add?</h3>
+      <p>Text boxes (click, then type in the prompt), rectangles (click and drag), and yellow highlights (click and drag over existing text) — on any page, as many as you like.</p>
+      <h3>Can I remove an edit?</h3>
+      <p>Use "Undo Last" to remove the most recent addition on the current page before saving.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — editing happens entirely in your browser. Your PDF never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/edit-pdf.js"></script>
+</body>
+</html>

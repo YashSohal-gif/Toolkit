@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign PDF — Add Your Signature to a PDF Free | KBResize</title>
+<meta name="description" content="Draw or type your signature and place it anywhere on a PDF page, then save, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Sign PDF</h1>
+      <p>Draw or type your signature, drop it onto the exact spot on any page, then save — no printing, scanning, or extra apps needed.</p>
+    </div>
+
+    <div class="spec-box">
+      Everything happens in your browser — your PDF is never uploaded anywhere. Larger PDFs show a short ad before downloading, which keeps this tool free.
+    </div>
+
+    <div class="card">
+      <div class="step-label"><span class="step-num">1</span> Upload your PDF</div>
+      <div id="dropzoneSign" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+        <p>Click or drag & drop your PDF here</p>
+      </div>
+      <input type="file" id="fileInputSign" accept="application/pdf" style="display:none">
+
+      <div class="step-label" id="signStepLabel2" style="display:none;"><span class="step-num">2</span> Create your signature</div>
+      <div id="signCreateWrap" style="display:none;">
+        <div class="field">
+          <label>Signature method</label>
+          <div class="segmented" id="signMethodGroup">
+            <button type="button" class="active" data-value="draw">Draw</button>
+            <button type="button" data-value="type">Type</button>
+          </div>
+        </div>
+        <div id="signDrawWrap">
+          <canvas id="signDrawCanvas" width="500" height="160" style="border:1px solid var(--border);border-radius:8px;background:#fff;touch-action:none;max-width:100%;"></canvas>
+          <div class="controls" style="margin-top:8px;">
+            <button class="btn secondary" id="signClearBtn" type="button">Clear</button>
+          </div>
+        </div>
+        <div id="signTypeWrap" style="display:none;">
+          <div class="field">
+            <label for="signTypeInput">Type your name</label>
+            <input type="text" id="signTypeInput" placeholder="Your name">
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn" id="signUseBtn" type="button">Use This Signature →</button>
+        </div>
+      </div>
+
+      <div class="step-label" id="signStepLabel3" style="display:none;"><span class="step-num">3</span> Place it on the page</div>
+      <div class="controls" id="signPageNav" style="display:none;">
+        <button class="btn secondary" id="signPrevPage">← Prev Page</button>
+        <span id="signPageIndicator" class="status" style="margin:0;">Page 1</span>
+        <button class="btn secondary" id="signNextPage">Next Page →</button>
+      </div>
+      <div id="signCanvasWrap" style="display:none;position:relative;margin-top:14px;max-width:100%;overflow:auto;">
+        <canvas id="signPageCanvas"></canvas>
+        <img id="signStamp" style="position:absolute;cursor:move;display:none;" draggable="false">
+      </div>
+      <p class="status" id="signHint" style="display:none;">Drag the signature to position it, use the resize handles at its corner, then save.</p>
+      <div class="controls" id="signSizeControls" style="display:none;">
+        <div class="field">
+          <label for="signSizeSlider">Signature size</label>
+          <input type="range" id="signSizeSlider" min="60" max="400" value="180">
+        </div>
+      </div>
+
+      <div class="step-label" id="signStepLabel4" style="display:none;"><span class="step-num">4</span> Save</div>
+      <div class="controls" id="signSaveControls" style="display:none;justify-content:center;">
+        <button class="btn" id="signSaveBtn">Save Signed PDF</button>
+      </div>
+
+      <div id="progressWrapSign" class="progress-wrap">
+        <div id="progressBarSign" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgSign" class="status"></p>
+
+      <div id="resultBoxSign" class="result-box">
+        <a id="downloadLinkSign" class="btn" download>⬇ Download Signed PDF</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>About signing</h2>
+      <h3>Is this a legally binding e-signature?</h3>
+      <p>This places a visual signature image onto the page — it's great for informal signing, but it does not add cryptographic signature verification like some paid e-signature services.</p>
+      <h3>Can I make a reusable signature file instead?</h3>
+      <p>Yes — try the standalone <a href="../image-tools/signature-maker.html">Signature Maker</a> tool to save a transparent PNG you can reuse anywhere.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — signing happens entirely in your browser. Your PDF never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/sign-pdf.js"></script>
+</body>
+</html>

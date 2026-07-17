@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  IMPORTANT: replace https://www.kbresize.com with your real domain before
+  submitting this to Google Search Console — this is a placeholder.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.kbresize.com/index.html</loc><priority>1.0</priority></url>
+  <url><loc>https://www.kbresize.com/about.html</loc><priority>0.3</priority></url>
+  <url><loc>https://www.kbresize.com/contact.html</loc><priority>0.3</priority></url>
+  <url><loc>https://www.kbresize.com/privacy-policy.html</loc><priority>0.2</priority></url>
+  <url><loc>https://www.kbresize.com/blog/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/blog/reduce-pdf-size-for-email.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/blog/passport-photo-size-guide.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/blog/pdf-to-word-without-losing-formatting.html</loc><priority>0.6</priority></url>
+
+  <url><loc>https://www.kbresize.com/pdf-tools/merge-pdf.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/split-pdf.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/pdf-compressor.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/organize-pdf.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/rotate-pdf.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/crop-pdf.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/resize-pdf-pages.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/watermark-pdf.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/page-numbers.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/unlock-pdf.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/sign-pdf.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/edit-pdf.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/redact-pdf.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/compare-pdf.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/repair-pdf.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/ocr-pdf.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/pdf-forms.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/scan-to-pdf.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/scanner-effect-pdf.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.kbresize.com/pdf-tools/print-saver.html</loc><priority>0.5</priority></url>
+
+  <url><loc>https://www.kbresize.com/convert-from-pdf/pdf-to-word.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.kbresize.com/convert-from-pdf/pdf-to-excel.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.kbresize.com/convert-from-pdf/pdf-to-jpg.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.kbresize.com/convert-from-pdf/pdf-to-text.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/convert-from-pdf/pdf-to-powerpoint.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/convert-from-pdf/pdf-to-markdown.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.kbresize.com/convert-from-pdf/pdf-to-pdfa.html</loc><priority>0.5</priority></url>
+
+  <url><loc>https://www.kbresize.com/convert-to-pdf/word-to-pdf.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.kbresize.com/convert-to-pdf/jpg-to-pdf.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.kbresize.com/convert-to-pdf/excel-to-pdf.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/convert-to-pdf/ppt-to-pdf.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/convert-to-pdf/html-to-pdf.html</loc><priority>0.5</priority></url>
+
+  <url><loc>https://www.kbresize.com/image-tools/image-resizer.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.kbresize.com/image-tools/image-compressor.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.kbresize.com/image-tools/image-cropper.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/image-tools/image-rotator.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/image-tools/image-format-converter.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/image-tools/grayscale-converter.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/image-tools/watermark-image.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/image-tools/passport-photo.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.kbresize.com/image-tools/signature-maker.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/image-tools/legal-stamp-maker.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/image-tools/meme-generator.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.kbresize.com/image-tools/html-to-image.html</loc><priority>0.4</priority></url>
+  <url><loc>https://www.kbresize.com/image-tools/image-sharpener.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/image-tools/image-upscaler.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/image-tools/image-sketch-cartoon.html</loc><priority>0.5</priority></url>
+
+  <url><loc>https://www.kbresize.com/utility-tools/qr-code-generator.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/utility-tools/qr-code-scanner.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/utility-tools/password-generator.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/utility-tools/word-character-counter.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.kbresize.com/utility-tools/case-converter.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/utility-tools/unit-converter.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/utility-tools/age-calculator.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.kbresize.com/utility-tools/bmi-calculator.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.kbresize.com/utility-tools/emi-calculator.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.kbresize.com/utility-tools/base64-converter.html</loc><priority>0.4</priority></url>
+  <url><loc>https://www.kbresize.com/utility-tools/audio-format-converter.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.kbresize.com/utility-tools/audio-noise-remover.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.kbresize.com/utility-tools/voice-to-text.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.kbresize.com/utility-tools/pdf-read-aloud.html</loc><priority>0.5</priority></url>
+
+  <url><loc>https://www.kbresize.com/student-tools/gpa-calculator.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.kbresize.com/student-tools/citation-generator.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.kbresize.com/student-tools/study-timer.html</loc><priority>0.4</priority></url>
+  <url><loc>https://www.kbresize.com/student-tools/booklet-maker.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.kbresize.com/student-tools/smart-print-saver.html</loc><priority>0.4</priority></url>
+
+  <url><loc>https://www.kbresize.com/video-tools/video-to-gif.html</loc><priority>0.5</priority></url>
+
+  <url><loc>https://www.kbresize.com/exams/upsc-photo-signature-size.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/exams/ssc-cgl-photo-signature-size.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/exams/ibps-po-photo-signature-size.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.kbresize.com/exams/railway-rrb-photo-signature-size.html</loc><priority>0.6</priority></url>
+</urlset>

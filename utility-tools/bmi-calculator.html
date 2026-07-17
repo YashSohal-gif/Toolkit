@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free BMI Calculator — Body Mass Index Online | KBResize</title>
+<meta name="description" content="Calculate your Body Mass Index (BMI) using metric or imperial units, free and instant, with a health category guide.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>BMI Calculator</h1>
+      <p>Calculate your Body Mass Index and see which category it falls into — free, instant.</p>
+    </div>
+
+    <div class="spec-box">
+      BMI is a general screening tool, not a diagnosis. It doesn't account for muscle mass, bone density, or body composition. For personal health guidance, consult a doctor.
+    </div>
+
+    <div class="card">
+      <div class="controls">
+        <div class="field">
+          <label>Units</label>
+          <div class="segmented" id="unitSystemGroup">
+            <button type="button" class="active" data-value="metric">Metric (kg, cm)</button>
+            <button type="button" data-value="imperial">Imperial (lb, in)</button>
+          </div>
+        </div>
+      </div>
+      <div class="controls" style="flex-direction:column;align-items:stretch;gap:14px;">
+        <div class="field">
+          <label for="weight" id="weightLabel">Weight (kg)</label>
+          <input type="number" id="weight" value="70" min="0">
+        </div>
+        <div class="field">
+          <label for="height" id="heightLabel">Height (cm)</label>
+          <input type="number" id="height" value="170" min="0">
+        </div>
+      </div>
+
+      <div id="resultBox" class="result-box show" style="margin-top:18px;">
+        <div id="statsGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;">
+          <div class="stat-box"><b id="bmiValue">-</b><span>BMI</span></div>
+          <div class="stat-box"><b id="bmiCategory">-</b><span>Category</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>BMI categories (WHO standard)</h2>
+      <h3>Under 18.5</h3>
+      <p>Underweight</p>
+      <h3>18.5 – 24.9</h3>
+      <p>Normal weight</p>
+      <h3>25 – 29.9</h3>
+      <p>Overweight</p>
+      <h3>30 and above</h3>
+      <p>Obese</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/bmi-calculator.js"></script>
+</body>
+</html>

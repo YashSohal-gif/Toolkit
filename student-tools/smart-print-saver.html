@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Print Saver — Fit More Pages Per Sheet & Cut Printing Cost | KBResize</title>
+<meta name="description" content="Upload a PDF and print more pages per sheet to save paper and ink. Choose layout, border, black & white or invert mode, see a live preview, then download a compressed print-ready PDF. Free.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Smart Print Saver</h1>
+      <p>Fit several pages of your PDF onto a single printed sheet — pick a layout, see a live preview, and download a compressed, print-ready file. A 100-page PDF can shrink to as few as 20-25 printed sheets.</p>
+    </div>
+
+    <div class="spec-box">
+      Everything happens in your browser — your PDF is never uploaded anywhere. Larger PDFs show a short ad before downloading, which keeps this tool free.
+    </div>
+
+    <div class="card">
+      <div class="step-label"><span class="step-num">1</span> Upload your PDF</div>
+      <div id="dropzoneSPS" class="dropzone">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+        </div>
+        <p>Click or drag & drop your PDF here</p>
+      </div>
+      <input type="file" id="fileInputSPS" accept="application/pdf" style="display:none">
+
+      <div class="step-label"><span class="step-num">2</span> Choose your layout</div>
+      <div class="field" style="margin-bottom:18px;">
+        <label>Pages per sheet</label>
+        <div class="option-cards" id="perSheetCards">
+          <button type="button" class="option-card" data-value="1"><div class="mini-grid" style="grid-template-columns:1fr;grid-template-rows:1fr;"><span></span></div><span class="option-label">1</span></button>
+          <button type="button" class="option-card" data-value="2"><div class="mini-grid" style="grid-template-columns:1fr;grid-template-rows:repeat(2,1fr);"><span></span><span></span></div><span class="option-label">2</span></button>
+          <button type="button" class="option-card" data-value="3"><div class="mini-grid" style="grid-template-columns:1fr;grid-template-rows:repeat(3,1fr);"><span></span><span></span><span></span></div><span class="option-label">3</span></button>
+          <button type="button" class="option-card active" data-value="4"><div class="mini-grid" style="grid-template-columns:1fr;grid-template-rows:repeat(4,1fr);"><span></span><span></span><span></span><span></span></div><span class="option-label">4</span></button>
+          <button type="button" class="option-card" data-value="5"><div class="mini-grid" style="grid-template-columns:1fr;grid-template-rows:repeat(5,1fr);"><span></span><span></span><span></span><span></span><span></span></div><span class="option-label">5</span></button>
+        </div>
+      </div>
+
+      <div class="controls" style="flex-wrap:wrap;">
+        <div class="field">
+          <label for="marginSPS">Border / margin (mm)</label>
+          <input type="number" id="marginSPS" value="3" min="0" max="15" step="0.5">
+        </div>
+        <div class="field">
+          <label for="qualitySPS">Compression</label>
+          <select id="qualitySPS">
+            <option value="0.9">Highest quality</option>
+            <option value="0.75" selected>Balanced (recommended)</option>
+            <option value="0.5">Maximum savings</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field" style="margin-top:18px;">
+        <label>Preview / print color mode</label>
+        <div class="segmented" id="colorModeSPS">
+          <button type="button" class="active" data-value="color">Color</button>
+          <button type="button" data-value="bw">Black &amp; white</button>
+          <button type="button" data-value="invert">Invert colors</button>
+        </div>
+      </div>
+
+      <div class="step-label" id="previewStepLabel" style="display:none;"><span class="step-num">3</span> Live preview</div>
+      <div id="livePreviewWrap" style="display:none;">
+        <div id="livePreviewGrid" style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;"></div>
+        <p id="previewStatus" class="status"></p>
+      </div>
+
+      <div class="step-label"><span class="step-num">4</span> Generate &amp; download</div>
+      <div class="controls">
+        <button class="btn" id="generateBtnSPS">Generate Print-Saver PDF</button>
+      </div>
+
+      <div id="progressWrapSPS" class="progress-wrap">
+        <div id="progressBarSPS" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgSPS" class="status"></p>
+
+      <div id="resultBoxSPS" class="result-box">
+        <div class="size-row"><span>Original pages</span><b id="originalPagesSPS">-</b></div>
+        <div class="size-row"><span>Printed sheets</span><b id="newSheetsSPS">-</b></div>
+        <div class="size-row"><span>File size</span><b id="fileSizeSPS">-</b></div>
+        <a id="downloadLinkSPS" class="btn" download>⬇ Download Print-Ready PDF</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>Tips for students</h2>
+      <h3>How many pages per sheet should I pick?</h3>
+      <p>Each option stacks pages as full-width horizontal bands, one below the other, so the top of the sheet is always page 1: pick 2-3 for larger, easy-to-read text, or 4-5 to fit more pages per sheet and save the most paper.</p>
+      <h3>When should I use black &amp; white or invert?</h3>
+      <p>Black &amp; white removes color ink usage entirely — useful if your printer is set to color by default. Invert flips dark backgrounds to light, which is handy for slide decks or notes designed with a dark theme that would otherwise waste ink covering the whole page.</p>
+      <h3>Is the text still readable after compression?</h3>
+      <p>Yes — compression reduces file size for faster downloads and printing, but layout and page content stay exactly as they were, just smaller per page.</p>
+      <h3>Want to make a foldable booklet instead?</h3>
+      <p>Use the <a href="booklet-maker.html">Booklet Maker</a> tool — it arranges pages in the correct order for double-sided folded printing, with step-by-step instructions for your printer.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/smart-print-saver.js"></script>
+</body>
+</html>

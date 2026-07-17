@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redact PDF — Permanently Black Out Sensitive Info Free | KBResize</title>
+<meta name="description" content="Draw black boxes over sensitive text or images and permanently redact a PDF, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Redact PDF</h1>
+      <p>Draw black boxes over names, numbers, or any sensitive info — the page is then flattened to an image so the covered content can't be recovered.</p>
+    </div>
+
+    <div class="spec-box">
+      Unlike a simple black rectangle overlay, this tool rasterizes each redacted page into a flat image, so the text underneath the box is destroyed, not just hidden. Everything happens in your browser; larger PDFs show a short ad before downloading.
+    </div>
+
+    <div class="card">
+      <div class="step-label"><span class="step-num">1</span> Upload your PDF</div>
+      <div id="dropzoneRedact" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+        <p>Click or drag & drop your PDF here</p>
+      </div>
+      <input type="file" id="fileInputRedact" accept="application/pdf" style="display:none">
+
+      <div class="step-label" id="redactStepLabel" style="display:none;"><span class="step-num">2</span> Draw boxes over sensitive areas</div>
+      <div class="controls" id="redactPageNav" style="display:none;">
+        <button class="btn secondary" id="redactPrevPage">← Prev Page</button>
+        <span id="redactPageIndicator" class="status" style="margin:0;">Page 1</span>
+        <button class="btn secondary" id="redactNextPage">Next Page →</button>
+        <button class="btn secondary" id="redactUndoBtn">Undo Last</button>
+      </div>
+      <div id="redactCanvasWrap" style="display:none;position:relative;margin-top:14px;max-width:100%;overflow:auto;">
+        <canvas id="redactCanvas"></canvas>
+        <div id="redactOverlay" style="position:absolute;top:0;left:0;"></div>
+      </div>
+
+      <div class="step-label" id="redactSaveLabel" style="display:none;"><span class="step-num">3</span> Save redacted PDF</div>
+      <div class="controls" id="redactSaveControls" style="display:none;justify-content:center;">
+        <button class="btn" id="redactSaveBtn">Save Redacted PDF</button>
+      </div>
+
+      <div id="progressWrapRedact" class="progress-wrap">
+        <div id="progressBarRedact" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgRedact" class="status"></p>
+
+      <div id="resultBoxRedact" class="result-box">
+        <a id="downloadLinkRedact" class="btn" download>⬇ Download Redacted PDF</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How redaction works</h2>
+      <h3>Why flatten to an image?</h3>
+      <p>A black rectangle drawn on top of live PDF text can often still be copy-pasted or extracted underneath — flattening the whole page to a picture permanently destroys the original text and image data.</p>
+      <h3>Does this affect page quality?</h3>
+      <p>Pages are rendered at high resolution before flattening, so text stays sharp and readable when printed or viewed on screen.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — redaction happens entirely in your browser. Your PDF never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/redact-pdf.js"></script>
+</body>
+</html>

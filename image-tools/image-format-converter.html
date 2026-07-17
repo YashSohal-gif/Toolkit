@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convert HEIC, WEBP, PNG, JPG Online Free | KBResize</title>
+<meta name="description" content="Convert HEIC, WEBP, PNG, JPG, GIF, or SVG images to JPG, PNG, or WEBP, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Image Format Converter</h1>
+      <p>Convert HEIC (iPhone photos), WEBP, PNG, GIF, or SVG to JPG, PNG, or WEBP — free, works in your browser.</p>
+    </div>
+
+    <div class="card">
+      <div id="dropzoneFmt" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div>
+        <p>Click or drag & drop your image here (HEIC, WEBP, PNG, JPG, GIF, SVG)</p>
+      </div>
+      <input type="file" id="fileInputFmt" accept="image/*,.heic,.heif" style="display:none">
+
+      <div class="controls">
+        <div class="field">
+          <label>Convert to</label>
+          <div class="segmented" id="fmtOutputGroup">
+            <button type="button" class="active" data-value="jpg">JPG</button>
+            <button type="button" data-value="png">PNG</button>
+            <button type="button" data-value="webp">WEBP</button>
+          </div>
+        </div>
+        <button class="btn" id="fmtBtn">Convert</button>
+      </div>
+
+      <p id="statusMsgFmt" class="status"></p>
+
+      <div id="resultBoxFmt" class="result-box">
+        <a id="downloadLinkFmt" class="btn" download>⬇ Download Converted Image</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <h3>Why can't I open HEIC photos from my iPhone?</h3>
+      <p>iPhones save photos in HEIC format by default, which most non-Apple apps and websites can't open. This tool decodes HEIC right in your browser and converts it to a universally supported format.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — everything happens locally in your browser. Your photo never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/heic2any/0.0.4/heic2any.min.js"></script>
+<script src="../js/image-format-converter.js"></script>
+</body>
+</html>

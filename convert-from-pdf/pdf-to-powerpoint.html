@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF to PowerPoint Converter Online Free | KBResize</title>
+<meta name="description" content="Convert every PDF page into a PowerPoint slide, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>PDF to PowerPoint</h1>
+      <p>Turn every page of your PDF into a PowerPoint slide — free.</p>
+    </div>
+
+    <div class="spec-box">
+      ⚠️ <b>Image-based slides.</b> Each PDF page becomes a full-slide image, so the layout looks exactly like the original — but text on the slide won't be separately editable in PowerPoint (it's a picture, not live text).
+    </div>
+
+    <div class="card">
+      <div id="dropzoneP2P" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <p>Click or drag & drop your PDF here</p>
+      </div>
+      <input type="file" id="fileInputP2P" accept="application/pdf" style="display:none">
+
+      <div class="controls">
+        <button class="btn" id="p2pBtn">Convert to PowerPoint</button>
+      </div>
+
+      <div id="progressWrapP2P" class="progress-wrap">
+        <div id="progressBarP2P" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgP2P" class="status"></p>
+
+      <div id="resultBoxP2P" class="result-box">
+        <a id="downloadLinkP2P" class="btn" download>⬇ Download PowerPoint</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <p>Each PDF page is rendered as a high-resolution image (via pdf.js) and placed full-bleed onto its own slide (via PptxGenJS) — entirely in your browser.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — everything happens locally. Your PDF never leaves your device.</p>
+      <h3>Can I edit the text after converting?</h3>
+      <p>Not directly — since each slide is an image, you'd need to add a text box over it in PowerPoint if you want to edit specific words. For fully editable slides, you'd need the original presentation file.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/pdf-to-powerpoint.js"></script>
+</body>
+</html>

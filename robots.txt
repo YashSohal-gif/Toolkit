@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Downloader tools are excluded from crawling/indexing — they touch
+# third-party platform content (YouTube/Instagram) and are a common cause
+# of AdSense policy rejection, so they're kept out of search entirely.
+Disallow: /video-tools/youtube-downloader.html
+Disallow: /video-tools/instagram-downloader.html
+Disallow: /utility-tools/youtube-thumbnail-downloader.html
+
+Sitemap: https://www.kbresize.com/sitemap.xml

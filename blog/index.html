@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Guides for PDFs, Photos & Files | KBResize</title>
+<meta name="description" content="Practical, no-nonsense guides for common PDF, photo, and file problems — reducing PDF size for email, passport photo requirements, and more.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>KBResize Blog</h1>
+      <p>Straightforward guides for the file problems that sent you searching in the first place.</p>
+    </div>
+
+    <div class="tool-grid">
+      <a class="tool-card" href="reduce-pdf-size-for-email.html">
+        <h3>Why won't my PDF fit in an email? (And how to fix it)</h3>
+        <p>The real reasons a PDF balloons in size, and which compression approach actually keeps it readable.</p>
+      </a>
+      <a class="tool-card" href="passport-photo-size-guide.html">
+        <h3>Passport & visa photo size requirements, country by country</h3>
+        <p>Exact pixel dimensions, DPI, and background rules for the most commonly needed passport photos.</p>
+      </a>
+      <a class="tool-card" href="pdf-to-word-without-losing-formatting.html">
+        <h3>Converting PDF to Word without it turning into a mess</h3>
+        <p>Why most free converters mangle formatting, and what a converter actually needs to do right.</p>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

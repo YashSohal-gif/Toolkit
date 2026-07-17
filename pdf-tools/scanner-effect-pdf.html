@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scanner Effect PDF — Make a PDF Look Scanned Free | KBResize</title>
+<meta name="description" content="Turn a clean digital PDF into a realistic scanned-document look with grain, slight skew, and shadow, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/exclusive-tools.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Scanner Effect PDF <span class="exclusive-badge">Exclusive</span></h1>
+      <p>Turn a clean, digital PDF into one that looks like it came out of an office scanner — subtle paper grain, a touch of skew, and soft page-edge shadow.</p>
+    </div>
+
+    <div class="spec-box">
+      Everything happens in your browser — your PDF is never uploaded anywhere. Larger PDFs show a short ad before downloading, which keeps this tool free.
+    </div>
+
+    <div class="card">
+      <div id="dropzoneScanFx" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+        <p>Click or drag & drop your PDF here</p>
+      </div>
+      <input type="file" id="fileInputScanFx" accept="application/pdf" style="display:none">
+
+      <div class="field" style="margin-top:14px;">
+        <label>Effect strength</label>
+        <div class="segmented" id="strengthGroupScanFx">
+          <button type="button" data-value="light">Light</button>
+          <button type="button" class="active" data-value="medium">Medium</button>
+          <button type="button" data-value="heavy">Heavy</button>
+        </div>
+      </div>
+
+      <div class="controls" style="justify-content:center;margin-top:16px;">
+        <button class="btn" id="scanFxBtn">Apply Scanner Effect</button>
+      </div>
+
+      <div id="progressWrapScanFx" class="progress-wrap">
+        <div id="progressBarScanFx" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgScanFx" class="status"></p>
+
+      <div id="resultBoxScanFx" class="result-box">
+        <a id="downloadLinkScanFx" class="btn" download>⬇ Download Scanned-Look PDF</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>About this effect</h2>
+      <h3>Why would I want this?</h3>
+      <p>Sometimes a document needs to look like a physical original was scanned — a slight paper texture, a touch of imperfect alignment, and gentle shadowing at the edges.</p>
+      <h3>Does this affect readability?</h3>
+      <p>No — text stays fully readable; the effect is subtle by design at "Light" and "Medium", and more pronounced at "Heavy".</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — everything happens locally in your browser. Your PDF never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/scanner-effect-pdf.js"></script>
+</body>
+</html>

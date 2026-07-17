@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Text Case Converter — Upper, Lower, Title, Camel Case | KBResize</title>
+<meta name="description" content="Convert text to uppercase, lowercase, title case, sentence case, camelCase, or snake_case instantly, free.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Text Case Converter</h1>
+      <p>Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, and snake_case — free, instant.</p>
+    </div>
+
+    <div class="card">
+      <div class="field">
+        <label for="inputText">Your text</label>
+        <textarea id="inputText" rows="8" placeholder="Type or paste text here..." style="width:100%;padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--card-bg);color:var(--text);font-family:inherit;resize:vertical;"></textarea>
+      </div>
+
+      <div class="controls" style="flex-wrap:wrap;">
+        <button class="btn" data-case="upper">UPPERCASE</button>
+        <button class="btn" data-case="lower">lowercase</button>
+        <button class="btn" data-case="title">Title Case</button>
+        <button class="btn" data-case="sentence">Sentence case</button>
+        <button class="btn" data-case="camel">camelCase</button>
+        <button class="btn" data-case="snake">snake_case</button>
+        <button class="btn" data-case="kebab">kebab-case</button>
+        <button class="btn" data-case="pascal">PascalCase</button>
+        <button class="btn" data-case="constant">CONSTANT_CASE</button>
+        <button class="btn" data-case="alternating">aLtErNaTiNg</button>
+        <button class="btn" data-case="inverse">iNVERSE cASE</button>
+        <button class="btn" data-case="capitalize-words">Capitalize Each Word</button>
+      </div>
+
+      <div class="field" style="margin-top:14px;">
+        <label for="outputText">Result</label>
+        <textarea id="outputText" rows="8" readonly style="width:100%;padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--card-bg);color:var(--text);font-family:inherit;resize:vertical;"></textarea>
+      </div>
+      <button class="btn" id="copyBtn" style="margin-top:10px;">📋 Copy Result</button>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/case-converter.js"></script>
+</body>
+</html>

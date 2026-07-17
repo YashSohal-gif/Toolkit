@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scan to PDF — Turn Photos of Documents into a PDF Free | KBResize</title>
+<meta name="description" content="Use your camera or upload photos of documents and combine them into a single clean PDF, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Scan to PDF</h1>
+      <p>Use your camera to snap document pages (or upload photos you already took) and combine them into one clean PDF — in order, ready to share.</p>
+    </div>
+
+    <div class="spec-box">
+      Everything happens in your browser — your photos are never uploaded anywhere. Larger batches show a short ad before downloading, which keeps this tool free.
+    </div>
+
+    <div class="card">
+      <div class="step-label"><span class="step-num">1</span> Add pages</div>
+      <div class="controls" style="flex-wrap:wrap;">
+        <button class="btn" id="cameraBtnScan" type="button">📷 Use Camera</button>
+        <button class="btn secondary" id="uploadBtnScan" type="button">⬆ Upload Photos</button>
+      </div>
+      <input type="file" id="fileInputScan" accept="image/*" multiple style="display:none">
+
+      <div id="cameraWrapScan" style="display:none;margin-top:16px;">
+        <p style="font-size:0.85rem;color:var(--muted);margin:0 0 8px;">Drag the corner handles so the box hugs the page edges — only what's inside gets captured.</p>
+        <div class="scan-camera-stage" id="scanCameraStage">
+          <video id="cameraVideoScan" autoplay playsinline muted></video>
+          <div class="scan-crop-guide" id="scanCropGuide">
+            <div class="scan-crop-handle" data-handle="tl"></div>
+            <div class="scan-crop-handle" data-handle="tr"></div>
+            <div class="scan-crop-handle" data-handle="bl"></div>
+            <div class="scan-crop-handle" data-handle="br"></div>
+          </div>
+        </div>
+        <div class="controls" style="margin-top:12px;">
+          <div class="field">
+            <label>Scan filter <small title="Applied automatically to every page you capture or upload">(auto-applied)</small></label>
+            <div class="segmented" id="scanFilterGroup">
+              <button type="button" class="active" data-value="color">Color</button>
+              <button type="button" data-value="enhance">Auto Enhance</button>
+              <button type="button" data-value="bw">B&amp;W (High Contrast)</button>
+              <button type="button" data-value="gray">Grayscale</button>
+            </div>
+          </div>
+        </div>
+        <div class="controls" style="margin-top:10px;">
+          <button class="btn" id="captureBtnScan" type="button">📸 Capture Page</button>
+          <button class="btn secondary" id="closeCameraBtnScan" type="button">Close Camera</button>
+        </div>
+      </div>
+      <canvas id="captureCanvasScan" style="display:none;"></canvas>
+
+      <div class="step-label"><span class="step-num">2</span> Review &amp; reorder pages</div>
+      <div id="scanPageList" class="org-page-list"></div>
+
+      <div class="step-label"><span class="step-num">3</span> Generate &amp; download</div>
+      <div class="controls" style="justify-content:center;">
+        <button class="btn" id="scanSaveBtn">Combine into PDF</button>
+      </div>
+
+      <div id="progressWrapScan" class="progress-wrap">
+        <div id="progressBarScan" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgScan" class="status"></p>
+
+      <div id="resultBoxScan" class="result-box">
+        <a id="downloadLinkScan" class="btn" download>⬇ Download Scanned PDF</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>Tips for a clean scan</h2>
+      <h3>How do I get the best quality?</h3>
+      <p>Use good lighting, keep the camera parallel to the page, and fill the frame with the document to avoid extra background.</p>
+      <h3>What does the crop grid do?</h3>
+      <p>Drag the four corner handles onto the page's edges before you capture — only the area inside the box is kept, so background clutter around the document gets cropped out automatically.</p>
+      <h3>What does the scan filter do?</h3>
+      <p><b>Auto Enhance</b> stretches contrast so faded text reads darker and the background reads whiter — the classic "scanned document" look. <b>B&amp;W (High Contrast)</b> pushes it further into pure black/white, great for text-only pages and smaller file sizes. <b>Grayscale</b> removes color without boosting contrast. The selected filter applies automatically to every page, whether captured by camera or uploaded.</p>
+      <h3>Can I reorder or remove pages?</h3>
+      <p>Yes — use the ↑/↓ buttons on each page thumbnail to reorder, or uncheck "Keep" to leave a page out before combining.</p>
+      <h3>Is my photo uploaded anywhere?</h3>
+      <p>No — the camera feed and every photo stay on your device. The PDF is built locally in your browser.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/scan-to-pdf.js"></script>
+</body>
+</html>

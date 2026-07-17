@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF to Markdown — Convert a PDF into .md Text Free | KBResize</title>
+<meta name="description" content="Extract a PDF's text and turn it into clean Markdown with detected headings, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>PDF to Markdown</h1>
+      <p>Extract a PDF's text and turn it into clean Markdown — headings are detected automatically from font size, ready to paste into any docs tool.</p>
+    </div>
+
+    <div class="spec-box">
+      Everything happens in your browser — your PDF is never uploaded anywhere. Larger PDFs show a short ad before downloading, which keeps this tool free.
+    </div>
+
+    <div class="card">
+      <div id="dropzoneP2M" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+        <p>Click or drag & drop your PDF here</p>
+      </div>
+      <input type="file" id="fileInputP2M" accept="application/pdf" style="display:none">
+
+      <div class="controls" style="justify-content:center;">
+        <button class="btn" id="p2mBtn">Convert to Markdown</button>
+      </div>
+
+      <div id="progressWrapP2M" class="progress-wrap">
+        <div id="progressBarP2M" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgP2M" class="status"></p>
+
+      <div id="resultBoxP2M" class="result-box">
+        <textarea id="markdownOutputP2M" rows="14" style="width:100%;font-family:monospace;font-size:0.85rem;" readonly></textarea>
+        <a id="downloadLinkP2M" class="btn" download>⬇ Download Markdown (.md)</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>About this conversion</h2>
+      <h3>How are headings detected?</h3>
+      <p>Text rendered in a larger font size than the surrounding body text is treated as a heading — the biggest sizes become top-level (#), smaller ones become subheadings (##, ###).</p>
+      <h3>Will formatting like bold/italic carry over?</h3>
+      <p>This extracts plain text content and heading structure — inline styling like bold or italic isn't detected, since that requires deeper font-metadata parsing.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — conversion happens entirely in your browser. Your PDF never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/pdf-to-markdown.js"></script>
+</body>
+</html>

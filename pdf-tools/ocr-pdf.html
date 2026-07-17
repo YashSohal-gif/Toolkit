@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCR PDF — Extract Text from a Scanned PDF Free | KBResize</title>
+<meta name="description" content="Run OCR on a scanned or image-based PDF to extract its text, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>OCR PDF</h1>
+      <p>Run text recognition on a scanned or image-based PDF (photos of documents, scanned forms) to pull out real, selectable, searchable text.</p>
+    </div>
+
+    <div class="spec-box">
+      OCR runs entirely in your browser using an on-device recognition model (nothing is uploaded), which means it can take a little while for longer documents — a progress bar will show you how far along it is. Larger files show a short ad before the text is unlocked.
+    </div>
+
+    <div class="card">
+      <div id="dropzoneOcr" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+        <p>Click or drag & drop your PDF here</p>
+      </div>
+      <input type="file" id="fileInputOcr" accept="application/pdf" style="display:none">
+
+      <div class="field" style="margin-top:14px;">
+        <label>Language</label>
+        <div class="segmented" id="langGroupOcr">
+          <button type="button" class="active" data-value="eng">English</button>
+          <button type="button" data-value="hin">Hindi</button>
+          <button type="button" data-value="fra">French</button>
+          <button type="button" data-value="spa">Spanish</button>
+        </div>
+      </div>
+
+      <div class="controls" style="justify-content:center;margin-top:16px;">
+        <button class="btn" id="ocrBtn">Run OCR</button>
+      </div>
+
+      <div id="progressWrapOcr" class="progress-wrap">
+        <div id="progressBarOcr" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgOcr" class="status"></p>
+
+      <div id="resultBoxOcr" class="result-box">
+        <textarea id="ocrTextOutput" rows="12" style="width:100%;font-family:monospace;font-size:0.85rem;" readonly></textarea>
+        <a id="downloadLinkOcr" class="btn" download>⬇ Download Extracted Text (.txt)</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>About OCR accuracy</h2>
+      <h3>How accurate is it?</h3>
+      <p>Accuracy depends heavily on scan quality — clean, high-resolution, straight scans give the best results. Handwriting and very low-quality photos may not recognize well.</p>
+      <h3>Why does it take time?</h3>
+      <p>The recognition model runs fully on your device instead of a server, which keeps your document private but means larger or multi-page PDFs take longer than a cloud OCR service.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — OCR happens entirely in your browser. Your PDF never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5.0.4/dist/tesseract.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/ocr-pdf.js"></script>
+</body>
+</html>

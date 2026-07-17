@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Print Saver — Fit Multiple PDF Pages Per Sheet Free | KBResize</title>
+<meta name="description" content="Save paper and printing cost: fit 2, 4, 6, 9, or 12 original PDF pages onto each printed sheet. Perfect for printing long lecture notes cheaply. Free, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Print Saver — Fit Multiple Pages Per Sheet</h1>
+      <p>Got a 50-page PDF of class notes and don't want to spend a fortune printing it? Fit several original pages onto each printed sheet — same content, way fewer pages to print.</p>
+    </div>
+
+    <div class="spec-box">
+      This tool stays free by showing a short ad for larger files: <b>20 pages or fewer is free</b>, <b>21-50 pages = 1 ad</b>, <b>51-100 pages = 2 ads</b>, <b>100+ pages = 3 ads</b>.
+    </div>
+
+    <div class="card">
+      <div id="dropzonePrint" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7"/></svg></div>
+        <p>Click or drag & drop your PDF here</p>
+      </div>
+      <input type="file" id="fileInputPrint" accept="application/pdf" style="display:none">
+
+      <div class="controls">
+        <div class="field" style="width:100%;">
+          <label>Pages per printed sheet</label>
+          <div class="option-cards" id="perSheet">
+            <button type="button" class="option-card" data-value="2"><div class="mini-grid" style="grid-template-columns:1fr;grid-template-rows:1fr 1fr;"><span></span><span></span></div><span class="option-label">2</span></button>
+            <button type="button" class="option-card active" data-value="4"><div class="mini-grid" style="grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;"><span></span><span></span><span></span><span></span></div><span class="option-label">4</span></button>
+            <button type="button" class="option-card" data-value="6"><div class="mini-grid" style="grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr 1fr;"><span></span><span></span><span></span><span></span><span></span><span></span></div><span class="option-label">6</span></button>
+            <button type="button" class="option-card" data-value="9"><div class="mini-grid" style="grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><span class="option-label">9</span></button>
+            <button type="button" class="option-card" data-value="12"><div class="mini-grid" style="grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr);"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><span class="option-label">12 (max savings)</span></button>
+            <button type="button" class="option-card" data-value="16"><div class="mini-grid" style="grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,1fr);"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><span class="option-label">16 (small text)</span></button>
+          </div>
+        </div>
+        <button class="btn" id="printSaverBtn">Create Print-Saver PDF</button>
+      </div>
+
+      <div id="progressWrapPrint" class="progress-wrap">
+        <div id="progressBarPrint" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgPrint" class="status"></p>
+
+      <div id="resultBoxPrint" class="result-box">
+        <div class="size-row"><span>Original pages</span><b id="originalPages">-</b></div>
+        <div class="size-row"><span>New printed sheets</span><b id="newPages">-</b></div>
+        <a id="downloadLinkPrint" class="btn" download>⬇ Download Print-Saver PDF</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <h3>What actually happens to my notes?</h3>
+      <p>Nothing is summarized, reworded, or removed. Each original page is shrunk down and placed into a grid on a new page — like the "N pages per sheet" option in a print dialog, except you get a ready-to-print PDF file with clean margins.</p>
+      <h3>How many pages will 12-per-sheet save me?</h3>
+      <p>A 50-page PDF becomes about 5 printed sheets at 12-per-sheet. Text gets noticeably smaller, so use 4 or 6 per sheet if you want it easier to read, or 9-12 if you mainly need it for revision/reference.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — everything happens locally in your browser. Your PDF never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/print-saver.js"></script>
+</body>
+</html>

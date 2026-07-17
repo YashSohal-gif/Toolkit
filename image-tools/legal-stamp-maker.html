@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal Stamp Maker Online Free | KBResize</title>
+<meta name="description" content="Design your own legal, office, or notary stamp online free. Add text, stamp borders, logos, and signatures, remove backgrounds, then download as a transparent PNG.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container" style="max-width:1180px;">
+    <div class="hero">
+      <h1>Legal Stamp Maker</h1>
+      <p>Design your own office, legal, or notary stamp — add text, borders, logos, and signatures, then download as a transparent PNG. Everything runs in your browser.</p>
+    </div>
+
+    <div class="card">
+      <div class="controls" style="margin-top:0;">
+        <div class="field">
+          <label for="stampPreset">Stamp shape / size</label>
+          <select id="stampPreset">
+            <option value="circle-500">Round stamp (500 x 500)</option>
+            <option value="rect-600x300" selected>Rectangle stamp (600 x 300)</option>
+            <option value="square-500">Square stamp (500 x 500)</option>
+            <option value="custom">Custom size...</option>
+          </select>
+        </div>
+        <div class="field" id="stampCustomW" style="display:none;">
+          <label for="stampCustomWidth">Width (px)</label>
+          <input type="number" id="stampCustomWidth" min="100" max="1600" value="600">
+        </div>
+        <div class="field" id="stampCustomH" style="display:none;">
+          <label for="stampCustomHeight">Height (px)</label>
+          <input type="number" id="stampCustomHeight" min="100" max="1600" value="300">
+        </div>
+      </div>
+
+      <div class="stamp-toolbar">
+        <button class="btn secondary" id="stampAddText">+ Text</button>
+        <button class="btn secondary" id="stampAddShape">+ Border / Shape</button>
+        <button class="btn secondary" id="stampAddImage">+ Image / Logo</button>
+        <button class="btn secondary" id="stampAddSignature">+ Signature</button>
+        <button class="btn secondary" id="stampDuplicate">Duplicate</button>
+        <button class="btn secondary" id="stampDelete">Delete Layer</button>
+      </div>
+      <input type="file" id="stampImageInput" accept="image/*" style="display:none">
+
+      <div class="stamp-editor-wrap">
+        <div class="stamp-stage-outer">
+          <div class="stamp-stage" id="stampStage"></div>
+        </div>
+
+        <div class="stamp-side-panel">
+          <div class="stamp-panel-box" id="stampPropsBox">
+            <h4>Properties</h4>
+            <p class="stamp-panel-empty" id="stampPropsEmpty">Select a layer on the canvas, or add a new one, to edit its properties here.</p>
+            <div id="stampPropsBody"></div>
+          </div>
+
+          <div class="stamp-panel-box">
+            <h4>Layers</h4>
+            <div class="stamp-layers-list" id="stampLayersList">
+              <p class="stamp-panel-empty">No layers yet.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="field">
+          <label for="stampExportFormat">Download format</label>
+          <select id="stampExportFormat">
+            <option value="png">PNG (transparent background)</option>
+            <option value="jpg">JPG (white background, for printing)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="stampExportScale">Export resolution</label>
+          <select id="stampExportScale">
+            <option value="1">Standard</option>
+            <option value="2" selected>High (2x)</option>
+            <option value="3">Print quality (3x)</option>
+          </select>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="stampDownloadBtn">Download Stamp</button>
+      </div>
+
+      <p id="statusMsgStamp" class="status"></p>
+      <div id="resultBoxStamp" class="result-box">
+        <a id="downloadLinkStamp" class="btn" download>⬇ Download</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <h3>Building your stamp</h3>
+      <p>Pick a canvas size, then add layers: a border/shape for the classic stamp ring or box, text for your company or title lines, a logo image, and a signature. Drag each layer to move it, use the corner handle to resize, the top handle to rotate, and the red button to delete it.</p>
+      <h3>Removing a white background from a logo or signature</h3>
+      <p>After adding an image layer, tick "Remove white background" in the properties panel. This makes near-white pixels transparent so scanned logos and signatures on plain paper blend cleanly into the stamp — it isn't a full AI cutout, so it works best on plain, light backgrounds rather than busy photos.</p>
+      <h3>Is my image or signature uploaded anywhere?</h3>
+      <p>No — the entire editor runs locally in your browser using canvas. Nothing you draw, type, or upload is ever sent to a server.</p>
+      <h3>Is this stamp legally valid?</h3>
+      <p>This tool creates a graphic image of a stamp for use on digital documents, letterheads, or printed materials. Whether a stamp or seal has legal effect depends on your local laws and the requirements of the institution requesting it — check those requirements before relying on a self-made stamp for official or notarial use.</p>
+    </div>
+  </div>
+</main>
+
+<div class="stamp-modal-backdrop" id="stampSigModal">
+  <div class="stamp-modal">
+    <button class="stamp-modal-close" id="stampSigModalClose">&times;</button>
+    <h3>Add a Signature</h3>
+    <div class="radio-row">
+      <label><input type="radio" name="stampSigMode" value="draw" checked> Draw</label>
+      <label><input type="radio" name="stampSigMode" value="type"> Type</label>
+      <label><input type="radio" name="stampSigMode" value="upload"> Upload old signature</label>
+    </div>
+
+    <div id="stampSigDrawPanel">
+      <div class="sig-canvas-wrap">
+        <canvas id="stampSigCanvas"></canvas>
+      </div>
+      <div class="controls" style="justify-content:center;margin-top:10px;">
+        <button class="btn secondary" id="stampSigClearBtn">Clear</button>
+      </div>
+    </div>
+
+    <div id="stampSigTypePanel" style="display:none;">
+      <div class="controls">
+        <div class="field" style="flex:1;">
+          <label for="stampSigTypeInput">Your name</label>
+          <input type="text" id="stampSigTypeInput" placeholder="Type your name">
+        </div>
+        <div class="field">
+          <label for="stampSigFont">Style</label>
+          <select id="stampSigFont">
+            <option value="'Brush Script MT', cursive">Brush Script</option>
+            <option value="'Segoe Script', cursive">Segoe Script</option>
+            <option value="cursive">Cursive (default)</option>
+            <option value="italic serif">Elegant Italic</option>
+          </select>
+        </div>
+      </div>
+      <div id="stampSigTypePreview" class="sig-type-preview">Your Signature</div>
+    </div>
+
+    <div id="stampSigUploadPanel" style="display:none;">
+      <div id="stampSigDropzone" class="dropzone">
+        <div class="icon">✍️</div>
+        <p>Click or drag & drop your old signature image here</p>
+      </div>
+      <input type="file" id="stampSigUploadInput" accept="image/*" style="display:none">
+      <label class="toggle-row" style="margin-top:12px;">
+        <span class="toggle-switch"><input type="checkbox" id="stampSigRemoveBg" checked><span class="toggle-track"></span></span>
+        <span>Remove white background</span>
+      </label>
+      <div id="stampSigUploadPreviewWrap" style="display:none;margin-top:12px;text-align:center;">
+        <canvas id="stampSigUploadPreview" style="max-width:100%;max-height:180px;border:1px dashed var(--border);border-radius:8px;"></canvas>
+      </div>
+    </div>
+
+    <div class="controls" style="justify-content:center;">
+      <button class="btn" id="stampSigAddBtn">Add to Stamp</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/legal-stamp-maker.js"></script>
+</body>
+</html>

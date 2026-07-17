@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resize Image Online Free | KBResize</title>
+<meta name="description" content="Resize an image to custom pixel dimensions or a percentage, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Image Resizer</h1>
+      <p>Resize a photo to exact pixel dimensions or by percentage — free, private, works in your browser.</p>
+    </div>
+
+    <div class="card">
+      <div id="dropzoneResize" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        <p>Click or drag & drop your image here</p>
+      </div>
+      <input type="file" id="fileInputResize" accept="image/*" style="display:none">
+
+      <div class="radio-row">
+        <label><input type="radio" name="resizeMode" value="px" checked> Exact pixels</label>
+        <label><input type="radio" name="resizeMode" value="pct"> Percentage</label>
+      </div>
+
+      <div class="controls" id="resizePxFields">
+        <div class="field">
+          <label for="resizeWidth">Width (px)</label>
+          <input type="number" id="resizeWidth" min="1">
+        </div>
+        <div class="field">
+          <label for="resizeHeight">Height (px)</label>
+          <input type="number" id="resizeHeight" min="1">
+        </div>
+        <label style="display:flex;align-items:center;gap:6px;font-size:0.9rem;">
+          <input type="checkbox" id="resizeLockAspect" checked> Lock aspect ratio
+        </label>
+      </div>
+
+      <div class="controls" id="resizePctFields" style="display:none;">
+        <div class="field">
+          <label for="resizePct">Scale (%)</label>
+          <input type="number" id="resizePct" value="50" min="1" max="500">
+        </div>
+      </div>
+
+      <div id="resizeStats" style="display:none;margin-top:14px;">
+        <div id="statsGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;">
+          <div class="stat-box"><b id="resizeMegapixels">0</b><span>Megapixels (output)</span></div>
+          <div class="stat-box"><b id="resizePrintSize">—</b><span>Print size at set DPI</span></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="field">
+          <label for="resizeDpi" title="Dots per inch — affects only print size and the file's embedded resolution metadata, not the pixel dimensions">DPI (print resolution)</label>
+          <select id="resizeDpi">
+            <option value="72">72 DPI (screen/web)</option>
+            <option value="150">150 DPI (draft print)</option>
+            <option value="300" selected>300 DPI (standard print/photo)</option>
+            <option value="600">600 DPI (high-quality print)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="resizeFormat">Output format</label>
+          <select id="resizeFormat">
+            <option value="image/jpeg">JPG</option>
+            <option value="image/png">PNG (keeps transparency)</option>
+            <option value="image/webp">WebP (smallest)</option>
+          </select>
+        </div>
+        <div class="field" style="min-width:160px;">
+          <label for="resizeQuality">Quality: <span id="resizeQualityVal">95</span>%</label>
+          <input type="range" id="resizeQuality" min="40" max="100" step="1" value="95">
+        </div>
+        <label class="toggle-row" title="If the requested size is bigger than the original, keep the original size (enlarging reduces sharpness)">
+          <span class="toggle-switch"><input type="checkbox" id="resizeNoEnlarge"><span class="toggle-track"></span></span>
+          <span>Don't enlarge</span>
+        </label>
+      </div>
+
+      <div class="controls">
+        <button class="btn" id="resizeBtn">Resize Image</button>
+      </div>
+      <script>document.getElementById('resizeQuality').addEventListener('input', e => document.getElementById('resizeQualityVal').textContent = e.target.value);</script>
+
+      <p id="statusMsgResize" class="status"></p>
+
+      <div id="resultBoxResize" class="result-box">
+        <a id="downloadLinkResize" class="btn" download>⬇ Download Resized Image</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <h3>Exact pixels vs percentage</h3>
+      <p>Use exact pixels when a form or website tells you the required dimensions (e.g. 600×600px). Use percentage to quickly shrink or enlarge while keeping proportions.</p>
+      <h3>What does DPI actually change?</h3>
+      <p>DPI (dots per inch) doesn't touch your pixel dimensions — it only sets how large the image prints. A 3000×2000px photo is ~7.6 megapixels either way; at 300 DPI it prints at 10"×6.7", at 72 DPI the same pixels would print at ~41.7"×27.8" (usually too soft for print, fine for screens). The chosen DPI is written into the file's own metadata for JPG and PNG, so photo software and print shops read it automatically — WebP output keeps the default resolution tag since browsers can't write custom WebP metadata.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — everything happens locally in your browser. Your image never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/image-resizer.js"></script>
+</body>
+</html>

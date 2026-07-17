@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rotate Image Online Free — JPG, PNG, GIF | KBResize</title>
+<meta name="description" content="Rotate a JPG, PNG, or GIF image 90, 180, or 270 degrees, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Rotate Image</h1>
+      <p>Rotate one or more photos 90°, 180°, or 270° — free, instant.</p>
+    </div>
+
+    <div class="card">
+      <div id="dropzoneRotate" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div>
+        <p>Click or drag & drop your image here</p>
+      </div>
+      <input type="file" id="fileInputRotate" accept="image/*" style="display:none">
+
+      <div class="field" style="margin-top:14px;">
+        <label>Rotate by</label>
+        <div class="segmented" id="rotateAngleGroup">
+          <button type="button" class="active" data-value="90">90°</button>
+          <button type="button" data-value="180">180°</button>
+          <button type="button" data-value="270">270°</button>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;display:flex;justify-content:center;">
+        <canvas id="rotatePreviewCanvas" style="max-width:100%;border-radius:8px;border:1px solid var(--border);"></canvas>
+      </div>
+
+      <div class="controls">
+        <button class="btn" id="rotateBtn">Rotate & Download</button>
+      </div>
+
+      <p id="statusMsgRotate" class="status"></p>
+
+      <div id="resultBoxRotate" class="result-box">
+        <a id="downloadLinkRotate" class="btn" download>⬇ Download Rotated Image</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <p>Your image is redrawn onto a rotated canvas at full resolution — no quality loss. Everything happens in your browser.</p>
+      <h3>Is my photo uploaded anywhere?</h3>
+      <p>No — your image never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/image-rotator.js"></script>
+</body>
+</html>

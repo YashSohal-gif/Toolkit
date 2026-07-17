@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free EMI Calculator — Loan EMI, Interest & Total Payment | KBResize</title>
+<meta name="description" content="Calculate your monthly EMI, total interest, and total payment for any loan, free and instant.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>EMI Calculator</h1>
+      <p>Calculate your monthly loan installment, total interest, and total payment — free, instant.</p>
+    </div>
+
+    <div class="card">
+      <div class="controls" style="flex-direction:column;align-items:stretch;gap:14px;">
+        <div class="field">
+          <label for="principal">Loan amount</label>
+          <input type="number" id="principal" value="500000" min="0">
+        </div>
+        <div class="field">
+          <label for="rate">Annual interest rate (%)</label>
+          <input type="number" id="rate" value="9" step="0.1" min="0">
+        </div>
+        <div class="field">
+          <label for="tenure">Loan tenure</label>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+            <input type="number" id="tenure" value="5" min="1" style="flex:1;min-width:100px;">
+            <div class="segmented" id="tenureUnitGroup">
+              <button type="button" class="active" data-value="years">Years</button>
+              <button type="button" data-value="months">Months</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resultBox" class="result-box show" style="margin-top:18px;">
+        <div id="statsGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;">
+          <div class="stat-box"><b id="emiResult">-</b><span>Monthly EMI</span></div>
+          <div class="stat-box"><b id="totalInterest">-</b><span>Total Interest</span></div>
+          <div class="stat-box"><b id="totalPayment">-</b><span>Total Payment</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How EMI is calculated</h2>
+      <p>EMI = [P × R × (1+R)^N] / [(1+R)^N − 1], where P is the loan amount, R is the monthly interest rate, and N is the number of monthly installments.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/emi-calculator.js"></script>
+</body>
+</html>

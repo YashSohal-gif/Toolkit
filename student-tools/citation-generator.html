@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Citation Generator — APA, MLA & Chicago Style | KBResize</title>
+<meta name="description" content="Generate a properly formatted citation in APA, MLA, or Chicago style for websites, books, and journal articles. Free, instant, no sign-up.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Citation Generator</h1>
+      <p>Fill in the source details and get a correctly formatted citation in APA, MLA, or Chicago style — free, instant.</p>
+    </div>
+
+    <div class="card">
+      <div class="field">
+        <label>Citation style</label>
+        <div class="segmented" id="citeStyle">
+          <button type="button" class="active" data-value="apa">APA (7th ed.)</button>
+          <button type="button" data-value="mla">MLA (9th ed.)</button>
+          <button type="button" data-value="chicago">Chicago</button>
+        </div>
+      </div>
+
+      <div class="field" style="margin-top:16px;">
+        <label>Source type</label>
+        <div class="segmented" id="sourceType">
+          <button type="button" class="active" data-value="website">Website</button>
+          <button type="button" data-value="book">Book</button>
+          <button type="button" data-value="journal">Journal article</button>
+        </div>
+      </div>
+
+      <div class="controls" style="flex-direction:column;align-items:stretch;gap:14px;margin-top:18px;">
+        <div class="field">
+          <label for="citeAuthor">Author(s) — Last, First (one per line for multiple)</label>
+          <textarea id="citeAuthor" rows="2" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:0.95rem;background:var(--card-bg);color:var(--text);font-family:inherit;" placeholder="Smith, John"></textarea>
+        </div>
+        <div class="controls">
+          <div class="field" style="flex:1">
+            <label for="citeTitle">Title</label>
+            <input type="text" id="citeTitle" placeholder="Title of the source">
+          </div>
+          <div class="field">
+            <label for="citeYear">Year</label>
+            <input type="number" id="citeYear" placeholder="2024">
+          </div>
+        </div>
+        <div class="controls" id="websiteFields">
+          <div class="field" style="flex:1">
+            <label for="citeSiteName">Website / publisher name</label>
+            <input type="text" id="citeSiteName" placeholder="e.g. Khan Academy">
+          </div>
+          <div class="field" style="flex:2">
+            <label for="citeUrl">URL</label>
+            <input type="text" id="citeUrl" placeholder="https://...">
+          </div>
+        </div>
+        <div class="controls" id="bookFields" style="display:none;">
+          <div class="field" style="flex:1">
+            <label for="citePublisher">Publisher</label>
+            <input type="text" id="citePublisher" placeholder="e.g. Penguin Press">
+          </div>
+          <div class="field">
+            <label for="citeEdition">Edition (optional)</label>
+            <input type="text" id="citeEdition" placeholder="e.g. 2nd">
+          </div>
+        </div>
+        <div class="controls" id="journalFields" style="display:none;">
+          <div class="field" style="flex:1">
+            <label for="citeJournal">Journal name</label>
+            <input type="text" id="citeJournal" placeholder="e.g. Journal of Psychology">
+          </div>
+          <div class="field">
+            <label for="citeVolume">Volume(Issue)</label>
+            <input type="text" id="citeVolume" placeholder="e.g. 12(3)">
+          </div>
+          <div class="field">
+            <label for="citePages">Pages</label>
+            <input type="text" id="citePages" placeholder="e.g. 45-60">
+          </div>
+        </div>
+      </div>
+
+      <div class="controls" style="margin-top:18px;">
+        <button class="btn" id="generateCiteBtn">Generate Citation</button>
+      </div>
+
+      <div id="resultBoxCite" class="result-box">
+        <div class="field">
+          <label>Formatted citation</label>
+          <textarea id="citeOutput" rows="4" readonly style="width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--card-bg);color:var(--text);font-family:inherit;resize:vertical;"></textarea>
+        </div>
+        <button class="btn" id="copyCiteBtn" style="margin-top:10px;">📋 Copy Citation</button>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>Notes</h2>
+      <h3>Which style should I use?</h3>
+      <p>APA is common in social sciences and education, MLA in humanities and literature, and Chicago in history and some publishing contexts. Check what your instructor or institution requires.</p>
+      <h3>Is this a substitute for my institution's exact formatting rules?</h3>
+      <p>This covers the most common citation cases correctly, but always double-check against your course's style guide for edge cases (multiple authors, no author, republished works, etc.).</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/citation-generator.js"></script>
+</body>
+</html>

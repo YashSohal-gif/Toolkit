@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repair PDF — Fix a Damaged or Corrupted PDF Free | KBResize</title>
+<meta name="description" content="Attempt to repair a damaged, corrupted, or won't-open PDF by rebuilding it page by page, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Repair PDF</h1>
+      <p>If a PDF won't open properly, looks broken, or has messy internal structure, this tool rebuilds it page by page into a clean, standard file.</p>
+    </div>
+
+    <div class="spec-box">
+      This is a best-effort repair — it rebuilds the PDF's internal structure but can't recover data from a page that's too badly damaged to read at all. Everything happens in your browser; larger files show a short ad before downloading.
+    </div>
+
+    <div class="card">
+      <div id="dropzoneRepair" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+        <p>Click or drag & drop your PDF here</p>
+      </div>
+      <input type="file" id="fileInputRepair" accept="application/pdf" style="display:none">
+
+      <div class="controls" style="justify-content:center;">
+        <button class="btn" id="repairBtn">Repair PDF</button>
+      </div>
+
+      <div id="progressWrapRepair" class="progress-wrap">
+        <div id="progressBarRepair" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgRepair" class="status"></p>
+
+      <div id="resultBoxRepair" class="result-box">
+        <div class="size-row"><span>Pages recovered</span><b id="pagesRecoveredRepair">-</b></div>
+        <a id="downloadLinkRepair" class="btn" download>⬇ Download Repaired PDF</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How repair works</h2>
+      <h3>What does this actually do?</h3>
+      <p>It reads the PDF as leniently as possible, then copies every page it can successfully parse into a brand-new, cleanly-structured PDF file — this fixes most "won't open" or "corrupted structure" issues.</p>
+      <h3>What if a page can't be recovered?</h3>
+      <p>You'll be told how many pages were successfully recovered. If some pages are too damaged to read, they'll be skipped rather than breaking the whole file.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — repair happens entirely in your browser. Your PDF never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/repair-pdf.js"></script>
+</body>
+</html>

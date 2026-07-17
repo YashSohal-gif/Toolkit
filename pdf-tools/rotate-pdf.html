@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rotate PDF Online Free | KBResize</title>
+<meta name="description" content="Rotate every page of a PDF by 90, 180, or 270 degrees, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Rotate PDF</h1>
+      <p>Fix sideways or upside-down pages. Rotate the whole document by 90, 180, or 270 degrees.</p>
+    </div>
+
+    <div class="spec-box">
+      This tool stays free by showing a short ad for larger files: <b>20 pages or fewer is free</b>, <b>21-50 pages = 1 ad</b>, <b>51-100 pages = 2 ads</b>, <b>100+ pages = 3 ads</b>.
+    </div>
+
+    <div class="card">
+      <div id="dropzoneRotate" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div>
+        <p>Click or drag & drop your PDF here</p>
+      </div>
+      <input type="file" id="fileInputRotate" accept="application/pdf" style="display:none">
+
+      <div class="controls">
+        <div class="field">
+          <label>Rotate by</label>
+          <div class="segmented" id="rotateAngle">
+            <button type="button" class="active" data-value="90">90° CW</button>
+            <button type="button" data-value="180">180°</button>
+            <button type="button" data-value="270">270° CW</button>
+          </div>
+        </div>
+        <button class="btn" id="rotateBtn">Rotate PDF</button>
+      </div>
+
+      <div id="progressWrapRotate" class="progress-wrap">
+        <div id="progressBarRotate" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgRotate" class="status"></p>
+
+      <div id="resultBoxRotate" class="result-box">
+        <a id="downloadLinkRotate" class="btn" download>⬇ Download Rotated PDF</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <p>This rotates every page in the document the same amount, without re-rendering the content, so text stays crisp and selectable.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — everything happens locally in your browser. Your PDF never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/rotate-pdf.js"></script>
+</body>
+</html>

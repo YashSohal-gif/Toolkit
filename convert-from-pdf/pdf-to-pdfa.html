@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF to PDF/A Converter Online Free | KBResize</title>
+<meta name="description" content="Create a flattened, self-contained archival-style version of your PDF for long-term storage, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>PDF to PDF/A (Archival)</h1>
+      <p>Create a flattened, self-contained, archive-friendly version of your PDF — free.</p>
+    </div>
+
+    <div class="spec-box">
+      ⚠️ <b>Simplified PDF/A-style export, not ISO 19005 certified.</b> This flattens every page into an embedded image with no external font or content dependencies — great for long-term storage where you just need the pages to always look right. It is <b>not</b> a certified PDF/A file for legal/compliance archiving; use professional archiving software for that.
+    </div>
+
+    <div class="card">
+      <div id="dropzoneP2A" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+        <p>Click or drag & drop your PDF here</p>
+      </div>
+      <input type="file" id="fileInputP2A" accept="application/pdf" style="display:none">
+
+      <div class="field" style="margin-top:14px;">
+        <label>Quality</label>
+        <div class="segmented" id="qualityP2A">
+          <button type="button" data-value="0.95">Highest quality (larger file)</button>
+          <button type="button" class="active" data-value="0.85">Balanced</button>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="btn" id="p2aBtn">Create Archival PDF</button>
+      </div>
+
+      <div id="progressWrapP2A" class="progress-wrap">
+        <div id="progressBarP2A" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgP2A" class="status"></p>
+
+      <div id="resultBoxP2A" class="result-box">
+        <a id="downloadLinkP2A" class="btn" download>⬇ Download Archival PDF</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <p>Each page is rendered as a flattened image (via pdf.js) and rebuilt into a new PDF (via jsPDF) with basic archival metadata set — no fonts, scripts, or external references to break in the future.</p>
+      <h3>Why would I want this?</h3>
+      <p>Flattened, image-based PDFs are less likely to look different when opened years from now on different software, since there's nothing but pixels to render — no fonts that might be missing, no interactive elements.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — everything happens locally. Your PDF never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/pdf-to-pdfa.js"></script>
+</body>
+</html>

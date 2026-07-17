@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice to Text — Free Live Dictation | KBResize</title>
+<meta name="description" content="Dictate using your microphone and get live, accurate text using your browser's built-in speech recognition, free online.">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/exclusive-tools.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Voice to Text <span class="exclusive-badge">Exclusive</span></h1>
+      <p>Dictate into your microphone and watch accurate text appear live — powered by your browser's built-in speech recognition.</p>
+    </div>
+
+    <div class="spec-box">
+      This uses your browser's native speech recognition (best support in Chrome/Edge). Audio is processed by your browser directly — nothing is stored or uploaded by this site.
+    </div>
+
+    <div class="card">
+      <div class="field">
+        <label>Language</label>
+        <div class="segmented" id="voiceLangGroup">
+          <button type="button" class="active" data-value="en-US">English</button>
+          <button type="button" data-value="hi-IN">Hindi</button>
+          <button type="button" data-value="es-ES">Spanish</button>
+          <button type="button" data-value="fr-FR">French</button>
+        </div>
+      </div>
+
+      <div class="controls" style="justify-content:center;margin-top:16px;">
+        <button class="btn" id="voiceStartBtn">🎤 Start Dictating</button>
+        <button class="btn secondary" id="voiceStopBtn" style="display:none;">⏹ Stop</button>
+        <button class="btn secondary" id="voiceClearBtn">Clear</button>
+      </div>
+
+      <p id="voiceStatus" class="status"></p>
+
+      <textarea id="voiceOutput" rows="12" style="width:100%;font-size:1rem;margin-top:12px;" placeholder="Your dictated text will appear here..."></textarea>
+
+      <div class="controls" style="justify-content:center;margin-top:14px;">
+        <button class="btn" id="voiceDownloadBtn">⬇ Download as .txt</button>
+        <button class="btn secondary" id="voiceCopyBtn">Copy Text</button>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>Tips for accurate dictation</h2>
+      <h3>Why isn't it working in my browser?</h3>
+      <p>Live speech recognition is a browser feature — it works best in Chrome or Edge. Firefox and Safari have limited or no support for this API.</p>
+      <h3>Does this work offline?</h3>
+      <p>No — your browser sends short audio snippets to its own speech recognition service to transcribe (this is a browser feature, not something this site controls), so an internet connection is needed.</p>
+      <h3>Can I edit the text afterward?</h3>
+      <p>Yes — the textarea is fully editable, so you can clean up punctuation or fix any misheard words before copying or downloading.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/voice-to-text.js"></script>
+</body>
+</html>

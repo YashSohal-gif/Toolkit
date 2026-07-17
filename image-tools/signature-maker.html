@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signature Maker Online Free | KBResize</title>
+<meta name="description" content="Create a signature online free — draw with your mouse or finger, or type it in a cursive font. Download as a transparent PNG for forms and documents.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Signature Maker</h1>
+      <p>Draw or type your signature and download it as a transparent PNG — ready to paste into forms and documents.</p>
+    </div>
+
+    <div class="card">
+      <div class="radio-row">
+        <label><input type="radio" name="sigMode" value="draw" checked> Draw with mouse / finger</label>
+        <label><input type="radio" name="sigMode" value="type"> Type it</label>
+        <label><input type="radio" name="sigMode" value="upload"> Upload old signature</label>
+      </div>
+
+      <div class="controls">
+        <div class="field">
+          <label for="sigColor">Ink color</label>
+          <select id="sigColor">
+            <option value="#0f172a" selected>Black</option>
+            <option value="#1d4ed8">Blue</option>
+            <option value="#7f1d1d">Dark red</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="sigDrawPanel">
+        <div class="sig-canvas-wrap">
+          <canvas id="sigCanvas"></canvas>
+        </div>
+        <div class="controls" style="justify-content:center;">
+          <button class="btn secondary" id="sigClearBtn">Clear</button>
+        </div>
+      </div>
+
+      <div id="sigTypePanel" style="display:none;">
+        <div class="controls">
+          <div class="field" style="flex:1;">
+            <label for="sigTypeInput">Your name</label>
+            <input type="text" id="sigTypeInput" placeholder="Type your name">
+          </div>
+          <div class="field">
+            <label for="sigFont">Style</label>
+            <select id="sigFont">
+              <option value="'Brush Script MT', cursive">Brush Script</option>
+              <option value="'Segoe Script', cursive">Segoe Script</option>
+              <option value="cursive">Cursive (default)</option>
+              <option value="italic serif">Elegant Italic</option>
+            </select>
+          </div>
+        </div>
+        <div id="sigTypePreview" class="sig-type-preview">Your Signature</div>
+      </div>
+
+      <div id="sigUploadPanel" style="display:none;">
+        <div id="sigDropzone" class="dropzone">
+          <div class="icon">✍️</div>
+          <p>Click or drag & drop your old signature image here</p>
+        </div>
+        <input type="file" id="sigUploadInput" accept="image/*" style="display:none">
+        <label class="toggle-row" style="margin-top:12px;">
+          <span class="toggle-switch"><input type="checkbox" id="sigUploadRemoveBg" checked><span class="toggle-track"></span></span>
+          <span>Remove white background</span>
+        </label>
+        <div id="sigUploadPreviewWrap" style="display:none;margin-top:12px;text-align:center;">
+          <canvas id="sigUploadPreview" style="max-width:100%;max-height:220px;border:1px dashed var(--border);border-radius:8px;"></canvas>
+        </div>
+      </div>
+
+      <div class="controls" style="justify-content:center;">
+        <button class="btn" id="sigDownloadBtn">Download Signature (PNG)</button>
+      </div>
+
+      <p id="statusMsgSig" class="status"></p>
+
+      <div id="resultBoxSig" class="result-box">
+        <a id="downloadLinkSig" class="btn" download>⬇ Download</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <p>The drawn, typed, or uploaded signature is exported as a PNG with a transparent background, so it drops cleanly onto any form, contract, or PDF.</p>
+      <h3>I have an old signature photo — can I reuse it?</h3>
+      <p>Yes — choose "Upload old signature", pick the photo or scan, and turn on "Remove white background" to make the paper transparent, leaving just the ink.</p>
+      <h3>Is my signature uploaded anywhere?</h3>
+      <p>No — everything happens locally in your browser. Nothing is ever sent to a server.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/signature-maker.js"></script>
+</body>
+</html>

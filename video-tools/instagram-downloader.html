@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Instagram Video & Reel Downloader Online | KBResize</title>
+<meta name="description" content="Download Instagram Reels, Videos, and IGTV in MP4 format for free online. Fast, secure, and works directly in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+<style>
+  .download-card { border: 1px solid var(--border); padding: 15px; border-radius: 8px; margin-top: 20px; display: flex; gap: 15px; align-items: center; background: var(--surface); text-align: left; }
+  .download-card img { width: 120px; height: 120px; object-fit: cover; border-radius: 6px; }
+  .download-info { flex: 1; }
+  .download-info h3 { margin: 0 0 5px 0; font-size: 1rem; font-weight: 600; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .download-info p { margin: 0; font-size: 0.85rem; color: var(--text-muted); }
+  .btn-download { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: var(--accent); color: white; padding: 10px 15px; text-decoration: none; border-radius: 6px; font-weight: 500; margin-top: 10px; border: none; cursor: pointer; width: 100%; transition: opacity 0.2s; }
+  .btn-download:hover { opacity: 0.9; }
+  .spinner { display: inline-block; width: 18px; height: 18px; border: 3px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: #fff; animation: spin 1s ease-in-out infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #resultsArea { display: none; margin-top: 20px; }
+  .quality-list { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+  .quality-item { display: flex; justify-content: space-between; align-items: center; padding: 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); }
+  .quality-item span { font-weight: 500; }
+  .quality-item a { text-decoration: none; background: var(--accent); color: white; padding: 6px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 500; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Instagram Video & Reel Downloader</h1>
+      <p>Download Instagram Reels, IGTV, and feed videos directly to your device.</p>
+    </div>
+
+    <div class="card">
+      <div class="field" style="margin-bottom: 0;">
+        <label for="igUrl">Instagram URL</label>
+        <input type="url" id="igUrl" placeholder="https://www.instagram.com/reel/..." autocomplete="off">
+      </div>
+
+      <div class="controls" style="margin-top: 20px;">
+        <button class="btn" id="fetchBtn">Get Download Link</button>
+      </div>
+
+      <p id="statusMsg" class="status"></p>
+
+      <div id="resultsArea">
+        <div class="download-card">
+          <img id="videoThumb" src="" alt="Thumbnail">
+          <div class="download-info">
+            <h3 id="videoTitle">Instagram Post</h3>
+          </div>
+        </div>
+        
+        <h4 style="margin: 20px 0 10px;">Available Downloads</h4>
+        <div class="quality-list" id="qualityList">
+          <!-- Links injected by JS -->
+        </div>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How to download Instagram videos?</h2>
+      <h3>1. Copy the link</h3>
+      <p>Open the Instagram app or website, go to the Reel or Video, tap the "Share" icon (paper airplane), and select "Copy Link".</p>
+      <h3>2. Paste & Download</h3>
+      <p>Paste the link into the box above and click the button to generate your MP4 download link.</p>
+      <br>
+      <div style="padding:10px; background:var(--bg); border-left:3px solid var(--accent); border-radius:4px; font-size:0.9rem;">
+        <strong>Note for Site Owner:</strong> This tool requires a free RapidAPI key. Please check the <code>js/instagram-downloader.js</code> file to enter your API credentials.
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/instagram-downloader.js"></script>
+</body>
+</html>

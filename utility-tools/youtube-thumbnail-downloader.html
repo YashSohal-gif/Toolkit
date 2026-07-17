@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Thumbnail Downloader — Free HD Thumbnail Grabber | KBResize</title>
+<meta name="description" content="Download the thumbnail image of any YouTube video in HD, free. Paste a link, get the thumbnail instantly. No sign-up.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>YouTube Thumbnail Downloader</h1>
+      <p>Paste any YouTube video link and grab its thumbnail image in HD — free, instant, no sign-up.</p>
+    </div>
+
+    <div class="spec-box">
+      This tool only fetches the public thumbnail image that YouTube itself serves for every video (the same image you see on the video preview). It does not download or convert the video or audio.
+    </div>
+
+    <div class="card">
+      <div class="controls">
+        <div class="field" style="flex:1">
+          <label for="ytUrl">YouTube video URL</label>
+          <input type="text" id="ytUrl" placeholder="https://www.youtube.com/watch?v=...">
+        </div>
+        <button class="btn" id="fetchBtn">Get Thumbnail</button>
+      </div>
+      <p id="statusMsg" class="status"></p>
+
+      <div id="resultBox" class="result-box">
+        <div id="thumbGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:10px;"></div>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <h3>Where does the image come from?</h3>
+      <p>YouTube automatically generates several thumbnail sizes for every public video (max resolution, high quality, medium, and default). This tool builds the direct image link from the video ID and shows you every available size to download.</p>
+      <h3>Why do some sizes look blurry or missing?</h3>
+      <p>Not every video has a true HD (maxresdefault) thumbnail uploaded — for older or lower-resolution videos, YouTube may not have generated one, so it falls back to a smaller size.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/youtube-thumbnail-downloader.js"></script>
+</body>
+</html>

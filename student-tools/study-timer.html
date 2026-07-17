@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Study Timer — Pomodoro Focus Timer for Students | KBResize</title>
+<meta name="description" content="A free Pomodoro-style study timer with customizable work and break intervals, session tracking, and an end-of-interval alert.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Study Timer</h1>
+      <p>Focus in timed intervals with automatic short and long breaks — a simple Pomodoro-style timer to help you study without burning out.</p>
+    </div>
+
+    <div class="card" style="text-align:center;">
+      <div id="timerModeLabel" style="font-weight:700;letter-spacing:0.05em;text-transform:uppercase;font-size:0.85rem;color:var(--primary);margin-bottom:6px;">Focus session</div>
+      <div id="timerDisplay" style="font-size:4rem;font-weight:800;font-variant-numeric:tabular-nums;margin:10px 0;">25:00</div>
+      <div id="sessionCountLabel" class="status" style="margin-top:0;">Session 1 of 4</div>
+
+      <div class="controls" style="justify-content:center;margin-top:20px;">
+        <button class="btn" id="startPauseBtn">▶ Start</button>
+        <button class="btn secondary" id="resetBtn">↺ Reset</button>
+        <button class="btn secondary" id="skipBtn">⏭ Skip</button>
+      </div>
+
+      <div class="field" style="max-width:340px;margin:26px auto 0;">
+        <label>Timer presets</label>
+        <div class="segmented" id="timerPreset">
+          <button type="button" class="active" data-work="25" data-short="5" data-long="15">Classic 25/5</button>
+          <button type="button" data-work="50" data-short="10" data-long="20">Deep work 50/10</button>
+          <button type="button" data-work="15" data-short="3" data-long="10">Quick 15/3</button>
+        </div>
+      </div>
+
+      <div class="controls" style="justify-content:center;margin-top:16px;flex-wrap:wrap;">
+        <div class="field">
+          <label for="workMinutes">Focus (min)</label>
+          <input type="number" id="workMinutes" value="25" min="1" max="180" style="width:80px;">
+        </div>
+        <div class="field">
+          <label for="shortBreakMinutes">Short break (min)</label>
+          <input type="number" id="shortBreakMinutes" value="5" min="1" max="60" style="width:80px;">
+        </div>
+        <div class="field">
+          <label for="longBreakMinutes">Long break (min)</label>
+          <input type="number" id="longBreakMinutes" value="15" min="1" max="60" style="width:80px;">
+        </div>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How the Pomodoro method works</h2>
+      <h3>The basic cycle</h3>
+      <p>Work in focused intervals (typically 25 minutes), then take a short break (5 minutes). After 4 focus sessions, take a longer break (15 minutes) before starting the cycle again.</p>
+      <h3>Why does it help?</h3>
+      <p>Short, timed sessions make it easier to start studying without feeling overwhelmed, and scheduled breaks reduce mental fatigue over long study sessions.</p>
+      <h3>Does this keep running if I close the tab?</h3>
+      <p>No — the timer runs only while this page is open. Keep the tab open (you can still switch to other tabs) for the countdown and alert to work.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/study-timer.js"></script>
+</body>
+</html>

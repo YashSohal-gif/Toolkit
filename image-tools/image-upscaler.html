@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Upscaler — Resize a Photo Up to 4K Free | KBResize</title>
+<meta name="description" content="Resize a photo up to 2x, 4x, or 4K resolution using smooth step-wise interpolation, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/exclusive-tools.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Image Upscaler <span class="exclusive-badge">Exclusive</span></h1>
+      <p>Resize a photo up to a larger resolution — up to 4K — using smooth step-wise interpolation for the cleanest possible result.</p>
+    </div>
+
+    <div class="spec-box">
+      Honest heads-up: this resizes your photo larger using high-quality interpolation — it does not invent new detail the way an AI super-resolution model can. It's great for printing or filling a larger frame; a very low-resolution source photo will still look soft at 4K.
+    </div>
+
+    <div class="card">
+      <div id="dropzoneUpscale" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+        <p>Click or drag & drop your photo here</p>
+      </div>
+      <input type="file" id="fileInputUpscale" accept="image/*" style="display:none">
+
+      <div class="field" id="upscaleTargetField" style="display:none;margin-top:14px;">
+        <label>Target size</label>
+        <div class="segmented" id="upscaleTargetGroup">
+          <button type="button" class="active" data-value="2">2x</button>
+          <button type="button" data-value="4">4x</button>
+          <button type="button" data-value="4k">Up to 4K (long edge)</button>
+        </div>
+      </div>
+
+      <p id="upscaleDimsInfo" class="status" style="display:none;"></p>
+
+      <div class="controls" id="upscaleControls" style="display:none;justify-content:center;">
+        <button class="btn" id="upscaleBtn">Upscale Photo</button>
+      </div>
+
+      <div id="progressWrapUpscale" class="progress-wrap">
+        <div id="progressBarUpscale" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgUpscale" class="status"></p>
+
+      <div id="resultBoxUpscale" class="result-box">
+        <div class="size-row"><span>New dimensions</span><b id="newDimsUpscale">-</b></div>
+        <a id="downloadLinkUpscale" class="btn" download>⬇ Download Upscaled Photo</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>About upscaling</h2>
+      <h3>How is this different from an AI upscaler?</h3>
+      <p>An AI super-resolution model tries to guess plausible new detail that wasn't in the original photo. This tool doesn't guess — it resizes using smooth, high-quality interpolation done in incremental steps, which looks noticeably cleaner than a single big stretch, but adds no new detail.</p>
+      <h3>Will this fix a blurry or pixelated photo?</h3>
+      <p>No — it makes the image bigger while keeping edges as clean as possible, but any existing blur or pixelation will scale up along with it.</p>
+      <h3>Is my photo uploaded anywhere?</h3>
+      <p>No — everything happens locally in your browser. Your photo never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/image-upscaler.js"></script>
+</body>
+</html>

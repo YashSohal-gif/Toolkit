@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crop Image Online Free — JPG, PNG, GIF | KBResize</title>
+<meta name="description" content="Crop a JPG, PNG, or GIF image with a visual drag-to-select editor, or enter exact pixel values, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Crop Image</h1>
+      <p>Drag to select the area you want, or type exact pixel values — free, works on JPG, PNG, and GIF.</p>
+    </div>
+
+    <div class="card">
+      <div class="step-label"><span class="step-num">1</span> Upload your image</div>
+      <div id="dropzoneCrop" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+        <p>Click or drag & drop your image here</p>
+      </div>
+      <input type="file" id="fileInputCrop" accept="image/*" style="display:none">
+
+      <div class="step-label" id="cropStepLabel" style="display:none;"><span class="step-num">2</span> Drag to select your crop area</div>
+      <div id="cropWorkspace" style="display:none;margin-top:14px;">
+        <div id="cropContainer" style="position:relative;display:inline-block;max-width:100%;cursor:crosshair;user-select:none;">
+          <canvas id="cropCanvas" style="display:block;max-width:100%;border-radius:8px;border:1px solid var(--border);"></canvas>
+          <div id="cropSelection" style="position:absolute;border:2px dashed #fff;box-shadow:0 0 0 2000px rgba(0,0,0,0.4);display:none;pointer-events:none;"></div>
+        </div>
+
+        <div class="controls" style="flex-wrap:wrap;margin-top:16px;">
+          <div class="field">
+            <label for="cropX">X</label>
+            <input type="number" id="cropX" min="0" style="max-width:90px;">
+          </div>
+          <div class="field">
+            <label for="cropY">Y</label>
+            <input type="number" id="cropY" min="0" style="max-width:90px;">
+          </div>
+          <div class="field">
+            <label for="cropW">Width</label>
+            <input type="number" id="cropW" min="1" style="max-width:90px;">
+          </div>
+          <div class="field">
+            <label for="cropH">Height</label>
+            <input type="number" id="cropH" min="1" style="max-width:90px;">
+          </div>
+          <button class="btn secondary" id="cropResetBtn" type="button">Reset selection</button>
+        </div>
+      </div>
+
+      <div class="step-label" id="cropStep3Label" style="display:none;"><span class="step-num">3</span> Crop &amp; download</div>
+      <div class="controls" id="cropActionRow" style="display:none;">
+        <button class="btn" id="cropBtn">Crop Image</button>
+      </div>
+
+      <p id="statusMsgCrop" class="status"></p>
+
+      <div id="resultBoxCrop" class="result-box">
+        <img id="cropPreviewImg" style="max-width:100%;border-radius:8px;margin-bottom:14px;display:block;">
+        <a id="downloadLinkCrop" class="btn" download>⬇ Download Cropped Image</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <p>Drag anywhere on the image to draw a selection box, fine-tune it with the X/Y/Width/Height fields if needed, then crop — all in your browser.</p>
+      <h3>Is my photo uploaded anywhere?</h3>
+      <p>No — everything happens locally. Your image never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/image-cropper.js"></script>
+</body>
+</html>

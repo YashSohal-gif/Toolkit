@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watermark Image Online Free — Add Text to Photos | KBResize</title>
+<meta name="description" content="Stamp a text watermark across your photo — choose position, size, opacity, and color, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Watermark Image</h1>
+      <p>Stamp a text watermark across your photo — position, size, opacity, and color, all adjustable — free.</p>
+    </div>
+
+    <div class="card">
+      <div id="dropzoneWm" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69s-6 6.34-6 10.31a6 6 0 0 0 12 0c0-3.97-6-10.31-6-10.31z"/></svg></div>
+        <p>Click or drag & drop your image here</p>
+      </div>
+      <input type="file" id="fileInputWm" accept="image/*" style="display:none">
+
+      <div class="controls" style="flex-wrap:wrap;margin-top:14px;">
+        <div class="field" style="flex:1;min-width:200px;">
+          <label for="wmText">Watermark text</label>
+          <input type="text" id="wmText" value="SAMPLE" style="min-width:100%;">
+        </div>
+        <div class="field">
+          <label for="wmColor">Color</label>
+          <input type="color" id="wmColor" value="#ffffff" style="height:42px;width:70px;padding:2px;border-radius:8px;border:1px solid var(--border);">
+        </div>
+      </div>
+
+      <div class="field" style="margin-top:14px;">
+        <label>Position</label>
+        <div class="segmented" id="wmPositionGroup">
+          <button type="button" data-value="tl">Top-left</button>
+          <button type="button" data-value="tr">Top-right</button>
+          <button type="button" class="active" data-value="center">Center</button>
+          <button type="button" data-value="bl">Bottom-left</button>
+          <button type="button" data-value="br">Bottom-right</button>
+          <button type="button" data-value="tile">Tiled (repeat)</button>
+        </div>
+      </div>
+
+      <div class="controls" style="flex-wrap:wrap;margin-top:14px;">
+        <div class="field">
+          <label for="wmSize">Size (% of image width)</label>
+          <input type="range" id="wmSize" min="3" max="20" value="8" step="1" style="width:200px;">
+        </div>
+        <div class="field">
+          <label for="wmOpacity">Opacity</label>
+          <input type="range" id="wmOpacity" min="10" max="100" value="45" step="5" style="width:200px;">
+        </div>
+        <div class="field">
+          <label for="wmAngle">Rotation (°)</label>
+          <input type="range" id="wmAngle" min="-45" max="45" value="-30" step="5" style="width:200px;">
+        </div>
+      </div>
+
+      <div style="margin-top:18px;display:flex;justify-content:center;">
+        <canvas id="wmPreviewCanvas" style="max-width:100%;border-radius:8px;border:1px solid var(--border);"></canvas>
+      </div>
+
+      <div class="controls">
+        <button class="btn" id="wmBtn">Download Watermarked Image</button>
+      </div>
+
+      <p id="statusMsgWm" class="status"></p>
+
+      <div id="resultBoxWm" class="result-box">
+        <a id="downloadLinkWm" class="btn" download>⬇ Download Image</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <p>The watermark is drawn straight onto the image at full resolution, live-previewed as you adjust the sliders — all in your browser.</p>
+      <h3>Is my photo uploaded anywhere?</h3>
+      <p>No — your image never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/watermark-image.js"></script>
+</body>
+</html>

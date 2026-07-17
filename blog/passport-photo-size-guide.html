@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Passport & Visa Photo Size Requirements Guide | KBResize</title>
+<meta name="description" content="Exact pixel dimensions, DPI, file size limits, and background rules for passport and visa photos — plus common exam photo formats like UPSC and SSC.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero" style="text-align:left;padding:30px 0 10px;">
+      <h1>Passport &amp; visa photo size requirements</h1>
+      <p>Every country's passport office has slightly different rules — get the pixel size, DPI, and background wrong and your application bounces back. Here's what actually matters.</p>
+    </div>
+
+    <div class="card faq">
+      <h2>The four things every photo requirement actually checks</h2>
+      <h3>1. Physical size (usually in mm or inches)</h3>
+      <p>Passport photos are specified in physical print dimensions — commonly 2×2 inches (US), 35×45mm (most of Europe, India, UK), or 3.5×4.5cm (parts of Asia). This only matters once the photo is printed, so it's really a combination of pixel dimensions and DPI (see below) — get either wrong and the printed photo comes out the wrong physical size even if it "looks right" on screen.</p>
+      <h3>2. Pixel dimensions and DPI together</h3>
+      <p>A photo's physical print size = pixel dimensions ÷ DPI. So a 2×2 inch photo at 300 DPI needs to be exactly 600×600 pixels. If you upload a 600×600px photo but the file's DPI metadata says 72 instead of 300, some print/upload systems will size it as an 8.3×8.3 inch image instead of 2×2 — technically the same pixels, printed at the wrong size. This is why tools that only resize pixels without also fixing the DPI metadata can produce a photo that fails an automated size check.</p>
+      <h3>3. Background color</h3>
+      <p>Most passport/visa photos require a plain white or light gray background with no shadows, patterns, or other people visible. Visa photos for some countries (rare, but it happens) specify a different background color entirely — always check the specific country's current rule rather than assuming white is universal.</p>
+      <h3>4. File size limit (for online applications)</h3>
+      <p>Online application portals often cap the upload at a small file size — commonly under 100–300KB — separate from the pixel/DPI requirements. This is the part people get tripped up on: a photo can be the exact right pixel dimensions and still get rejected purely for being a 4MB file when the portal wants under 200KB.</p>
+    </div>
+
+    <div class="card faq">
+      <h2>Common exam &amp; passport formats</h2>
+      <p>India's competitive exams each specify their own exact photo and signature dimensions, separate from passport rules. We keep dedicated size guides for the most commonly searched ones:</p>
+      <ul>
+        <li><a href="../exams/upsc-photo-signature-size.html">UPSC photo &amp; signature size</a></li>
+        <li><a href="../exams/ssc-cgl-photo-signature-size.html">SSC CGL photo &amp; signature size</a></li>
+        <li><a href="../exams/ibps-po-photo-signature-size.html">IBPS PO photo &amp; signature size</a></li>
+        <li><a href="../exams/railway-rrb-photo-signature-size.html">Railway RRB photo &amp; signature size</a></li>
+      </ul>
+    </div>
+
+    <div class="card faq">
+      <h2>Try it</h2>
+      <p>The <a href="../image-tools/passport-photo.html">Passport Photo Maker</a> crops to the exact pixel dimensions for your country/exam and can compress the result to a target file size, so both the dimension check and the file-size check pass in one step — done entirely in your browser.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

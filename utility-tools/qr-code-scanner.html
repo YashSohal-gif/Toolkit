@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free QR Code Scanner Online — Decode QR from Image | KBResize</title>
+<meta name="description" content="Scan and decode any QR code from an uploaded image, free. No app needed, works instantly in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>QR Code Scanner</h1>
+      <p>Upload an image with a QR code and instantly decode what it contains — free, no app install.</p>
+    </div>
+
+    <div class="card">
+      <div id="dropzone" class="dropzone">
+        <div class="icon">📷</div>
+        <p>Click or drag & drop an image containing a QR code</p>
+      </div>
+      <input type="file" id="fileInput" accept="image/*" style="display:none">
+
+      <p id="statusMsg" class="status"></p>
+
+      <div id="resultBox" class="result-box">
+        <img id="previewImg" style="max-width:100%;border-radius:10px;margin-bottom:14px;display:none;">
+        <div class="field">
+          <label>Decoded content</label>
+          <textarea id="decodedText" rows="3" readonly style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--card-bg);color:var(--text);font-family:inherit;"></textarea>
+        </div>
+        <button class="btn" id="copyBtn" style="margin-top:10px;">📋 Copy Text</button>
+        <a id="openLink" class="btn" href="#" target="_blank" rel="noopener" style="display:none;margin-top:10px;margin-left:10px;">↗ Open Link</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>Tips for best results</h2>
+      <h3>Image quality</h3>
+      <p>Use a clear, well-lit photo or screenshot where the QR code isn't blurry, cropped, or at a steep angle.</p>
+      <h3>Multiple QR codes</h3>
+      <p>If your image has more than one QR code, this tool decodes the first one it detects.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/qr-code-scanner.js"></script>
+</body>
+</html>

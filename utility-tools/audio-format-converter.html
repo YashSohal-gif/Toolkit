@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Audio Format Converter — MP3, WAV Converter | KBResize</title>
+<meta name="description" content="Convert audio files between MP3 and WAV free, right in your browser. No upload, no sign-up.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lamejs/1.2.0/lame.min.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Audio Format Converter</h1>
+      <p>Convert an audio file you own to MP3 or WAV — free, private, works entirely in your browser.</p>
+    </div>
+
+    <div class="spec-box">
+      Works with audio files you already have (recordings, exported clips, voice notes). This is not a streaming-service downloader — it only converts files you upload from your device.
+    </div>
+
+    <div class="card">
+      <div id="dropzone" class="dropzone">
+        <div class="icon">🎵</div>
+        <p>Click or drag & drop an audio file here (MP3, WAV, OGG, M4A)</p>
+      </div>
+      <input type="file" id="fileInput" accept="audio/*" style="display:none">
+
+      <div class="controls">
+        <div class="field">
+          <label>Convert to</label>
+          <div class="segmented" id="outputFormatGroup">
+            <button type="button" class="active" data-value="mp3">MP3</button>
+            <button type="button" data-value="wav">WAV</button>
+          </div>
+        </div>
+        <div class="field" id="bitrateField">
+          <label>MP3 bitrate</label>
+          <div class="segmented" id="bitrateGroup">
+            <button type="button" class="active" data-value="128">128 kbps</button>
+            <button type="button" data-value="192">192 kbps</button>
+            <button type="button" data-value="320">320 kbps</button>
+          </div>
+        </div>
+        <button class="btn" id="convertBtn">Convert Audio</button>
+      </div>
+
+      <div id="progressWrap" class="progress-wrap">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsg" class="status"></p>
+
+      <div id="resultBox" class="result-box">
+        <audio id="audioPreview" controls style="width:100%;margin-bottom:14px;"></audio>
+        <a id="downloadLink" class="btn" download>⬇ Download Converted Audio</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>Notes</h2>
+      <h3>How long does conversion take?</h3>
+      <p>MP3 encoding happens on your device, so longer files take a bit more time. WAV conversion is near-instant since it doesn't need compression.</p>
+      <h3>Is audio quality preserved?</h3>
+      <p>WAV is lossless. MP3 quality depends on the bitrate you choose — 320 kbps is closest to the original, 128 kbps gives a much smaller file.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/audio-format-converter.js"></script>
+</body>
+</html>

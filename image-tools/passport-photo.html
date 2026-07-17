@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Passport Size Photo Maker Online Free | KBResize</title>
+<meta name="description" content="Make a passport size, PAN card, or ID photo online free. Crop, zoom, and download at the exact pixel size, plus a ready-to-print 4x6 sheet with multiple copies.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Passport & ID Photo Maker</h1>
+      <p>Upload a photo, pick the size you need, drag to position and zoom to frame your face — download at the exact pixel size, or a ready-to-print sheet with multiple copies.</p>
+    </div>
+
+    <div class="card">
+      <div id="dropzonePP" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="12" r="2"/><line x1="13" y1="10" x2="18" y2="10"/><line x1="13" y1="14" x2="18" y2="14"/></svg></div>
+        <p>Click or drag & drop your photo here</p>
+      </div>
+      <input type="file" id="fileInputPP" accept="image/*" style="display:none">
+
+      <div class="controls">
+        <div class="field">
+          <label for="ppPreset">Photo size</label>
+          <select id="ppPreset">
+            <option value="india-passport" selected>Indian Passport (3.5×4.5 cm)</option>
+            <option value="us-passport">US Passport / Visa (2×2 in)</option>
+            <option value="uk-passport">UK Passport (3.5×4.5 cm)</option>
+            <option value="canada-passport">Canada Passport (5×7 cm)</option>
+            <option value="australia-passport">Australia Passport (3.5×4.5 cm)</option>
+            <option value="schengen-visa">Schengen Visa (3.5×4.5 cm)</option>
+            <option value="china-visa">China Visa (3.3×4.8 cm)</option>
+            <option value="nigeria-passport">Nigeria Passport (2×2 in)</option>
+            <option value="pan-card">PAN Card (2.5×3.5 cm)</option>
+            <option value="aadhaar-card">Aadhaar Card (3.5×4.5 cm)</option>
+            <option value="voter-id">Voter ID / EPIC (2.5×3.5 cm)</option>
+            <option value="driving-licence-india">Driving Licence India (3.5×4.5 cm)</option>
+            <option value="stamp">Stamp Size (2×2.5 cm)</option>
+            <option value="custom">Custom size (mm)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="controls" id="ppCustomFields" style="display:none;">
+        <div class="field">
+          <label for="ppCustomW">Width (mm)</label>
+          <input type="number" id="ppCustomW" value="35" min="5">
+        </div>
+        <div class="field">
+          <label for="ppCustomH">Height (mm)</label>
+          <input type="number" id="ppCustomH" value="45" min="5">
+        </div>
+      </div>
+
+      <div class="pp-crop-wrap">
+        <div id="ppCropFrame" class="pp-crop-frame">
+          <img id="ppCropImg" src="" alt="">
+        </div>
+      </div>
+
+      <div class="pp-zoom-row">
+        <span>🔍</span>
+        <input type="range" id="ppZoom" min="1" max="3" step="0.01" value="1">
+      </div>
+
+      <div class="controls" style="justify-content:center;">
+        <button class="btn" id="ppDownloadBtn">Download Photo</button>
+        <button class="btn secondary" id="ppSheetBtn">Download 4×6 Print Sheet</button>
+      </div>
+
+      <p id="statusMsgPP" class="status"></p>
+
+      <div id="resultBoxPP" class="result-box">
+        <a id="downloadLinkPP" class="btn" download>⬇ Download</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <h3>Choosing a size</h3>
+      <p>Pick a preset that matches your form's requirement, or enter a custom size in millimeters. Most Indian government forms use 3.5×4.5 cm.</p>
+      <h3>Framing your photo</h3>
+      <p>Drag inside the frame to reposition, and use the zoom slider to get closer or further from your face. What you see in the frame is exactly what gets exported.</p>
+      <h3>Print sheet</h3>
+      <p>The "Download 4×6 Print Sheet" button tiles several copies of your cropped photo onto a single 6×4 inch sheet at 300 DPI — hand it to any photo printing shop or home photo printer.</p>
+      <h3>Is my photo uploaded anywhere?</h3>
+      <p>No — everything happens locally in your browser. Your photo never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/passport-photo.js"></script>
+</body>
+</html>

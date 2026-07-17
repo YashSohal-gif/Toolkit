@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Age Calculator — Date Difference Calculator | KBResize</title>
+<meta name="description" content="Calculate your exact age or the duration between two dates in years, months, and days, free.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Age & Date Difference Calculator</h1>
+      <p>Find your exact age, or the time between any two dates — in years, months, and days.</p>
+    </div>
+
+    <div class="card">
+      <div class="controls">
+        <div class="field">
+          <label for="birthDate">Date of birth (or start date)</label>
+          <input type="date" id="birthDate">
+        </div>
+        <div class="field">
+          <label for="toDate">Calculate age as of</label>
+          <input type="date" id="toDate">
+        </div>
+        <button class="btn" id="calcBtn">Calculate</button>
+      </div>
+      <p id="statusMsg" class="status"></p>
+
+      <div id="resultBox" class="result-box">
+        <div id="statsGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;">
+          <div class="stat-box"><b id="years">0</b><span>Years</span></div>
+          <div class="stat-box"><b id="months">0</b><span>Months</span></div>
+          <div class="stat-box"><b id="days">0</b><span>Days</span></div>
+          <div class="stat-box"><b id="totalDays">0</b><span>Total days</span></div>
+          <div class="stat-box"><b id="totalWeeks">0</b><span>Total weeks</span></div>
+          <div class="stat-box"><b id="nextBirthday">-</b><span>Next birthday in</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>Common uses</h2>
+      <h3>Exact age for forms</h3>
+      <p>Many exam and job applications need your precise age in years and months as of a specific date.</p>
+      <h3>Countdown to an event</h3>
+      <p>Set "Calculate age as of" to a future date to see exactly how far away it is.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/age-calculator.js"></script>
+</body>
+</html>

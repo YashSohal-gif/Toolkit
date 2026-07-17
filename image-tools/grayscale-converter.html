@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convert Image or PDF to Black & White Online Free | KBResize</title>
+<meta name="description" content="Convert a photo or PDF to grayscale / black and white online, free. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Black & White / Grayscale Converter</h1>
+      <p>Convert a photo or an entire PDF to grayscale — free, works in your browser.</p>
+    </div>
+
+    <div class="spec-box">
+      In PDF mode, this tool stays free by showing a short ad for larger files: <b>20 pages or fewer is free</b>, <b>21-50 pages = 1 ad</b>, <b>51-100 pages = 2 ads</b>, <b>100+ pages = 3 ads</b>. Image mode is always free.
+    </div>
+
+    <div class="card">
+      <div class="segmented" id="grayModeGroup">
+        <button type="button" class="active" data-value="image">Image (JPG/PNG)</button>
+        <button type="button" data-value="pdf">PDF</button>
+      </div>
+
+      <div id="dropzoneGray" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20V2z" fill="currentColor" stroke="none"/></svg></div>
+        <p>Click or drag & drop your file here</p>
+      </div>
+      <input type="file" id="fileInputGray" accept="image/*,application/pdf" style="display:none">
+
+      <div class="controls">
+        <button class="btn" id="grayBtn">Convert to Grayscale</button>
+      </div>
+
+      <div id="progressWrapGray" class="progress-wrap">
+        <div id="progressBarGray" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgGray" class="status"></p>
+
+      <div id="resultBoxGray" class="result-box">
+        <a id="downloadLinkGray" class="btn" download>⬇ Download Result</a>
+      </div>
+
+      <div id="beforeAfterWrapGray" style="display:none;margin-top:20px;">
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:8px;text-align:center;">Drag the slider to compare original vs. grayscale</p>
+        <div class="ba-slider" id="baSliderGray">
+          <img id="baAfterGray" class="ba-img" alt="Grayscale">
+          <div class="ba-before-wrap" id="baBeforeWrapGray">
+            <img id="baBeforeGray" class="ba-img" alt="Original">
+          </div>
+          <div class="ba-handle" id="baHandleGray"><span>◀▶</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <p>Every pixel's color is converted to its brightness value, producing a true grayscale result — useful for printing costs, scanned documents, or a cleaner look.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — everything happens locally in your browser. Your file never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/before-after-slider.js"></script>
+<script src="../js/grayscale-converter.js"></script>
+</body>
+</html>

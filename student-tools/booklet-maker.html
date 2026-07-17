@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booklet Maker — Turn a PDF into a Foldable, Printable Book | KBResize</title>
+<meta name="description" content="Turn any PDF into a foldable booklet, free. Automatically arranges pages in the correct print order, with step-by-step instructions for your printer.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Booklet Maker</h1>
+      <p>Turn any PDF into a foldable booklet — pages are automatically reordered so when you print, fold, and staple, they read in the right order.</p>
+    </div>
+
+    <div class="spec-box">
+      Works best for PDFs where the page count is a multiple of 4 (we'll pad with blank pages automatically otherwise). Everything happens in your browser — nothing is uploaded.
+    </div>
+
+    <div class="card">
+      <div class="step-label"><span class="step-num">1</span> Upload your PDF</div>
+      <div id="dropzoneBM" class="dropzone">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+        </div>
+        <p>Click or drag & drop your PDF here</p>
+      </div>
+      <input type="file" id="fileInputBM" accept="application/pdf" style="display:none">
+
+      <div id="bookletInfo" class="status" style="display:none;"></div>
+
+      <div class="step-label"><span class="step-num">2</span> How will you print it?</div>
+      <div class="segmented" id="printerTypeBM">
+        <button type="button" class="active" data-value="auto">Automatic duplex (2-sided) printer</button>
+        <button type="button" data-value="manual">Manual duplex (flip &amp; reinsert)</button>
+        <button type="button" data-value="single">Single-sided only (no folding)</button>
+      </div>
+
+      <div id="printerInstructionsBM" class="spec-box" style="margin-top:16px;"></div>
+
+      <div class="step-label"><span class="step-num">3</span> Color mode</div>
+      <div class="segmented" id="colorModeBM">
+        <button type="button" class="active" data-value="color">Color</button>
+        <button type="button" data-value="bw">Black &amp; white</button>
+      </div>
+
+      <div class="step-label"><span class="step-num">4</span> Generate &amp; download</div>
+      <div class="controls">
+        <button class="btn" id="generateBtnBM">Generate Booklet PDF</button>
+      </div>
+
+      <div id="progressWrapBM" class="progress-wrap">
+        <div id="progressBarBM" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgBM" class="status"></p>
+
+      <div id="resultBoxBM" class="result-box">
+        <div class="size-row"><span>Original pages</span><b id="originalPagesBM">-</b></div>
+        <div class="size-row"><span>Sheets to print</span><b id="sheetsBM">-</b></div>
+        <div class="size-row"><span>File size</span><b id="fileSizeBM">-</b></div>
+        <a id="downloadLinkBM" class="btn" download>⬇ Download Booklet PDF</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How booklet printing works</h2>
+      <h3>Why aren't the pages in normal order in the PDF?</h3>
+      <p>A booklet is one stack of folded sheets. If you fold several sheets of paper in half and staple the spine, the physical first and last pages end up on the same sheet, the second and second-to-last on the next sheet, and so on. This tool works out that order for you automatically — you never have to think about it.</p>
+      <h3>What if my PDF's page count isn't a multiple of 4?</h3>
+      <p>We add blank pages at the end so the booklet folds evenly. Those blank pages will just be empty in the final printed booklet.</p>
+      <h3>My printed pages didn't line up correctly — what happened?</h3>
+      <p>Printer duplex ("flip") settings vary by manufacturer. If the back side doesn't align, try switching your printer's duplex option between "flip on short edge" and "flip on long edge" and reprint just the first sheet to test before printing the whole booklet.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/booklet-maker.js"></script>
+</body>
+</html>

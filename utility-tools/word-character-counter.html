@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Word & Character Counter Online | KBResize</title>
+<meta name="description" content="Count words, characters, sentences, and paragraphs instantly, free. See estimated reading time too.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Word & Character Counter</h1>
+      <p>Paste or type your text to instantly see word count, character count, and more.</p>
+    </div>
+
+    <div class="card">
+      <textarea id="textInput" rows="12" placeholder="Start typing or paste your text here..." style="width:100%;padding:14px;border-radius:10px;border:1px solid var(--border);background:var(--card-bg);color:var(--text);font-family:inherit;font-size:1rem;resize:vertical;"></textarea>
+
+      <div id="statsGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:18px;">
+        <div class="stat-box"><b id="wordCount">0</b><span>Words</span></div>
+        <div class="stat-box"><b id="charCount">0</b><span>Characters</span></div>
+        <div class="stat-box"><b id="charNoSpaceCount">0</b><span>Chars (no spaces)</span></div>
+        <div class="stat-box"><b id="sentenceCount">0</b><span>Sentences</span></div>
+        <div class="stat-box"><b id="paragraphCount">0</b><span>Paragraphs</span></div>
+        <div class="stat-box"><b id="readingTime">0 min</b><span>Reading time</span></div>
+        <div class="stat-box"><b id="speakingTime">0 min</b><span>Speaking time</span></div>
+        <div class="stat-box"><b id="avgWordLen">0</b><span>Avg word length</span></div>
+        <div class="stat-box"><b id="longestWord" style="font-size:1rem;word-break:break-all;">—</b><span>Longest word</span></div>
+      </div>
+
+      <div id="keywordCard" style="margin-top:18px;display:none;">
+        <h3 style="margin:0 0 8px;font-size:0.95rem;">Top keywords <small style="color:var(--muted);font-weight:400;">(3+ letters)</small></h3>
+        <div id="keywordChips" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>Why use a word counter?</h2>
+      <h3>Essays & assignments</h3>
+      <p>Quickly check if you're hitting a word count requirement before submitting.</p>
+      <h3>Social media & SEO</h3>
+      <p>Keep captions, meta descriptions, and tweets within character limits.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/word-character-counter.js"></script>
+</body>
+</html>

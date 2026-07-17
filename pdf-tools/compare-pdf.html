@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare PDF — See Text Differences Between Two PDFs Free | KBResize</title>
+<meta name="description" content="Compare two PDFs and see exactly which lines of text were added, removed, or changed, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Compare PDF</h1>
+      <p>Upload two versions of a document and instantly see which lines were added, removed, or changed between them.</p>
+    </div>
+
+    <div class="spec-box">
+      Everything happens in your browser — neither PDF is uploaded anywhere. This compares extracted text line-by-line, so purely visual/formatting-only changes may not be detected.
+    </div>
+
+    <div class="card">
+      <div class="controls" style="align-items:flex-start;flex-wrap:wrap;gap:20px;">
+        <div style="flex:1;min-width:220px;">
+          <div class="step-label"><span class="step-num">A</span> Original PDF</div>
+          <div id="dropzoneCompareA" class="dropzone">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+            <p>Click or drag & drop PDF A</p>
+          </div>
+          <input type="file" id="fileInputCompareA" accept="application/pdf" style="display:none">
+        </div>
+        <div style="flex:1;min-width:220px;">
+          <div class="step-label"><span class="step-num">B</span> Revised PDF</div>
+          <div id="dropzoneCompareB" class="dropzone">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+            <p>Click or drag & drop PDF B</p>
+          </div>
+          <input type="file" id="fileInputCompareB" accept="application/pdf" style="display:none">
+        </div>
+      </div>
+
+      <div class="controls" style="justify-content:center;margin-top:16px;">
+        <button class="btn" id="compareBtn">Compare PDFs</button>
+      </div>
+
+      <div id="progressWrapCompare" class="progress-wrap">
+        <div id="progressBarCompare" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgCompare" class="status"></p>
+
+      <div id="resultBoxCompare" class="result-box">
+        <div class="size-row"><span>Lines added</span><b id="linesAddedCompare">-</b></div>
+        <div class="size-row"><span>Lines removed</span><b id="linesRemovedCompare">-</b></div>
+        <div id="compareDiffOutput" style="max-height:500px;overflow:auto;font-family:monospace;font-size:0.85rem;border:1px solid var(--border);border-radius:8px;padding:12px;margin-top:12px;background:var(--surface);"></div>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>About comparing PDFs</h2>
+      <h3>How does this detect differences?</h3>
+      <p>Text is extracted from both PDFs and compared line by line — lines only in PDF A are shown as removed, lines only in PDF B are shown as added.</p>
+      <h3>Will this catch layout or formatting changes?</h3>
+      <p>Only text content differences are detected — purely visual changes like font, color, or spacing shifts with identical text won't show up as a difference.</p>
+      <h3>Are my files uploaded anywhere?</h3>
+      <p>No — comparison happens entirely in your browser. Neither PDF ever leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/compare-pdf.js"></script>
+</body>
+</html>

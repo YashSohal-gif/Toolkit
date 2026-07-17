@@ -1,0 +1,128 @@
+/* Video Ad Carousel — coverflow-style featured video ad slot for the
+   bottom of the homepage. Center card is sharp/full-size; neighbors are
+   scaled down, blurred, and dimmed, echoing a "peek preview" carousel. */
+
+.video-ad-section{
+  margin:40px 0 24px;
+  text-align:center;
+}
+.video-ad-title{
+  font-size:clamp(1.5rem, 3vw, 2.1rem);
+  font-weight:800;
+  color:var(--text);
+  margin-bottom:26px;
+  letter-spacing:-0.01em;
+}
+.video-ad-carousel{
+  position:relative;
+  overflow:hidden;
+  padding:10px 0;
+}
+.video-ad-track{
+  display:flex;
+  align-items:center;
+  will-change:transform;
+  transition:transform 0.55s cubic-bezier(.4,0,.2,1);
+}
+.video-ad-card{
+  flex:0 0 auto;
+  width:min(620px, 74vw);
+  margin:0 18px;
+  border-radius:18px;
+  position:relative;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  cursor:pointer;
+  transform:scale(0.82);
+  filter:blur(3px);
+  opacity:0.5;
+  transition:transform 0.55s cubic-bezier(.4,0,.2,1), filter 0.55s, opacity 0.55s, box-shadow 0.55s;
+  box-shadow:0 8px 24px rgba(0,0,0,0.12);
+}
+.video-ad-card.is-active{
+  transform:scale(1);
+  filter:blur(0);
+  opacity:1;
+  box-shadow:0 24px 55px rgba(0,0,0,0.28);
+  z-index:2;
+}
+.video-ad-card.is-adjacent{
+  transform:scale(0.88);
+  filter:blur(2px);
+  opacity:0.65;
+}
+.video-ad-thumb{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-size:cover;
+  background-position:center;
+}
+.video-ad-caption{
+  position:absolute;
+  top:0; left:0; right:0;
+  padding:14px 16px 40px;
+  background:linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0));
+  color:#fff;
+  font-size:0.8rem;
+  font-weight:600;
+  text-align:left;
+  line-height:1.35;
+}
+.video-ad-badge{
+  position:absolute;
+  top:12px;
+  right:12px;
+  background:rgba(255,255,255,0.9);
+  color:#111;
+  font-size:0.62rem;
+  font-weight:700;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  padding:3px 9px;
+  border-radius:999px;
+}
+.video-ad-play{
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.94);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 6px 18px rgba(0,0,0,0.3);
+  transition:transform 0.2s;
+}
+.video-ad-card:hover .video-ad-play{ transform:scale(1.08); }
+.video-ad-play svg{ width:24px; height:24px; margin-left:3px; color:var(--primary); }
+.video-ad-nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  z-index:3;
+  box-shadow:0 6px 16px rgba(0,0,0,0.2);
+  transition:transform 0.15s, background 0.15s;
+}
+.video-ad-nav:hover{ background:var(--primary-dark); transform:translateY(-50%) scale(1.08); }
+.video-ad-nav.prev{ left:8px; }
+.video-ad-nav.next{ right:8px; }
+.video-ad-nav svg{ width:20px; height:20px; }
+.video-ad-watchmore{
+  margin-top:22px;
+}
+@media (max-width:640px){
+  .video-ad-nav{ display:none; }
+  .video-ad-card{ margin:0 10px; }
+}

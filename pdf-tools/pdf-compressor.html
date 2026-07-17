@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compress PDF to Exact KB Size Online Free | KBResize</title>
+<meta name="description" content="Free online tool to compress a PDF to an exact KB or MB size for exam forms, job applications, and government portals. Fast, private, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>PDF Compressor -- Exact KB Size</h1>
+      <p>Upload your PDF, set the target size your form requires, and download an instantly compressed version. 100% free, no upload to any server.</p>
+    </div>
+
+    <div class="spec-box">
+      This tool stays free by showing a short ad for larger files: <b>20 pages or fewer is free</b>, <b>21-50 pages = 1 ad</b>, <b>51-100 pages = 2 ads</b>, <b>100+ pages = 3 ads</b>.
+    </div>
+
+    <div class="card">
+      <div id="dropzonePdf" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+        <p>Click or drag & drop your PDF here</p>
+      </div>
+      <input type="file" id="fileInputPdf" accept="application/pdf" style="display:none">
+
+      <div id="pdfFontInfo" style="display:none;margin-top:14px;padding:12px 14px;border-radius:10px;background:var(--bg);border:1px solid var(--border);font-size:0.85rem;color:var(--muted);"></div>
+
+      <div class="controls">
+        <div class="field">
+          <label for="targetSizePdf">Target size</label>
+          <input type="number" id="targetSizePdf" value="100" min="1">
+        </div>
+        <div class="field">
+          <label>Unit</label>
+          <div class="segmented" id="targetUnitPdf">
+            <button type="button" class="active" data-value="KB">KB</button>
+            <button type="button" data-value="MB">MB</button>
+          </div>
+        </div>
+        <button class="btn" id="compressBtnPdf">Compress PDF</button>
+      </div>
+
+      <div id="progressWrapPdf" class="progress-wrap">
+        <div id="progressBarPdf" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgPdf" class="status"></p>
+
+      <div id="resultBoxPdf" class="result-box">
+        <div class="size-row"><span>Original size</span><b id="originalSizePdf">-</b></div>
+        <div class="size-row"><span>Compressed size</span><b id="compressedSizePdf">-</b></div>
+        <a id="downloadLinkPdf" class="btn" download>Download Compressed PDF</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <h3>1. Choose your PDF</h3>
+      <p>Drag and drop or click to select a PDF file.</p>
+      <h3>2. Set your target size</h3>
+      <p>Enter the exact size your form requires -- e.g. 100 KB, 200 KB, 1 MB.</p>
+      <h3>3. Download</h3>
+      <p>Each page is redrawn at a reduced quality until the whole PDF is as close as possible to your target size.</p>
+      <h3>Note</h3>
+      <p>This works best for PDFs that are mostly scanned pages/images (like signed forms). Text-heavy PDFs will be converted to image pages during compression.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/pdf-compressor.js"></script>
+</body>
+</html>

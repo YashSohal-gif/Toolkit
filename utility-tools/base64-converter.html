@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Base64 Encode & Decode Online | KBResize</title>
+<meta name="description" content="Encode text to Base64 or decode Base64 back to text, free and instant. Works entirely in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Base64 Encode / Decode</h1>
+      <p>Convert text to Base64 or decode Base64 back to plain text — instant, free, private.</p>
+    </div>
+
+    <div class="card">
+      <div class="controls">
+        <div class="field">
+          <label>Mode</label>
+          <div class="segmented" id="modeGroup">
+            <button type="button" class="active" data-value="encode">Encode (Text → Base64)</button>
+            <button type="button" data-value="decode">Decode (Base64 → Text)</button>
+          </div>
+        </div>
+        <button class="btn" id="swapBtn">⇄ Swap</button>
+      </div>
+
+      <div class="field">
+        <label for="inputText">Input</label>
+        <textarea id="inputText" rows="6" placeholder="Type or paste here..." style="width:100%;padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--card-bg);color:var(--text);font-family:monospace;resize:vertical;"></textarea>
+      </div>
+
+      <p id="statusMsg" class="status"></p>
+
+      <div class="field">
+        <label for="outputText">Output</label>
+        <textarea id="outputText" rows="6" readonly style="width:100%;padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--card-bg);color:var(--text);font-family:monospace;resize:vertical;"></textarea>
+      </div>
+      <button class="btn" id="copyBtn" style="margin-top:10px;">📋 Copy Output</button>
+    </div>
+
+    <div class="card faq">
+      <h2>What is Base64?</h2>
+      <h3>Common uses</h3>
+      <p>Base64 is used to embed images/data in HTML or CSS, encode data for URLs, or safely transmit binary-like data as plain text.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/base64-converter.js"></script>
+</body>
+</html>

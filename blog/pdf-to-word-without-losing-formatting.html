@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Converting PDF to Word Without Losing Formatting | KBResize</title>
+<meta name="description" content="Why most free PDF-to-Word converters mangle headings, bold text, and paragraphs — and what a converter actually needs to do to preserve them.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero" style="text-align:left;padding:30px 0 10px;">
+      <h1>Converting PDF to Word without it turning into a mess</h1>
+      <p>You've tried a "free PDF to Word" tool before and gotten back a wall of run-on text with no headings, no bold, and words jammed together. Here's why that happens.</p>
+    </div>
+
+    <div class="card faq">
+      <h2>A PDF doesn't actually store "paragraphs"</h2>
+      <p>This is the part that trips up simple converters. A PDF page is really just a set of drawing instructions: "put this word at this exact x/y position, in this font, at this size." There's no concept of a paragraph, a heading, or even a line — those are things a human reading the page perceives, not something explicitly recorded in the file. A naive converter reads every word's position and just dumps them out in position order, which is why you get walls of text with no structure and, worse, why words sometimes fuse together (<code>likethis</code>) or scatter with random extra spaces — the converter isn't reconstructing spacing correctly from where each letter actually sits.</p>
+
+      <h3>What a converter has to reconstruct, not just read</h3>
+      <p><b>Headings:</b> inferred from font size relative to the rest of the document — a heading is just text that's noticeably larger (or bold and short) than the surrounding body text, nothing more. <b>Bold and italic:</b> read from the actual font name embedded in the PDF (e.g. a font literally named "Helvetica-Bold"), not from any explicit "this is bold" flag. <b>Paragraphs:</b> lines that are close enough vertically, aligned the same way, and don't look like a new list item or heading get merged back into one flowing paragraph — otherwise every line break in the original PDF becomes its own paragraph in the Word document, which is the "wall of disconnected short lines" look. <b>Word spacing:</b> has to be rebuilt from the actual horizontal gap between glyphs, because if you just concatenate every text fragment on a line, you get words fused together wherever the PDF happened to encode a word as multiple back-to-back fragments.</p>
+
+      <h3>Why scanned PDFs can't be "converted" at all</h3>
+      <p>If a PDF is a scanned image — a photo of a paper page — none of the above applies, because there's no text in the file to begin with, just a picture of text. A converter can only extract what's actually there as selectable text; if there isn't any, the correct fix is OCR (optical character recognition), which reads the shapes of letters out of the image first, not a formatting-aware converter.</p>
+    </div>
+
+    <div class="card faq">
+      <h2>Try it</h2>
+      <p>The <a href="../convert-from-pdf/pdf-to-word.html">PDF to Word</a> tool includes what we call a Magic Layer: it detects headings from font size, reads bold/italic from the actual embedded font, rebuilds flowing paragraphs instead of one-line-per-paragraph, and reconstructs word spacing from character positions — instead of dumping raw text. If your PDF turns out to be a scan with no real text layer, it tells you that upfront and points you to the <a href="../pdf-tools/ocr-pdf.html">OCR PDF tool</a> instead of silently producing garbage.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

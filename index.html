@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Online PDF & Image Tools — Compress, Convert, Merge & More | KBResize</title>
+<meta name="description" content="Free online tools for PDFs and images: compress, merge, split, convert, rotate, watermark, resize photos, passport photo maker, QR codes, and more. No upload to any server, works in your browser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/video-ad-carousel.css">
+<link rel="stylesheet" href="css/exclusive-tools.css">
+<script src="js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <div class="hero-badges" aria-hidden="true">
+        <div class="hero-badge icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+        <div class="hero-badge icon-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+        <div class="hero-badge icon-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
+        <div class="hero-badge icon-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <div class="hero-badge icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01M9 15c1 1 2 1.5 3 1.5s2-.5 3-1.5"/></svg></div>
+        <div class="hero-badge icon-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="12" y2="15"/></svg></div>
+      </div>
+      <h1 class="hero-headline">
+        Where your files get
+        <span class="rotator-pill"><span class="rotator-dot"></span><span class="rotator-word" id="heroRotatorWord">Compressed</span></span>
+        in seconds.
+      </h1>
+      <p>Everything you need for exam forms, printing, documents, photos, QR codes, and everyday calculations — all in one place. Nothing is uploaded to a server, so it's fast and private.</p>
+    </div>
+
+    <div class="tool-search-wrap">
+      <div class="tool-search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="toolSearch" placeholder="Search for a tool... (e.g. merge, compress, QR code)">
+        <button id="clearSearch" class="clear-search" title="Clear search" style="display:none;">✕</button>
+      </div>
+      <div class="category-chips" id="categoryChips">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="convert-to-pdf">Convert to PDF</button>
+        <button class="chip" data-filter="convert-from-pdf">Convert from PDF</button>
+        <button class="chip" data-filter="pdf-tools">PDF Tools</button>
+        <button class="chip" data-filter="pdf-security">PDF Security</button>
+        <button class="chip" data-filter="image-tools">Image Tools</button>
+        <button class="chip" data-filter="utility-tools">Utility Tools</button>
+        <button class="chip" data-filter="video-tools">Video Tools</button>
+        <button class="chip" data-filter="student-tools">Student Tools</button>
+      </div>
+    </div>
+
+    <div class="ad-billboard">
+      <div class="ad-label">Advertisement</div>
+      <div class="ad-slider" id="homeAdSlider">
+        <div class="ad-slider-track">
+          <div class="ad-slide">
+            <!-- Google AdSense unit #1 goes here once the site is approved -->
+            <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+            <span class="ad-slot-placeholder">Ad space 1</span>
+          </div>
+          <div class="ad-slide">
+            <!-- Google AdSense unit #2 goes here once the site is approved -->
+            <span class="ad-slot-placeholder">Ad space 2</span>
+          </div>
+          <div class="ad-slide">
+            <!-- Google AdSense unit #3 goes here once the site is approved -->
+            <span class="ad-slot-placeholder">Ad space 3</span>
+          </div>
+        </div>
+        <div class="ad-slider-dots"></div>
+      </div>
+    </div>
+
+    <div class="app-screen" id="recentlyUsedSection" style="display:none;">
+      <h2>Recently Used</h2>
+      <p class="app-screen-sub">Pick up where you left off.</p>
+      <div class="app-grid" id="recentlyUsedGrid"></div>
+    </div>
+
+    <p id="noResultsMsg" class="status" style="display:none;text-align:center;padding:30px 0;">No tools found. Try a different search term.</p>
+
+    <div class="app-screen" data-category="convert-to-pdf">
+      <h2>Convert to PDF</h2>
+      <p class="app-screen-sub">Turn documents, spreadsheets, slides, or images into a PDF.</p>
+      <div class="app-grid">
+        <a class="app-tile" href="convert-to-pdf/word-to-pdf.html" data-desc="Convert a .docx document into a PDF file">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span></div>
+          <div class="app-label">Word to PDF</div>
+        </a>
+        <a class="app-tile" href="convert-to-pdf/excel-to-pdf.html" data-desc="Turn a spreadsheet's data into a PDF">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span></div>
+          <div class="app-label">Excel to PDF</div>
+        </a>
+        <a class="app-tile" href="convert-to-pdf/ppt-to-pdf.html" data-desc="Convert your slides' text into a PDF">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span></div>
+          <div class="app-label">PowerPoint to PDF</div>
+        </a>
+        <a class="app-tile" href="convert-to-pdf/jpg-to-pdf.html" data-desc="Combine one or more images into a PDF">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span></div>
+          <div class="app-label">JPG to PDF</div>
+        </a>
+        <a class="app-tile" href="convert-to-pdf/html-to-pdf.html" data-desc="Convert an .html file or pasted HTML code into a PDF">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span></div>
+          <div class="app-label">HTML to PDF</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="app-screen" data-category="convert-from-pdf">
+      <h2>Convert from PDF</h2>
+      <p class="app-screen-sub">Get content out of a PDF in another format.</p>
+      <div class="app-grid">
+        <a class="app-tile" href="convert-from-pdf/pdf-to-jpg.html" data-desc="Turn every PDF page into a JPG image">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><polyline points="12 12 12 18 15 15"/><polyline points="12 18 9 15"/></svg></span></div>
+          <div class="app-label">PDF to JPG</div>
+        </a>
+        <a class="app-tile" href="convert-from-pdf/pdf-to-text.html" data-desc="Extract all text from a PDF as .txt">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><polyline points="12 12 12 18 15 15"/><polyline points="12 18 9 15"/></svg></span></div>
+          <div class="app-label">PDF to Text</div>
+        </a>
+        <a class="app-tile" href="convert-from-pdf/pdf-to-word.html" data-desc="Extract a PDF's text into an editable Word .docx">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><polyline points="12 12 12 18 15 15"/><polyline points="12 18 9 15"/></svg></span></div>
+          <div class="app-label">PDF to Word</div>
+        </a>
+        <a class="app-tile" href="convert-from-pdf/pdf-to-powerpoint.html" data-desc="Turn every PDF page into a PowerPoint slide">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><polyline points="12 12 12 18 15 15"/><polyline points="12 18 9 15"/></svg></span></div>
+          <div class="app-label">PDF to PowerPoint</div>
+        </a>
+        <a class="app-tile" href="convert-from-pdf/pdf-to-excel.html" data-desc="Extract a PDF's text and tables into an Excel spreadsheet">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><polyline points="12 12 12 18 15 15"/><polyline points="12 18 9 15"/></svg></span></div>
+          <div class="app-label">PDF to Excel</div>
+        </a>
+        <a class="app-tile" href="convert-from-pdf/pdf-to-pdfa.html" data-desc="Create a flattened, self-contained archival-style PDF">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><polyline points="12 12 12 18 15 15"/><polyline points="12 18 9 15"/></svg></span></div>
+          <div class="app-label">PDF to PDF/A</div>
+        </a>
+        <a class="app-tile" href="convert-from-pdf/pdf-to-markdown.html" data-desc="Extract a PDF's text into clean Markdown with headings">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><polyline points="12 12 12 18 15 15"/><polyline points="12 18 9 15"/></svg></span></div>
+          <div class="app-label">PDF to Markdown</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="app-screen" data-category="pdf-tools">
+      <h2>PDF Tools</h2>
+      <p class="app-screen-sub">Compress, combine, split, and edit PDFs.</p>
+      <div class="app-grid">
+        <a class="app-tile" href="pdf-tools/pdf-compressor.html" data-desc="Shrink a PDF to an exact KB or MB size">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="13" r="3"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span></div>
+          <div class="app-label">PDF Compressor</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/print-saver.html" data-desc="Fit multiple pages on one printed sheet">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="13" r="3"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span></div>
+          <div class="app-label">Print Saver</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/merge-pdf.html" data-desc="Combine multiple PDFs into one file">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="13" r="3"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span></div>
+          <div class="app-label">Merge PDF</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/split-pdf.html" data-desc="Extract a page range or split into pages">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="13" r="3"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span></div>
+          <div class="app-label">Split PDF</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/organize-pdf.html" data-desc="Remove, reorder, or extract PDF pages">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="13" r="3"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span></div>
+          <div class="app-label">Organize PDF</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/rotate-pdf.html" data-desc="Rotate every page 90°, 180°, or 270°">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="13" r="3"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span></div>
+          <div class="app-label">Rotate PDF</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/crop-pdf.html" data-desc="Trim margins from every page">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="13" r="3"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span></div>
+          <div class="app-label">Crop PDF</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/resize-pdf-pages.html" data-desc="Rescale pages to A4, Letter, or Legal">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="13" r="3"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span></div>
+          <div class="app-label">Change Page Size</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/watermark-pdf.html" data-desc="Stamp text across every page">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="13" r="3"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span></div>
+          <div class="app-label">Watermark PDF</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/page-numbers.html" data-desc="Add page numbers to every page">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="13" r="3"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span></div>
+          <div class="app-label">Add Page Numbers</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/scan-to-pdf.html" data-desc="Use your camera or upload photos and combine them into a PDF">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="13" r="3"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span></div>
+          <div class="app-label">Scan to PDF</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/repair-pdf.html" data-desc="Rebuild a damaged or corrupted PDF page by page">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="13" r="3"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span></div>
+          <div class="app-label">Repair PDF</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/ocr-pdf.html" data-desc="Run text recognition on a scanned PDF to extract text">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="13" r="3"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span></div>
+          <div class="app-label">OCR PDF</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/edit-pdf.html" data-desc="Add text boxes, rectangles, and highlights to your PDF">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="13" r="3"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span></div>
+          <div class="app-label">Edit PDF</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/pdf-forms.html" data-desc="Fill out a fillable PDF form's fields and save a completed copy">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="13" r="3"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span></div>
+          <div class="app-label">PDF Forms</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="app-screen" data-category="pdf-security">
+      <h2>PDF Security</h2>
+      <p class="app-screen-sub">Unlock, sign, redact, and compare PDFs.</p>
+      <div class="app-grid">
+        <a class="app-tile" href="pdf-tools/unlock-pdf.html" data-desc="Remove a known password from a protected PDF">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span></div>
+          <div class="app-label">Unlock PDF</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/sign-pdf.html" data-desc="Draw or type a signature and place it on your PDF">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span></div>
+          <div class="app-label">Sign PDF</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/redact-pdf.html" data-desc="Permanently black out sensitive text or images in a PDF">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span></div>
+          <div class="app-label">Redact PDF</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/compare-pdf.html" data-desc="See text differences between two versions of a PDF">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span></div>
+          <div class="app-label">Compare PDF</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="app-screen" data-category="image-tools">
+      <h2>Image Tools</h2>
+      <p class="app-screen-sub">Compress, resize, and convert photos — including ID/passport photos.</p>
+      <div class="app-grid">
+        <a class="app-tile" href="image-tools/image-compressor.html" data-desc="Compress a photo to an exact KB size">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span></div>
+          <div class="app-label">Photo Compressor</div>
+        </a>
+        <a class="app-tile" href="image-tools/image-resizer.html" data-desc="Resize a photo to exact pixels or a %">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span></div>
+          <div class="app-label">Image Resizer</div>
+        </a>
+        <a class="app-tile" href="image-tools/passport-photo.html" data-desc="Crop and print passport/ID photos">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span></div>
+          <div class="app-label">Passport Photo Maker</div>
+        </a>
+        <a class="app-tile" href="image-tools/image-format-converter.html" data-desc="Convert HEIC, WEBP, PNG to JPG/PNG">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span></div>
+          <div class="app-label">HEIC/WEBP Converter</div>
+        </a>
+        <a class="app-tile" href="image-tools/grayscale-converter.html" data-desc="Convert a photo or PDF to black & white">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span></div>
+          <div class="app-label">Grayscale Converter</div>
+        </a>
+        <a class="app-tile" href="image-tools/signature-maker.html" data-desc="Draw, type, or upload a signature as a PNG">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span></div>
+          <div class="app-label">Signature Maker</div>
+        </a>
+        <a class="app-tile" href="image-tools/legal-stamp-maker.html" data-desc="Design an office, legal, or notary stamp with text, borders, and logos">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span></div>
+          <div class="app-label">Legal Stamp Maker</div>
+        </a>
+        <a class="app-tile" href="image-tools/image-cropper.html" data-desc="Crop a JPG, PNG, or GIF with a drag-to-select editor">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span></div>
+          <div class="app-label">Crop Image</div>
+        </a>
+        <a class="app-tile" href="image-tools/image-rotator.html" data-desc="Rotate a photo 90, 180, or 270 degrees">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span></div>
+          <div class="app-label">Rotate Image</div>
+        </a>
+        <a class="app-tile" href="image-tools/watermark-image.html" data-desc="Stamp a text watermark across your photo">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span></div>
+          <div class="app-label">Watermark Image</div>
+        </a>
+        <a class="app-tile" href="image-tools/meme-generator.html" data-desc="Add classic top/bottom captions to your photo">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span></div>
+          <div class="app-label">Meme Generator</div>
+        </a>
+        <a class="app-tile" href="image-tools/html-to-image.html" data-desc="Convert an HTML file or pasted HTML code into a PNG/JPG">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span></div>
+          <div class="app-label">HTML to Image</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="app-screen" data-category="utility-tools">
+      <h2>Utility Tools</h2>
+      <p class="app-screen-sub">Handy everyday tools — QR codes, audio, and quick calculators.</p>
+      <div class="app-grid">
+        <a class="app-tile" href="utility-tools/youtube-thumbnail-downloader.html" data-desc="Download a YouTube video's public thumbnail image">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span></div>
+          <div class="app-label">YouTube Thumbnail</div>
+        </a>
+        <a class="app-tile" href="utility-tools/qr-code-generator.html" data-desc="Turn text or a link into a downloadable QR code">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span></div>
+          <div class="app-label">QR Code Generator</div>
+        </a>
+        <a class="app-tile" href="utility-tools/qr-code-scanner.html" data-desc="Decode a QR code from an uploaded image">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span></div>
+          <div class="app-label">QR Code Scanner</div>
+        </a>
+        <a class="app-tile" href="utility-tools/audio-format-converter.html" data-desc="Convert an audio file between MP3 and WAV">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span></div>
+          <div class="app-label">Audio Converter</div>
+        </a>
+        <a class="app-tile" href="utility-tools/word-character-counter.html" data-desc="Count words, characters, sentences, and reading time">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span></div>
+          <div class="app-label">Word Counter</div>
+        </a>
+        <a class="app-tile" href="utility-tools/unit-converter.html" data-desc="Convert length, weight, temperature, area, and speed">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span></div>
+          <div class="app-label">Unit Converter</div>
+        </a>
+        <a class="app-tile" href="utility-tools/age-calculator.html" data-desc="Calculate exact age or the days between two dates">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span></div>
+          <div class="app-label">Age Calculator</div>
+        </a>
+        <a class="app-tile" href="utility-tools/password-generator.html" data-desc="Generate a strong random password">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span></div>
+          <div class="app-label">Password Generator</div>
+        </a>
+        <a class="app-tile" href="utility-tools/base64-converter.html" data-desc="Encode text to Base64 or decode it back">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span></div>
+          <div class="app-label">Base64 Encode/Decode</div>
+        </a>
+        <a class="app-tile" href="utility-tools/case-converter.html" data-desc="Convert text to upper, lower, title, or camelCase">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span></div>
+          <div class="app-label">Case Converter</div>
+        </a>
+        <a class="app-tile" href="utility-tools/emi-calculator.html" data-desc="Calculate monthly loan EMI and total interest">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span></div>
+          <div class="app-label">EMI Calculator</div>
+        </a>
+        <a class="app-tile" href="utility-tools/bmi-calculator.html" data-desc="Calculate your Body Mass Index and category">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span></div>
+          <div class="app-label">BMI Calculator</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="app-screen" data-category="video-tools">
+      <h2>Video Tools</h2>
+      <p class="app-screen-sub">Save videos from social platforms for personal, offline viewing.</p>
+      <div class="app-grid">
+        <a class="app-tile" href="video-tools/youtube-downloader.html" data-desc="Download a YouTube video as MP4 or MP3">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></span></div>
+          <div class="app-label">YouTube Downloader</div>
+        </a>
+        <a class="app-tile" href="video-tools/instagram-downloader.html" data-desc="Download an Instagram Reel, video, or IGTV as MP4">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></span></div>
+          <div class="app-label">Instagram Downloader</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="app-screen" data-category="student-tools">
+      <h2>Student Tools</h2>
+      <p class="app-screen-sub">Print cheaper, shrink notes, and get exam-ready photos — built for student budgets.</p>
+      <div class="app-grid">
+        <a class="app-tile" href="student-tools/smart-print-saver.html" data-desc="Fit multiple pages per sheet with live preview, borders, and B&W/invert modes">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span></div>
+          <div class="app-label">Smart Print Saver</div>
+        </a>
+        <a class="app-tile" href="pdf-tools/pdf-compressor.html" data-desc="Shrink a PDF to an exact KB or MB size">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span></div>
+          <div class="app-label">PDF Compressor</div>
+        </a>
+        <a class="app-tile" href="image-tools/grayscale-converter.html" data-desc="Convert a photo or PDF to black & white">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span></div>
+          <div class="app-label">Grayscale Converter</div>
+        </a>
+        <a class="app-tile" href="image-tools/passport-photo.html" data-desc="Crop and print passport/ID photos for exam forms">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span></div>
+          <div class="app-label">Exam Photo Maker</div>
+        </a>
+        <a class="app-tile" href="student-tools/booklet-maker.html" data-desc="Turn a PDF into a foldable, printable booklet with printer instructions">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span></div>
+          <div class="app-label">Booklet Maker</div>
+        </a>
+        <a class="app-tile" href="student-tools/citation-generator.html" data-desc="Generate APA, MLA, or Chicago style citations">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span></div>
+          <div class="app-label">Citation Generator</div>
+        </a>
+        <a class="app-tile" href="student-tools/gpa-calculator.html" data-desc="Calculate your GPA from courses, credits, and grades">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span></div>
+          <div class="app-label">GPA Calculator</div>
+        </a>
+        <a class="app-tile" href="student-tools/study-timer.html" data-desc="A Pomodoro-style focus timer with breaks and session tracking">
+          <div class="app-icon"><span class="svg-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span></div>
+          <div class="app-label">Study Timer</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="card" id="exam-guides">
+      <h2>Popular Exam Photo & Signature Size Guides</h2>
+      <p>Every exam form has its own exact size rules. Pick yours below and the tool will be pre-set for you.</p>
+      <div class="exam-list">
+        <a href="exams/ssc-cgl-photo-signature-size.html">SSC CGL</a>
+        <a href="exams/ibps-po-photo-signature-size.html">IBPS PO</a>
+        <a href="exams/upsc-photo-signature-size.html">UPSC</a>
+        <a href="exams/railway-rrb-photo-signature-size.html">Railway RRB</a>
+      </div>
+    </div>
+
+    <div class="video-ad-section">
+      <h2 class="video-ad-title">Companies who pay us to provide you exclusive features for FREE</h2>
+      <div class="video-ad-carousel">
+        <button class="video-ad-nav prev" type="button" aria-label="Previous video">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="video-ad-track">
+          <div class="video-ad-card" style="background:linear-gradient(135deg,#0f766e,#134e4a);">
+            <div class="video-ad-thumb">
+              <div class="video-ad-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
+            </div>
+            <div class="video-ad-badge">Ad</div>
+            <div class="video-ad-caption"><!-- Ad video slot 1 — swap this card's thumbnail/caption for a real video embed --> Sponsored Video Ad</div>
+          </div>
+          <div class="video-ad-card" style="background:linear-gradient(135deg,#1d4ed8,#1e3a8a);">
+            <div class="video-ad-thumb">
+              <div class="video-ad-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
+            </div>
+            <div class="video-ad-badge">Ad</div>
+            <div class="video-ad-caption"><!-- Ad video slot 2 — swap this card's thumbnail/caption for a real video embed --> Sponsored Video Ad</div>
+          </div>
+          <div class="video-ad-card" style="background:linear-gradient(135deg,#7c3aed,#4c1d95);">
+            <div class="video-ad-thumb">
+              <div class="video-ad-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
+            </div>
+            <div class="video-ad-badge">Ad</div>
+            <div class="video-ad-caption"><!-- Ad video slot 3 — swap this card's thumbnail/caption for a real video embed --> Sponsored Video Ad</div>
+          </div>
+          <div class="video-ad-card" style="background:linear-gradient(135deg,#dc2626,#7f1d1d);">
+            <div class="video-ad-thumb">
+              <div class="video-ad-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
+            </div>
+            <div class="video-ad-badge">Ad</div>
+            <div class="video-ad-caption"><!-- Ad video slot 4 — swap this card's thumbnail/caption for a real video embed --> Sponsored Video Ad</div>
+          </div>
+          <div class="video-ad-card" style="background:linear-gradient(135deg,#ea580c,#7c2d12);">
+            <div class="video-ad-thumb">
+              <div class="video-ad-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg></div>
+            </div>
+            <div class="video-ad-badge">Ad</div>
+            <div class="video-ad-caption"><!-- Ad video slot 5 — swap this card's thumbnail/caption for a real video embed --> Sponsored Video Ad</div>
+          </div>
+        </div>
+        <button class="video-ad-nav next" type="button" aria-label="Next video">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+      <button class="btn video-ad-watchmore" type="button">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px;margin-right:6px;vertical-align:-2px;"><polygon points="6 4 20 12 6 20"/></svg>
+        Watch More
+      </button>
+    </div>
+
+    <div class="exclusive-section">
+      <div class="exclusive-section-head">
+        <h2>🔓 Exclusive Tools</h2>
+      </div>
+      <p class="exclusive-section-sub">A set of premium tools, free to unlock — no subscription. Watch 5 full ads and every tool below unlocks for 3 days on this device.</p>
+
+      <div class="exclusive-unlock-banner">
+        <span class="exclusive-unlock-text"><b>Locked.</b> Watch 5 ads without skipping to unlock every tool below for 3 days on this device.</span>
+        <button type="button" class="btn exclusive-unlock-btn">Unlock Exclusive Tools</button>
+      </div>
+
+      <div class="exclusive-grid">
+        <a class="exclusive-tile is-locked" href="#" data-href="pdf-tools/scanner-effect-pdf.html">
+          <div class="exclusive-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div class="exclusive-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+          <div class="exclusive-label">Scanner Effect PDF</div>
+        </a>
+        <a class="exclusive-tile is-locked" href="#" data-href="image-tools/image-sharpener.html">
+          <div class="exclusive-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div class="exclusive-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+          <div class="exclusive-label">Image Sharpener</div>
+        </a>
+        <a class="exclusive-tile is-locked" href="#" data-href="image-tools/image-upscaler.html">
+          <div class="exclusive-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div class="exclusive-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+          <div class="exclusive-label">Image Upscaler</div>
+        </a>
+        <a class="exclusive-tile is-locked" href="#" data-href="utility-tools/audio-noise-remover.html">
+          <div class="exclusive-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div class="exclusive-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+          <div class="exclusive-label">Audio Noise Remover</div>
+        </a>
+        <a class="exclusive-tile is-locked" href="#" data-href="utility-tools/voice-to-text.html">
+          <div class="exclusive-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div class="exclusive-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg></div>
+          <div class="exclusive-label">Voice to Text</div>
+        </a>
+        <a class="exclusive-tile is-locked" href="#" data-href="utility-tools/pdf-read-aloud.html">
+          <div class="exclusive-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div class="exclusive-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></div>
+          <div class="exclusive-label">PDF Read Aloud</div>
+        </a>
+        <a class="exclusive-tile is-locked" href="#" data-href="image-tools/image-sketch-cartoon.html">
+          <div class="exclusive-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div class="exclusive-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+          <div class="exclusive-label">Image to Sketch/Cartoon</div>
+        </a>
+        <a class="exclusive-tile is-locked" href="#" data-href="video-tools/video-to-gif.html">
+          <div class="exclusive-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div class="exclusive-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+          <div class="exclusive-label">Video to GIF</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>Why this site?</h2>
+      <h3>Everything in one place</h3>
+      <p>Compress a photo, make a passport photo, merge PDFs, convert Word to PDF, generate a QR code — no need to bounce between five different websites.</p>
+      <h3>Is my photo or PDF uploaded anywhere?</h3>
+      <p>No. Almost everything happens locally in your browser using JavaScript — your file never leaves your device.</p>
+      <h3>Is it free?</h3>
+      <p>Yes, completely free, no sign-up required. Larger PDF files show a short ad to keep the tools free — see each tool page for details.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="about.html">About</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="js/hero-rotator.js"></script>
+<script src="js/homepage-interactive.js"></script>
+<script src="js/ad-slider.js"></script>
+<script src="js/video-ad-carousel.js"></script>
+<script src="js/ad-gate-exclusive.js"></script>
+<script src="js/exclusive-tools.js"></script>
+</body>
+</html>

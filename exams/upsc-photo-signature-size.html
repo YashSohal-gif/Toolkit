@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPSC Photo & Signature Size Online — Compress Free | KBResize</title>
+<meta name="description" content="Compress your photo and signature to the correct size for the UPSC application form, free online. No upload, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>UPSC Photo & Signature Size Compressor</h1>
+      <p>Resize your photo and signature to fit the UPSC application form size limits — instantly, for free, right in your browser.</p>
+    </div>
+
+    <div class="spec-box">
+      <b>Typical UPSC requirement (illustrative):</b> Photo — 20 KB to 300 KB, JPG format. Signature — 20 KB to 300 KB, JPG format.
+      <br><br>
+      ⚠️ Size limits can change every year and vary by exam (CSE, NDA, CDS, etc.). Always check the exact numbers in your current UPSC notification before submitting — use the numbers below just as a starting point.
+    </div>
+
+    <div class="card">
+      <div id="dropzone" class="dropzone">
+        <div class="icon">📷</div>
+        <p>Click or drag & drop your photo or signature image here</p>
+      </div>
+      <input type="file" id="fileInput" accept="image/*" style="display:none">
+
+      <div class="controls">
+        <div class="field">
+          <label for="targetSize">Target size</label>
+          <input type="number" id="targetSize" value="100" min="1">
+        </div>
+        <div class="field">
+          <label for="targetUnit">Unit</label>
+          <select id="targetUnit">
+            <option value="KB" selected>KB</option>
+            <option value="MB">MB</option>
+          </select>
+        </div>
+        <button class="btn" id="compressBtn">Compress Image</button>
+      </div>
+
+      <div id="progressWrap" class="progress-wrap">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsg" class="status"></p>
+
+      <div id="resultBox" class="result-box">
+        <div class="size-row"><span>Original size</span><b id="originalSize">-</b></div>
+        <div class="size-row"><span>Compressed size</span><b id="compressedSize">-</b></div>
+        <a id="downloadLink" class="btn" download>⬇ Download Compressed Image</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>Tips for UPSC photo & signature upload</h2>
+      <h3>Photo</h3>
+      <p>Use a recent passport-style photo with a plain light background. Set the target size to match what your current notification asks for — UPSC allows a wider range than SSC/IBPS.</p>
+      <h3>Signature</h3>
+      <p>Sign on plain white paper with black or blue ink, photograph or scan it, then compress it here.</p>
+      <h3>Need to compress a scanned PDF instead?</h3>
+      <p>Use the <a href="../pdf-tools/pdf-compressor.html">PDF Compressor</a> if your form requires documents inside a PDF.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/image-compressor.js"></script>
+</body>
+</html>

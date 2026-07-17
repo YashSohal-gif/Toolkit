@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Read Aloud — Listen to a PDF Free | KBResize</title>
+<meta name="description" content="Have any PDF read aloud using your browser's built-in text-to-speech voices, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/exclusive-tools.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>PDF Read Aloud <span class="exclusive-badge">Exclusive</span></h1>
+      <p>Upload a PDF and have it read aloud using your browser's built-in voices — great for proofreading, multitasking, or accessibility.</p>
+    </div>
+
+    <div class="spec-box">
+      Everything happens in your browser — your PDF is never uploaded anywhere. Voice quality and available voices depend on your browser and operating system.
+    </div>
+
+    <div class="card">
+      <div id="dropzoneReadAloud" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+        <p>Click or drag & drop your PDF here</p>
+      </div>
+      <input type="file" id="fileInputReadAloud" accept="application/pdf" style="display:none">
+
+      <div id="readAloudControlsWrap" style="display:none;margin-top:16px;">
+        <div class="field">
+          <label for="readAloudVoice">Voice</label>
+          <select id="readAloudVoice"></select>
+        </div>
+        <div class="controls" style="flex-wrap:wrap;">
+          <div class="field">
+            <label for="readAloudRate">Speed</label>
+            <input type="range" id="readAloudRate" min="0.5" max="2" step="0.1" value="1">
+          </div>
+          <div class="field">
+            <label for="readAloudPitch">Pitch</label>
+            <input type="range" id="readAloudPitch" min="0" max="2" step="0.1" value="1">
+          </div>
+        </div>
+
+        <div class="controls" style="justify-content:center;">
+          <button class="btn" id="readAloudPlayBtn">▶ Play</button>
+          <button class="btn secondary" id="readAloudPauseBtn" style="display:none;">⏸ Pause</button>
+          <button class="btn secondary" id="readAloudStopBtn">⏹ Stop</button>
+        </div>
+
+        <p id="readAloudProgress" class="status"></p>
+      </div>
+
+      <p id="statusMsgReadAloud" class="status"></p>
+
+      <div id="readAloudTextPreview" style="display:none;max-height:260px;overflow:auto;border:1px solid var(--border);border-radius:8px;padding:12px;margin-top:12px;font-size:0.9rem;line-height:1.6;background:var(--surface);"></div>
+    </div>
+
+    <div class="card faq">
+      <h2>About PDF read-aloud</h2>
+      <h3>Which voices are available?</h3>
+      <p>Whatever voices your browser/OS provides — this varies by device. Chrome, Edge, and Safari all include a set of system voices.</p>
+      <h3>Can I jump to a specific part?</h3>
+      <p>The currently-read sentence is highlighted in the text preview below the controls, so you can follow along as it reads.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — everything happens locally in your browser. Your PDF never leaves your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="../js/pdf-read-aloud.js"></script>
+</body>
+</html>

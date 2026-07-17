@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free GPA Calculator — Calculate Your GPA Online | KBResize</title>
+<meta name="description" content="Calculate your GPA on a 4.0 or 10-point scale by adding your courses, credit hours, and grades. Free, instant, no sign-up.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>GPA Calculator</h1>
+      <p>Add your courses, credit hours, and grades to calculate your GPA instantly — on a 4.0 or 10-point scale.</p>
+    </div>
+
+    <div class="card">
+      <div class="field" style="max-width:220px;">
+        <label>Grading scale</label>
+        <div class="segmented" id="gpaScale">
+          <button type="button" class="active" data-value="4">4.0 scale</button>
+          <button type="button" data-value="10">10-point scale</button>
+        </div>
+      </div>
+
+      <div id="courseRows" style="margin-top:20px;display:flex;flex-direction:column;gap:10px;"></div>
+
+      <div class="controls" style="margin-top:14px;">
+        <button class="btn secondary" id="addRowBtn">+ Add Course</button>
+      </div>
+
+      <div id="resultBoxGpa" class="result-box show" style="margin-top:20px;">
+        <div id="statsGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;">
+          <div class="stat-box"><b id="gpaResult">-</b><span>Your GPA</span></div>
+          <div class="stat-box"><b id="totalCreditsResult">-</b><span>Total credit hours</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How this works</h2>
+      <h3>4.0 scale grade points</h3>
+      <p>A = 4.0, A- = 3.7, B+ = 3.3, B = 3.0, B- = 2.7, C+ = 2.3, C = 2.0, C- = 1.7, D+ = 1.3, D = 1.0, F = 0.0.</p>
+      <h3>10-point scale grade points</h3>
+      <p>Corresponds to common grade bands out of 10 (O=10, A+=9, A=8, B+=7, B=6, C=5, P=4, F=0) — check your institution's exact conversion since these can vary.</p>
+      <h3>Is this the same as my official transcript GPA?</h3>
+      <p>This gives you a close estimate using common grade-point conventions. Some institutions weight courses differently (e.g. excluding pass/fail or repeated courses), so always confirm with your registrar for official records.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/gpa-calculator.js"></script>
+</body>
+</html>

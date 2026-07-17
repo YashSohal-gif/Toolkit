@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merge PDF Files Online Free | KBResize</title>
+<meta name="description" content="Combine multiple PDF files into one, free online. No upload to any server, works in your browser, preserves original quality.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Merge PDF Files</h1>
+      <p>Combine two or more PDFs into a single file, in the order you add them. Original quality preserved — nothing is rasterized.</p>
+    </div>
+
+    <div class="spec-box">
+      This tool stays free by showing a short ad for larger combined files: <b>20 total pages or fewer is free</b>, <b>21-50 = 1 ad</b>, <b>51-100 = 2 ads</b>, <b>100+ = 3 ads</b>.
+    </div>
+
+    <div class="card">
+      <div id="dropzoneMerge" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a5 5 0 0 1-7.07-7.07l9.19-9.19a3.5 3.5 0 0 1 4.95 4.95l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></div>
+        <p>Click or drag & drop 2 or more PDF files here</p>
+      </div>
+      <input type="file" id="fileInputMerge" accept="application/pdf" multiple style="display:none">
+
+      <div id="fileListMerge" class="file-list"></div>
+
+      <div class="controls">
+        <button class="btn" id="mergeBtn">Merge PDFs</button>
+      </div>
+
+      <div id="progressWrapMerge" class="progress-wrap">
+        <div id="progressBarMerge" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgMerge" class="status"></p>
+
+      <div id="resultBoxMerge" class="result-box">
+        <a id="downloadLinkMerge" class="btn" download>⬇ Download Merged PDF</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <h3>What order will the pages be in?</h3>
+      <p>Files are merged in the order you add them (shown in the list above). Remove and re-add a file to change its position.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — everything happens locally in your browser. Your PDFs never leave your device.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/merge-pdf.js"></script>
+</body>
+</html>

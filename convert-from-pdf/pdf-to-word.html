@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF to Word Converter Online Free | KBResize</title>
+<meta name="description" content="Convert a PDF's text into an editable Word .docx document, free online. No upload to any server, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>PDF to Word</h1>
+      <p>Extract a PDF's text into an editable Word .docx document — free.</p>
+    </div>
+
+    <div class="spec-box">
+      ✨ <b>Magic Layer inside.</b> Unlike basic converters that dump broken symbols, the Magic Layer reads your PDF's real typography — it detects headings, bold &amp; italic text, rebuilds flowing paragraphs, and centers titles. Perfect for notes, test papers and question papers.
+    </div>
+
+    <div class="card">
+      <div id="dropzoneP2W" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 11v6"/><path d="M9.5 14.5L12 17l2.5-2.5"/></svg></div>
+        <p>Click or drag & drop your PDF here</p>
+      </div>
+      <input type="file" id="fileInputP2W" accept="application/pdf" style="display:none">
+
+      <div class="controls" style="align-items:center;">
+        <label class="toggle-row" title="Detect headings, bold/italic and paragraphs automatically">
+          <span class="toggle-switch"><input type="checkbox" id="p2wMagic" checked><span class="toggle-track"></span></span>
+          <span>✨ Magic Layer <small>(smart formatting)</small></span>
+        </label>
+        <label class="toggle-row" title="Insert a page break in Word wherever a new PDF page starts">
+          <span class="toggle-switch"><input type="checkbox" id="p2wPageBreaks" checked><span class="toggle-track"></span></span>
+          <span>Keep page breaks</span>
+        </label>
+        <label class="toggle-row" title="Join words split across lines with a hyphen (e.g. conver- sion → conversion)">
+          <span class="toggle-switch"><input type="checkbox" id="p2wDehyphen" checked><span class="toggle-track"></span></span>
+          <span>Fix hyphenated words</span>
+        </label>
+      </div>
+
+      <div class="controls">
+        <div class="field">
+          <label for="p2wLayoutMode">Layout mode</label>
+          <select id="p2wLayoutMode">
+            <option value="flow">Flowing paragraphs (best for reading/editing)</option>
+            <option value="lines">Exact line-by-line (best for test/question papers)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="p2wFont">Output font</label>
+          <select id="p2wFont">
+            <option value="Calibri">Calibri (Word default)</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Arial">Arial</option>
+            <option value="Georgia">Georgia</option>
+          </select>
+        </div>
+        <button class="btn" id="p2wBtn">Convert to Word</button>
+      </div>
+
+      <div id="progressWrapP2W" class="progress-wrap">
+        <div id="progressBarP2W" class="progress-bar"></div>
+      </div>
+
+      <p id="statusMsgP2W" class="status"></p>
+
+      <div id="resultBoxP2W" class="result-box">
+        <a id="downloadLinkP2W" class="btn" download>⬇ Download Word Document</a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <p>Each page's text is read directly from the PDF (via pdf.js) and written into a real, valid .docx file that opens in Word, Google Docs, or LibreOffice — entirely in your browser.</p>
+      <h3>Is my file uploaded anywhere?</h3>
+      <p>No — everything happens locally. Your PDF never leaves your device.</p>
+      <h3>What about scanned PDFs (images of text)?</h3>
+      <p>If your PDF is a scanned image with no selectable text layer, there is no text to extract — this tool works on PDFs that already contain real, selectable text.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="../js/ad-gate.js"></script>
+<script src="../js/pdf-to-word.js"></script>
+</body>
+</html>

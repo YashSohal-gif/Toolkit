@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compress Image to Exact KB Size Online Free | KBResize</title>
+<meta name="description" content="Free online tool to compress JPG or PNG photo to an exact KB or MB size for exam forms, job applications, and government portals. Fast, private, works in your browser.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">KB<span>Resize</span></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+    </nav>
+    <div class="theme-controls">
+      <button id="themeToggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle day/night mode">🌙</button>
+      <div class="accent-picker">
+        <button id="accentToggle" class="icon-btn" title="Change theme color" aria-label="Change theme color">🎨</button>
+        <div id="accentMenu" class="accent-menu">
+          <button class="accent-swatch" data-accent="blue" style="background:#2563eb" title="Blue"></button>
+          <button class="accent-swatch" data-accent="purple" style="background:#7c3aed" title="Purple"></button>
+          <button class="accent-swatch" data-accent="green" style="background:#16a34a" title="Green"></button>
+          <button class="accent-swatch" data-accent="red" style="background:#dc2626" title="Red"></button>
+          <button class="accent-swatch" data-accent="orange" style="background:#ea580c" title="Orange"></button>
+          <button class="accent-swatch" data-accent="teal" style="background:#0d9488" title="Teal"></button>
+          <button class="accent-swatch" data-accent="pink" style="background:#db2777" title="Pink"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <h1>Photo / Image Compressor — Exact KB Size</h1>
+      <p>Upload your photo, set the target size your form requires, and download an instantly compressed version. 100% free, no upload to any server.</p>
+    </div>
+
+    <div class="card">
+      <div id="dropzone" class="dropzone">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+        <p>Click or drag & drop one or more images here (JPG or PNG)</p>
+      </div>
+      <input type="file" id="fileInput" accept="image/*" multiple style="display:none">
+
+      <div id="fileListCompress" class="file-list"></div>
+
+      <div class="controls">
+        <div class="field">
+          <label for="targetSize">Target size</label>
+          <input type="number" id="targetSize" value="50" min="1">
+        </div>
+        <div class="field">
+          <label>Unit</label>
+          <div class="segmented" id="targetUnit">
+            <button type="button" class="active" data-value="KB">KB</button>
+            <button type="button" data-value="MB">MB</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="outputFormat" title="Lossy formats discard some detail to shrink the file; lossless keeps every pixel exact but compresses less">Output format</label>
+          <select id="outputFormat">
+            <option value="image/jpeg">JPG — Lossy (best compatibility)</option>
+            <option value="image/webp">WebP — Lossy (smaller files)</option>
+            <option value="image/png">PNG — Lossless (no quality loss)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="maxDimension">Limit longest side</label>
+          <select id="maxDimension">
+            <option value="0">Original resolution</option>
+            <option value="1920">1920 px (Full HD)</option>
+            <option value="1280">1280 px (HD)</option>
+            <option value="800">800 px (web)</option>
+            <option value="600">600 px (email)</option>
+          </select>
+        </div>
+        <label class="toggle-row" title="Never shrink width/height to reach the target — only reduce quality">
+          <span class="toggle-switch"><input type="checkbox" id="keepDimensions"><span class="toggle-track"></span></span>
+          <span>Keep exact dimensions</span>
+        </label>
+        <button class="btn" id="compressBtn">Compress Image(s)</button>
+      </div>
+
+      <div id="progressWrap" class="progress-wrap">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+      <p id="batchProgressLabel" class="status" style="display:none;"></p>
+
+      <p id="statusMsg" class="status"></p>
+
+      <div id="resultBox" class="result-box">
+        <div class="size-row"><span>Original size</span><b id="originalSize">-</b></div>
+        <div class="size-row"><span>Compressed size</span><b id="compressedSize">-</b></div>
+        <a id="downloadLink" class="btn" download>⬇ Download Compressed Image</a>
+      </div>
+
+      <div id="beforeAfterWrap" style="display:none;margin-top:20px;">
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:8px;text-align:center;">Drag the slider to compare original vs. compressed</p>
+        <div class="ba-slider" id="baSlider">
+          <img id="baAfter" class="ba-img" alt="Compressed">
+          <div class="ba-before-wrap" id="baBeforeWrap">
+            <img id="baBefore" class="ba-img" alt="Original">
+          </div>
+          <div class="ba-handle" id="baHandle"><span>◀▶</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>How it works</h2>
+      <h3>1. Choose your file</h3>
+      <p>Drag and drop or click to select a JPG or PNG photo.</p>
+      <h3>2. Set your target size</h3>
+      <p>Enter the exact size your form requires — e.g. 20 KB, 50 KB, 100 KB.</p>
+      <h3>3. Download</h3>
+      <p>The tool reduces quality and dimensions step by step until it's as close as possible to your target, then gives you a download link.</p>
+      <h3>Lossy vs. Lossless — which should I pick?</h3>
+      <p><b>Lossy</b> (JPG, WebP) throws away detail the eye barely notices to shrink the file a lot — right for photos and any target-size goal. <b>Lossless</b> (PNG) keeps every pixel byte-for-byte identical to the resized original, so nothing is ever degraded — right for screenshots, logos, or graphics with sharp edges/text, at the cost of a bigger file. Because lossless has no quality dial, hitting a very small target size in PNG mode relies entirely on shrinking dimensions, not on visible quality loss.</p>
+      <h3>Can I compress more than one image at once?</h3>
+      <p>Yes — add multiple images and they're all compressed to the same target size with the same settings, then bundled into a single ZIP to download. Add just one image and it downloads directly, no ZIP step needed.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="../about.html">About</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <p>&copy; <span id="year"></span> KBResize. All rights reserved.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="../js/before-after-slider.js"></script>
+<script src="../js/image-compressor.js"></script>
+</body>
+</html>
