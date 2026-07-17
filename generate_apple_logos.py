@@ -1,5 +1,5 @@
 import re
-import os
+import uuid
 
 html_file = 'index.html'
 css_file = 'css/style.css'
@@ -53,17 +53,66 @@ def get_glyph_for_label(label):
     if 'pdf' in lbl: return glyphs['pdf']
     return glyphs['default']
 
+def get_gradient_for_label(label):
+    lbl = label.lower()
+    # iOS vibrant gradients
+    # Red / Orange
+    if 'pdf' in lbl or 'redact' in lbl or 'delete' in lbl or 'youtube' in lbl:
+        return ('#FF3B30', '#FF9500')
+    # Blue / Cyan
+    if 'image' in lbl or 'photo' in lbl or 'word' in lbl or 'text' in lbl or 'markdown' in lbl:
+        return ('#007AFF', '#5AC8FA')
+    # Green / Teal
+    if 'excel' in lbl or 'spreadsheet' in lbl or 'split' in lbl or 'crop' in lbl:
+        return ('#34C759', '#32ADE6')
+    # Purple / Pink
+    if 'merge' in lbl or 'powerpoint' in lbl or 'ppt' in lbl or 'video' in lbl or 'instagram' in lbl:
+        return ('#AF52DE', '#FF2D55')
+    # Orange / Yellow
+    if 'compress' in lbl or 'resize' in lbl or 'calculat' in lbl or 'time' in lbl:
+        return ('#FF9500', '#FFCC00')
+    # Indigo / Purple
+    if 'lock' in lbl or 'security' in lbl or 'watermark' in lbl or 'sign' in lbl:
+        return ('#5856D6', '#AF52DE')
+    # Default (Grey to Silver)
+    return ('#8E8E93', '#D1D1D6')
+
+
 def tile_replacer(match):
     full_tile = match.group(0)
     label_match = re.search(r'<div class="app-label">(.*?)</div>', full_tile)
     label = label_match.group(1) if label_match else ""
     
     glyph = get_glyph_for_label(label)
+    color_start, color_end = get_gradient_for_label(label)
     
+    uid = uuid.uuid4().hex[:8]
+    
+    # 3D Glassmorphism Apple SVG
     apple_svg = f'''
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-{uid}" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="{color_start}" />
+      <stop offset="100%" stop-color="{color_end}" />
+    </linearGradient>
+    <filter id="shadow-{uid}" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-{uid})" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-{uid})">
+    {glyph}
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-{uid})" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     {glyph}
   </g>
 </svg>
@@ -71,11 +120,21 @@ def tile_replacer(match):
     new_tile = re.sub(r'<div class="app-icon[^"]*">.*?</div>', f'<div class="app-icon apple-icon-container">{apple_svg}</div>', full_tile, flags=re.DOTALL)
     return new_tile
 
+# Process html
 new_content = re.sub(r'<a class="app-tile"[^>]*>.*?</a>', tile_replacer, content, flags=re.DOTALL)
 
 with open(html_file, 'w', encoding='utf-8') as f:
     f.write(new_content)
 
+# Remove the old apple CSS rules to insert the new advanced ones cleanly.
+# We will use python string manipulation to truncate everything after /* --- APPLE TIER LOGO DESIGN --- */ if it exists
+with open(css_file, 'r', encoding='utf-8') as f:
+    css_content = f.read()
+
+if '/* --- APPLE TIER LOGO DESIGN --- */' in css_content:
+    css_content = css_content.split('/* --- APPLE TIER LOGO DESIGN --- */')[0]
+
+# Add new CSS rules
 css_rules = """
 /* --- APPLE TIER LOGO DESIGN --- */
 .apple-icon-container {
@@ -91,39 +150,31 @@ css_rules = """
   display: block;
 }
 
-/* Light Mode: Frosted glass / Sleek white background, Dark glyph */
-.apple-logo .apple-bg {
-  fill: #f8fafc;
-  stroke: #e2e8f0;
-  stroke-width: 1px;
-  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.06));
-  transition: fill 0.3s ease, filter 0.3s ease, stroke 0.3s ease;
+/* Base Light Mode Styles (Vibrant Gradients + White Glass Icons) */
+.apple-bg-light, .apple-glyph-light {
+  opacity: 1;
+  transition: opacity 0.4s ease, filter 0.4s ease;
 }
-.apple-logo .apple-glyph {
-  color: #0f172a; /* Dark slate */
-  transition: color 0.3s ease;
+.apple-bg-dark, .apple-glyph-dark {
+  opacity: 0;
+  transition: opacity 0.4s ease, filter 0.4s ease;
 }
 
-.app-tile:hover .apple-logo .apple-bg {
-  fill: #ffffff;
-  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.12));
-  stroke: #cbd5e1;
+/* Hover effects for liquidly/3D pop */
+.app-tile:hover .apple-logo .apple-bg-light {
+  filter: drop-shadow(0 14px 24px rgba(0,0,0,0.25)) brightness(1.1);
+}
+.app-tile:hover .apple-logo .apple-bg-dark {
+  filter: drop-shadow(0 14px 24px rgba(0,0,0,0.5)) brightness(1.3);
 }
 
-/* Dark Mode: Deep premium matte black, White glowing glyph */
-[data-theme="dark"] .apple-logo .apple-bg {
-  fill: #1e293b;
-  stroke: #334155;
-  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.4));
+/* iOS 18 Dark Mode Tinted Effect */
+[data-theme="dark"] .apple-bg-light, [data-theme="dark"] .apple-glyph-light {
+  opacity: 0;
 }
-[data-theme="dark"] .apple-logo .apple-glyph {
-  color: #ffffff;
-}
-[data-theme="dark"] .app-tile:hover .apple-logo .apple-bg {
-  fill: #0f172a;
-  stroke: #475569;
-  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.6));
+[data-theme="dark"] .apple-bg-dark, [data-theme="dark"] .apple-glyph-dark {
+  opacity: 1;
 }
 """
-with open(css_file, 'a', encoding='utf-8') as f:
-    f.write(css_rules)
+with open(css_file, 'w', encoding='utf-8') as f:
+    f.write(css_content + css_rules)

@@ -115,8 +115,28 @@
         <a class="app-tile" href="convert-to-pdf/word-to-pdf.html" data-desc="Convert a .docx document into a PDF file">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-e56f125d" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-e56f125d" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-e56f125d)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-e56f125d)">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-e56f125d)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/>
   </g>
 </svg>
@@ -126,8 +146,28 @@
         <a class="app-tile" href="convert-to-pdf/excel-to-pdf.html" data-desc="Turn a spreadsheet's data into a PDF">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-411513a4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-411513a4" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-411513a4)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-411513a4)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h2"/><path d="M8 17h2"/><path d="M14 13h2"/><path d="M14 17h2"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-411513a4)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h2"/><path d="M8 17h2"/><path d="M14 13h2"/><path d="M14 17h2"/>
   </g>
 </svg>
@@ -137,8 +177,28 @@
         <a class="app-tile" href="convert-to-pdf/ppt-to-pdf.html" data-desc="Convert your slides' text into a PDF">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-d45624a9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-d45624a9" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-d45624a9)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-d45624a9)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><rect x="8" y="12" width="8" height="6"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-d45624a9)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><rect x="8" y="12" width="8" height="6"/>
   </g>
 </svg>
@@ -148,8 +208,28 @@
         <a class="app-tile" href="convert-to-pdf/jpg-to-pdf.html" data-desc="Combine one or more images into a PDF">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-15316f3a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-15316f3a" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-15316f3a)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-15316f3a)">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-15316f3a)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
   </g>
 </svg>
@@ -159,8 +239,28 @@
         <a class="app-tile" href="convert-to-pdf/html-to-pdf.html" data-desc="Convert an .html file or pasted HTML code into a PDF">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-4f0631ae" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-4f0631ae" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-4f0631ae)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-4f0631ae)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-4f0631ae)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
   </g>
 </svg>
@@ -177,8 +277,28 @@
         <a class="app-tile" href="convert-from-pdf/pdf-to-jpg.html" data-desc="Turn every PDF page into a JPG image">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-93d00159" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-93d00159" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-93d00159)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-93d00159)">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-93d00159)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
   </g>
 </svg>
@@ -188,8 +308,28 @@
         <a class="app-tile" href="convert-from-pdf/pdf-to-text.html" data-desc="Extract all text from a PDF as .txt">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-3e967f63" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-3e967f63" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-3e967f63)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-3e967f63)">
+    <path d="M4 7V4h16v3"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-3e967f63)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4 7V4h16v3"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/>
   </g>
 </svg>
@@ -199,8 +339,28 @@
         <a class="app-tile" href="convert-from-pdf/pdf-to-word.html" data-desc="Extract a PDF's text into an editable Word .docx">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-4de34ae6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-4de34ae6" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-4de34ae6)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-4de34ae6)">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-4de34ae6)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/>
   </g>
 </svg>
@@ -210,8 +370,28 @@
         <a class="app-tile" href="convert-from-pdf/pdf-to-powerpoint.html" data-desc="Turn every PDF page into a PowerPoint slide">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-77ffe7c3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-77ffe7c3" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-77ffe7c3)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-77ffe7c3)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><rect x="8" y="12" width="8" height="6"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-77ffe7c3)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><rect x="8" y="12" width="8" height="6"/>
   </g>
 </svg>
@@ -221,8 +401,28 @@
         <a class="app-tile" href="convert-from-pdf/pdf-to-excel.html" data-desc="Extract a PDF's text and tables into an Excel spreadsheet">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-6acfad82" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-6acfad82" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-6acfad82)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-6acfad82)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h2"/><path d="M8 17h2"/><path d="M14 13h2"/><path d="M14 17h2"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-6acfad82)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h2"/><path d="M8 17h2"/><path d="M14 13h2"/><path d="M14 17h2"/>
   </g>
 </svg>
@@ -232,8 +432,28 @@
         <a class="app-tile" href="convert-from-pdf/pdf-to-pdfa.html" data-desc="Create a flattened, self-contained archival-style PDF">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-4911302a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-4911302a" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-4911302a)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-4911302a)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-4911302a)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
   </g>
 </svg>
@@ -243,8 +463,28 @@
         <a class="app-tile" href="convert-from-pdf/pdf-to-markdown.html" data-desc="Extract a PDF's text into clean Markdown with headings">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-716d9fe9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-716d9fe9" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-716d9fe9)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-716d9fe9)">
+    <path d="M4 7V4h16v3"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-716d9fe9)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4 7V4h16v3"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/>
   </g>
 </svg>
@@ -261,8 +501,28 @@
         <a class="app-tile" href="pdf-tools/pdf-compressor.html" data-desc="Shrink a PDF to an exact KB or MB size">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-78f4e4c9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-78f4e4c9" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-78f4e4c9)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-78f4e4c9)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 14l3 3 3-3"/><path d="M12 11v6"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-78f4e4c9)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 14l3 3 3-3"/><path d="M12 11v6"/>
   </g>
 </svg>
@@ -272,8 +532,28 @@
         <a class="app-tile" href="pdf-tools/print-saver.html" data-desc="Fit multiple pages on one printed sheet">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-71bed9d7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-71bed9d7" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-71bed9d7)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-71bed9d7)">
+    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-71bed9d7)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
   </g>
 </svg>
@@ -283,8 +563,28 @@
         <a class="app-tile" href="pdf-tools/merge-pdf.html" data-desc="Combine multiple PDFs into one file">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-8472f654" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-8472f654" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-8472f654)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-8472f654)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="M9 15l3-3 3 3"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-8472f654)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="M9 15l3-3 3 3"/>
   </g>
 </svg>
@@ -294,8 +594,28 @@
         <a class="app-tile" href="pdf-tools/split-pdf.html" data-desc="Extract a page range or split into pages">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-78e8c13d" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-78e8c13d" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-78e8c13d)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-78e8c13d)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="8" y1="14" x2="16" y2="14"/><line x1="12" y1="10" x2="12" y2="18"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-78e8c13d)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="8" y1="14" x2="16" y2="14"/><line x1="12" y1="10" x2="12" y2="18"/>
   </g>
 </svg>
@@ -305,8 +625,28 @@
         <a class="app-tile" href="pdf-tools/organize-pdf.html" data-desc="Remove, reorder, or extract PDF pages">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-cd2dd2ea" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-cd2dd2ea" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-cd2dd2ea)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-cd2dd2ea)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-cd2dd2ea)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
   </g>
 </svg>
@@ -316,8 +656,28 @@
         <a class="app-tile" href="pdf-tools/rotate-pdf.html" data-desc="Rotate every page 90°, 180°, or 270°">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-c28d23f7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-c28d23f7" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-c28d23f7)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-c28d23f7)">
+    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.59-9.5l4.5 4.5"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-c28d23f7)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.59-9.5l4.5 4.5"/>
   </g>
 </svg>
@@ -327,8 +687,28 @@
         <a class="app-tile" href="pdf-tools/crop-pdf.html" data-desc="Trim margins from every page">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-4e4d7fa0" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-4e4d7fa0" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-4e4d7fa0)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-4e4d7fa0)">
+    <path d="M6.13 1L6 16a2 2 0 0 0 2 2h15"/><path d="M1 6.13L16 6a2 2 0 0 1 2 2v15"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-4e4d7fa0)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M6.13 1L6 16a2 2 0 0 0 2 2h15"/><path d="M1 6.13L16 6a2 2 0 0 1 2 2v15"/>
   </g>
 </svg>
@@ -338,8 +718,28 @@
         <a class="app-tile" href="pdf-tools/resize-pdf-pages.html" data-desc="Rescale pages to A4, Letter, or Legal">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-51b9a1fb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-51b9a1fb" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-51b9a1fb)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-51b9a1fb)">
+    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-51b9a1fb)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
   </g>
 </svg>
@@ -349,8 +749,28 @@
         <a class="app-tile" href="pdf-tools/watermark-pdf.html" data-desc="Stamp text across every page">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-6f6cf251" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-6f6cf251" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-6f6cf251)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-6f6cf251)">
+    <circle cx="12" cy="12" r="10"/><path d="M8 12a4 4 0 0 0 8 0"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-6f6cf251)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><path d="M8 12a4 4 0 0 0 8 0"/>
   </g>
 </svg>
@@ -360,8 +780,28 @@
         <a class="app-tile" href="pdf-tools/page-numbers.html" data-desc="Add page numbers to every page">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-e8a6b594" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-e8a6b594" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-e8a6b594)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-e8a6b594)">
+    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-e8a6b594)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
   </g>
 </svg>
@@ -371,8 +811,28 @@
         <a class="app-tile" href="pdf-tools/scan-to-pdf.html" data-desc="Use your camera or upload photos and combine them into a PDF">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-56562f17" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-56562f17" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-56562f17)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-56562f17)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-56562f17)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
   </g>
 </svg>
@@ -382,8 +842,28 @@
         <a class="app-tile" href="pdf-tools/repair-pdf.html" data-desc="Rebuild a damaged or corrupted PDF page by page">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-634455d3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-634455d3" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-634455d3)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-634455d3)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-634455d3)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
   </g>
 </svg>
@@ -393,8 +873,28 @@
         <a class="app-tile" href="pdf-tools/ocr-pdf.html" data-desc="Run text recognition on a scanned PDF to extract text">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-a6062c17" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-a6062c17" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-a6062c17)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-a6062c17)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-a6062c17)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
   </g>
 </svg>
@@ -404,8 +904,28 @@
         <a class="app-tile" href="pdf-tools/edit-pdf.html" data-desc="Add text boxes, rectangles, and highlights to your PDF">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-6698a123" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-6698a123" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-6698a123)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-6698a123)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-6698a123)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
   </g>
 </svg>
@@ -415,8 +935,28 @@
         <a class="app-tile" href="pdf-tools/pdf-forms.html" data-desc="Fill out a fillable PDF form's fields and save a completed copy">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-a03d66ed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-a03d66ed" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-a03d66ed)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-a03d66ed)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-a03d66ed)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
   </g>
 </svg>
@@ -433,8 +973,28 @@
         <a class="app-tile" href="pdf-tools/unlock-pdf.html" data-desc="Remove a known password from a protected PDF">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-35e5bfed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-35e5bfed" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-35e5bfed)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-35e5bfed)">
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-35e5bfed)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>
   </g>
 </svg>
@@ -444,8 +1004,28 @@
         <a class="app-tile" href="pdf-tools/sign-pdf.html" data-desc="Draw or type a signature and place it on your PDF">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-5507b12b" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-5507b12b" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-5507b12b)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-5507b12b)">
+    <circle cx="12" cy="12" r="10"/><path d="M8 12a4 4 0 0 0 8 0"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-5507b12b)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><path d="M8 12a4 4 0 0 0 8 0"/>
   </g>
 </svg>
@@ -455,8 +1035,28 @@
         <a class="app-tile" href="pdf-tools/redact-pdf.html" data-desc="Permanently black out sensitive text or images in a PDF">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-0552391c" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-0552391c" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-0552391c)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-0552391c)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-0552391c)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
   </g>
 </svg>
@@ -466,8 +1066,28 @@
         <a class="app-tile" href="pdf-tools/compare-pdf.html" data-desc="See text differences between two versions of a PDF">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-9f69fa8d" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-9f69fa8d" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-9f69fa8d)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-9f69fa8d)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-9f69fa8d)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M10 18v-6a2 2 0 1 1 4 0v6"/><path d="M10 15h4"/>
   </g>
 </svg>
@@ -484,8 +1104,28 @@
         <a class="app-tile" href="image-tools/image-compressor.html" data-desc="Compress a photo to an exact KB size">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-2a6adfa4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#007AFF" />
+      <stop offset="100%" stop-color="#5AC8FA" />
+    </linearGradient>
+    <filter id="shadow-2a6adfa4" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-2a6adfa4)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-2a6adfa4)">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-2a6adfa4)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
   </g>
 </svg>
@@ -495,8 +1135,28 @@
         <a class="app-tile" href="image-tools/image-resizer.html" data-desc="Resize a photo to exact pixels or a %">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-33b9f115" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#007AFF" />
+      <stop offset="100%" stop-color="#5AC8FA" />
+    </linearGradient>
+    <filter id="shadow-33b9f115" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-33b9f115)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-33b9f115)">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-33b9f115)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
   </g>
 </svg>
@@ -506,8 +1166,28 @@
         <a class="app-tile" href="image-tools/passport-photo.html" data-desc="Crop and print passport/ID photos">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-6cf6d2b4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#007AFF" />
+      <stop offset="100%" stop-color="#5AC8FA" />
+    </linearGradient>
+    <filter id="shadow-6cf6d2b4" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-6cf6d2b4)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-6cf6d2b4)">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-6cf6d2b4)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
   </g>
 </svg>
@@ -517,8 +1197,28 @@
         <a class="app-tile" href="image-tools/image-format-converter.html" data-desc="Convert HEIC, WEBP, PNG to JPG/PNG">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-6b68ff80" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-6b68ff80" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-6b68ff80)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-6b68ff80)">
+    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-6b68ff80)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
   </g>
 </svg>
@@ -528,8 +1228,28 @@
         <a class="app-tile" href="image-tools/grayscale-converter.html" data-desc="Convert a photo or PDF to black & white">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-5b3b951e" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-5b3b951e" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-5b3b951e)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-5b3b951e)">
+    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-5b3b951e)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
   </g>
 </svg>
@@ -539,8 +1259,28 @@
         <a class="app-tile" href="image-tools/signature-maker.html" data-desc="Draw, type, or upload a signature as a PNG">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-c7996f83" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5856D6" />
+      <stop offset="100%" stop-color="#AF52DE" />
+    </linearGradient>
+    <filter id="shadow-c7996f83" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-c7996f83)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-c7996f83)">
+    <circle cx="12" cy="12" r="10"/><path d="M8 12a4 4 0 0 0 8 0"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-c7996f83)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><path d="M8 12a4 4 0 0 0 8 0"/>
   </g>
 </svg>
@@ -550,8 +1290,28 @@
         <a class="app-tile" href="image-tools/legal-stamp-maker.html" data-desc="Design an office, legal, or notary stamp with text, borders, and logos">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-16736eb2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-16736eb2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-16736eb2)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-16736eb2)">
+    <circle cx="12" cy="12" r="10"/><path d="M8 12a4 4 0 0 0 8 0"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-16736eb2)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><path d="M8 12a4 4 0 0 0 8 0"/>
   </g>
 </svg>
@@ -561,8 +1321,28 @@
         <a class="app-tile" href="image-tools/image-cropper.html" data-desc="Crop a JPG, PNG, or GIF with a drag-to-select editor">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-f9615eb5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#007AFF" />
+      <stop offset="100%" stop-color="#5AC8FA" />
+    </linearGradient>
+    <filter id="shadow-f9615eb5" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-f9615eb5)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-f9615eb5)">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-f9615eb5)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
   </g>
 </svg>
@@ -572,8 +1352,28 @@
         <a class="app-tile" href="image-tools/image-rotator.html" data-desc="Rotate a photo 90, 180, or 270 degrees">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-734d3e21" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#007AFF" />
+      <stop offset="100%" stop-color="#5AC8FA" />
+    </linearGradient>
+    <filter id="shadow-734d3e21" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-734d3e21)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-734d3e21)">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-734d3e21)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
   </g>
 </svg>
@@ -583,8 +1383,28 @@
         <a class="app-tile" href="image-tools/watermark-image.html" data-desc="Stamp a text watermark across your photo">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-34271da3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#007AFF" />
+      <stop offset="100%" stop-color="#5AC8FA" />
+    </linearGradient>
+    <filter id="shadow-34271da3" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-34271da3)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-34271da3)">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-34271da3)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
   </g>
 </svg>
@@ -594,8 +1414,28 @@
         <a class="app-tile" href="image-tools/meme-generator.html" data-desc="Add classic top/bottom captions to your photo">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-d8f553e2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-d8f553e2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-d8f553e2)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-d8f553e2)">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-d8f553e2)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
   </g>
 </svg>
@@ -605,8 +1445,28 @@
         <a class="app-tile" href="image-tools/html-to-image.html" data-desc="Convert an HTML file or pasted HTML code into a PNG/JPG">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-8adae185" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#007AFF" />
+      <stop offset="100%" stop-color="#5AC8FA" />
+    </linearGradient>
+    <filter id="shadow-8adae185" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-8adae185)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-8adae185)">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-8adae185)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
   </g>
 </svg>
@@ -623,8 +1483,28 @@
         <a class="app-tile" href="utility-tools/youtube-thumbnail-downloader.html" data-desc="Download a YouTube video's public thumbnail image">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-fd2cd5a7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-fd2cd5a7" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-fd2cd5a7)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-fd2cd5a7)">
+    <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-fd2cd5a7)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
   </g>
 </svg>
@@ -634,8 +1514,28 @@
         <a class="app-tile" href="utility-tools/qr-code-generator.html" data-desc="Turn text or a link into a downloadable QR code">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-ee4f75f8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-ee4f75f8" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-ee4f75f8)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-ee4f75f8)">
+    <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-ee4f75f8)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
   </g>
 </svg>
@@ -645,8 +1545,28 @@
         <a class="app-tile" href="utility-tools/qr-code-scanner.html" data-desc="Decode a QR code from an uploaded image">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-d41ef27a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-d41ef27a" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-d41ef27a)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-d41ef27a)">
+    <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-d41ef27a)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
   </g>
 </svg>
@@ -656,8 +1576,28 @@
         <a class="app-tile" href="utility-tools/audio-format-converter.html" data-desc="Convert an audio file between MP3 and WAV">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-26915fe4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-26915fe4" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-26915fe4)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-26915fe4)">
+    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-26915fe4)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
   </g>
 </svg>
@@ -667,8 +1607,28 @@
         <a class="app-tile" href="utility-tools/word-character-counter.html" data-desc="Count words, characters, sentences, and reading time">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-c4334fbf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#007AFF" />
+      <stop offset="100%" stop-color="#5AC8FA" />
+    </linearGradient>
+    <filter id="shadow-c4334fbf" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-c4334fbf)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-c4334fbf)">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-c4334fbf)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/>
   </g>
 </svg>
@@ -678,8 +1638,28 @@
         <a class="app-tile" href="utility-tools/unit-converter.html" data-desc="Convert length, weight, temperature, area, and speed">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-a667d999" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-a667d999" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-a667d999)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-a667d999)">
+    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-a667d999)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
   </g>
 </svg>
@@ -689,8 +1669,28 @@
         <a class="app-tile" href="utility-tools/age-calculator.html" data-desc="Calculate exact age or the days between two dates">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-8bfd6cdf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9500" />
+      <stop offset="100%" stop-color="#FFCC00" />
+    </linearGradient>
+    <filter id="shadow-8bfd6cdf" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-8bfd6cdf)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-8bfd6cdf)">
+    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="16" y1="18" x2="16" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="8" y1="18" x2="8" y2="18.01"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-8bfd6cdf)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="16" y1="18" x2="16" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="8" y1="18" x2="8" y2="18.01"/>
   </g>
 </svg>
@@ -700,8 +1700,28 @@
         <a class="app-tile" href="utility-tools/password-generator.html" data-desc="Generate a strong random password">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-06346bfb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#007AFF" />
+      <stop offset="100%" stop-color="#5AC8FA" />
+    </linearGradient>
+    <filter id="shadow-06346bfb" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-06346bfb)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-06346bfb)">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-06346bfb)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/>
   </g>
 </svg>
@@ -711,8 +1731,28 @@
         <a class="app-tile" href="utility-tools/base64-converter.html" data-desc="Encode text to Base64 or decode it back">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-163adecc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-163adecc" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-163adecc)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-163adecc)">
+    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-163adecc)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
   </g>
 </svg>
@@ -722,8 +1762,28 @@
         <a class="app-tile" href="utility-tools/case-converter.html" data-desc="Convert text to upper, lower, title, or camelCase">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-ba9b751f" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-ba9b751f" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-ba9b751f)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-ba9b751f)">
+    <path d="M4 7V4h16v3"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-ba9b751f)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4 7V4h16v3"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/>
   </g>
 </svg>
@@ -733,8 +1793,28 @@
         <a class="app-tile" href="utility-tools/emi-calculator.html" data-desc="Calculate monthly loan EMI and total interest">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-0c339d10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9500" />
+      <stop offset="100%" stop-color="#FFCC00" />
+    </linearGradient>
+    <filter id="shadow-0c339d10" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-0c339d10)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-0c339d10)">
+    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="16" y1="18" x2="16" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="8" y1="18" x2="8" y2="18.01"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-0c339d10)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="16" y1="18" x2="16" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="8" y1="18" x2="8" y2="18.01"/>
   </g>
 </svg>
@@ -744,8 +1824,28 @@
         <a class="app-tile" href="utility-tools/bmi-calculator.html" data-desc="Calculate your Body Mass Index and category">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-b5ac97f1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9500" />
+      <stop offset="100%" stop-color="#FFCC00" />
+    </linearGradient>
+    <filter id="shadow-b5ac97f1" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-b5ac97f1)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-b5ac97f1)">
+    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="16" y1="18" x2="16" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="8" y1="18" x2="8" y2="18.01"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-b5ac97f1)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="16" y1="18" x2="16" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="8" y1="18" x2="8" y2="18.01"/>
   </g>
 </svg>
@@ -762,8 +1862,28 @@
         <a class="app-tile" href="video-tools/youtube-downloader.html" data-desc="Download a YouTube video as MP4 or MP3">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-b5680e46" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-b5680e46" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-b5680e46)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-b5680e46)">
+    <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-b5680e46)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
   </g>
 </svg>
@@ -773,8 +1893,28 @@
         <a class="app-tile" href="video-tools/instagram-downloader.html" data-desc="Download an Instagram Reel, video, or IGTV as MP4">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-8f80d4cf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#AF52DE" />
+      <stop offset="100%" stop-color="#FF2D55" />
+    </linearGradient>
+    <filter id="shadow-8f80d4cf" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-8f80d4cf)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-8f80d4cf)">
+    <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-8f80d4cf)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
   </g>
 </svg>
@@ -791,8 +1931,28 @@
         <a class="app-tile" href="student-tools/smart-print-saver.html" data-desc="Fit multiple pages per sheet with live preview, borders, and B&W/invert modes">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-20507397" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-20507397" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-20507397)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-20507397)">
+    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-20507397)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
   </g>
 </svg>
@@ -802,8 +1962,28 @@
         <a class="app-tile" href="pdf-tools/pdf-compressor.html" data-desc="Shrink a PDF to an exact KB or MB size">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-b9e23c53" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3B30" />
+      <stop offset="100%" stop-color="#FF9500" />
+    </linearGradient>
+    <filter id="shadow-b9e23c53" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-b9e23c53)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-b9e23c53)">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 14l3 3 3-3"/><path d="M12 11v6"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-b9e23c53)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 14l3 3 3-3"/><path d="M12 11v6"/>
   </g>
 </svg>
@@ -813,8 +1993,28 @@
         <a class="app-tile" href="image-tools/grayscale-converter.html" data-desc="Convert a photo or PDF to black & white">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-f4544050" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-f4544050" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-f4544050)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-f4544050)">
+    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-f4544050)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
   </g>
 </svg>
@@ -824,8 +2024,28 @@
         <a class="app-tile" href="image-tools/passport-photo.html" data-desc="Crop and print passport/ID photos for exam forms">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-6e6570be" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#007AFF" />
+      <stop offset="100%" stop-color="#5AC8FA" />
+    </linearGradient>
+    <filter id="shadow-6e6570be" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-6e6570be)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-6e6570be)">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-6e6570be)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
   </g>
 </svg>
@@ -835,8 +2055,28 @@
         <a class="app-tile" href="student-tools/booklet-maker.html" data-desc="Turn a PDF into a foldable, printable booklet with printer instructions">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-51320e3e" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-51320e3e" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-51320e3e)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-51320e3e)">
+    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-51320e3e)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
   </g>
 </svg>
@@ -846,8 +2086,28 @@
         <a class="app-tile" href="student-tools/citation-generator.html" data-desc="Generate APA, MLA, or Chicago style citations">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-39dd4c56" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E8E93" />
+      <stop offset="100%" stop-color="#D1D1D6" />
+    </linearGradient>
+    <filter id="shadow-39dd4c56" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-39dd4c56)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-39dd4c56)">
+    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-39dd4c56)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
   </g>
 </svg>
@@ -857,8 +2117,28 @@
         <a class="app-tile" href="student-tools/gpa-calculator.html" data-desc="Calculate your GPA from courses, credits, and grades">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-692fc8ce" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9500" />
+      <stop offset="100%" stop-color="#FFCC00" />
+    </linearGradient>
+    <filter id="shadow-692fc8ce" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-692fc8ce)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-692fc8ce)">
+    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="16" y1="18" x2="16" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="8" y1="18" x2="8" y2="18.01"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-692fc8ce)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="16" y1="18" x2="16" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="8" y1="18" x2="8" y2="18.01"/>
   </g>
 </svg>
@@ -868,8 +2148,28 @@
         <a class="app-tile" href="student-tools/study-timer.html" data-desc="A Pomodoro-style focus timer with breaks and session tracking">
           <div class="app-icon apple-icon-container">
 <svg viewBox="0 0 100 100" class="apple-logo" xmlns="http://www.w3.org/2000/svg">
-  <rect class="apple-bg" x="4" y="4" width="92" height="92" rx="22" ry="22" />
-  <g class="apple-glyph" transform="translate(28, 28) scale(1.83)" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad-e2fe8506" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9500" />
+      <stop offset="100%" stop-color="#FFCC00" />
+    </linearGradient>
+    <filter id="shadow-e2fe8506" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Light Mode Layers -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="url(#grad-e2fe8506)" />
+  <!-- Inner rim reflection for glass aesthetic -->
+  <rect class="apple-bg-light" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2" />
+  
+  <g class="apple-glyph-light" transform="translate(28, 28) scale(1.83)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow-e2fe8506)">
+    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+  </g>
+
+  <!-- Dark Mode Layers (iOS 18 Tinted Style) -->
+  <rect class="apple-bg-dark" x="4" y="4" width="92" height="92" rx="22" ry="22" fill="#121212" stroke="#2c2c2e" stroke-width="1.5" />
+  <g class="apple-glyph-dark" transform="translate(28, 28) scale(1.83)" fill="none" stroke="url(#grad-e2fe8506)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
   </g>
 </svg>
